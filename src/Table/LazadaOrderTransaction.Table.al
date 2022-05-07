@@ -1,6 +1,6 @@
-// <summary>
-// Table Lazada Order Transaction (ID 50101).
-// </summary>
+/// <summary>
+/// Table Lazada Order Transaction (ID 50101).
+/// </summary>
 table 50101 "Lazada Order Transaction"
 {
     Caption = 'Lazada Order Transaction';
@@ -311,6 +311,10 @@ table 50101 "Lazada Order Transaction"
             Clustered = true;
         }
     }
+    /// <summary>
+    /// Get LastEntry.
+    /// </summary>
+    /// <returns>Return value of type Integer.</returns>
     procedure "Get LastEntry"(): Integer
     var
         ltLazadatransaction: Record "Lazada Order Transaction";

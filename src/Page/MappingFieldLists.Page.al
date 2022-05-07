@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Mapping Field Lists (ID 50101).
+/// </summary>
 page 50101 "Mapping Field Lists"
 {
     ApplicationArea = All;
@@ -21,6 +24,11 @@ page 50101 "Mapping Field Lists"
                 field("Table Name"; Rec."Table Name")
                 {
                     ToolTip = 'Specifies the value of the Table Name field.';
+                    ApplicationArea = All;
+                }
+                field("Service Name"; rec."Service Name")
+                {
+                    ToolTip = 'Specifies the value of the Service Name field.';
                     ApplicationArea = All;
                 }
             }

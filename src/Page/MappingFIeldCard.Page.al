@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Mapping FIeld Card (ID 50102).
+/// </summary>
 page 50102 "Mapping FIeld Card"
 {
     Caption = 'Mapping FIeld Card';
@@ -18,6 +21,11 @@ page 50102 "Mapping FIeld Card"
                 field("Table Name"; Rec."Table Name")
                 {
                     ToolTip = 'Specifies the value of the Table Name field.';
+                    ApplicationArea = All;
+                }
+                field("Service Name"; rec."Service Name")
+                {
+                    ToolTip = 'Specifies the value of the Service Name field.';
                     ApplicationArea = All;
                 }
             }

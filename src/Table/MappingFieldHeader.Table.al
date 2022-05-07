@@ -1,3 +1,6 @@
+/// <summary>
+/// Table Mapping Field Header (ID 50102).
+/// </summary>
 table 50102 "Mapping Field Header"
 {
     Caption = 'Mapping Field Header';
@@ -52,6 +55,11 @@ table 50102 "Mapping Field Header"
             Caption = 'Table Name';
             DataClassification = ToBeClassified;
             Editable = false;
+        }
+        field(3; "Service Name"; Text[100])
+        {
+            Caption = 'Service Name';
+            DataClassification = ToBeClassified;
         }
     }
 

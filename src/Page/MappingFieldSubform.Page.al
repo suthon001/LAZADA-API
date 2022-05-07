@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Mapping Field Subform (ID 50103).
+/// </summary>
 page 50103 "Mapping Field Subform"
 {
     Caption = 'Mapping Field Subform';
