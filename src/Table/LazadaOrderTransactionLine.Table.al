@@ -1,9 +1,9 @@
 /// <summary>
 /// Table Lazada Order Transaction (ID 50101).
 /// </summary>
-table 50101 "Lazada Order Transaction"
+table 50101 "Lazada Order Transaction Line"
 {
-    Caption = 'Lazada Order Transaction';
+    Caption = 'Lazada Order Transaction Line';
     DataClassification = ToBeClassified;
 
     fields
@@ -306,23 +306,30 @@ table 50101 "Lazada Order Transaction"
     }
     keys
     {
-        key(PK; "Entry No.")
+        key(PK; "Order ID", "Entry No.")
         {
             Clustered = true;
         }
     }
+    trigger OnInsert()
+    begin
+        "Entry No." := "Get LastEntry";
+    end;
     /// <summary>
     /// Get LastEntry.
     /// </summary>
     /// <returns>Return value of type Integer.</returns>
     procedure "Get LastEntry"(): Integer
     var
-        ltLazadatransaction: Record "Lazada Order Transaction";
+        ltLazadatransaction: Record "Lazada Order Transaction Line";
     begin
         ltLazadatransaction.reset();
-        ltLazadatransaction.SetCurrentKey("Entry No.");
+        ltLazadatransaction.SetCurrentKey("Order ID", "Entry No.");
+        ltLazadatransaction.SetRange("Order ID", rec."Order ID");
         if ltLazadatransaction.FindLast() then
             exit(ltLazadatransaction."Entry No." + 1);
         exit(1);
     end;
+
+
 }

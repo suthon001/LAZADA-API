@@ -40,7 +40,7 @@ table 50103 "Mapping Field Line"
             DataClassification = ToBeClassified;
             Editable = false;
         }
-        field(5; "Mapping Field Name"; Code[30])
+        field(5; "Mapping Field Name"; text[50])
         {
             Caption = 'Mapping Field Name';
             DataClassification = ToBeClassified;
@@ -54,12 +54,26 @@ table 50103 "Mapping Field Line"
             Caption = 'Remark';
             DataClassification = ToBeClassified;
         }
+        field(7; "Table Subfrom"; Integer)
+        {
+            Caption = 'Remark';
+            DataClassification = ToBeClassified;
+        }
+        field(8; "Square"; Integer)
+        {
+            Caption = 'Remark';
+            DataClassification = ToBeClassified;
+        }
     }
     keys
     {
-        key(PK; "Table ID", "Field ID")
+        key(PK; "Table ID", "Table Subfrom", "Field ID")
         {
             Clustered = true;
+        }
+        key(FK; "Table ID", Square, "Field ID")
+        {
+
         }
     }
 }

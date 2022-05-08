@@ -124,14 +124,19 @@ codeunit 50100 "API Func"
         gvLazadaSetup.TestField("App Secret");
     end;
 
-    procedure "Get OrderItems"()
+    procedure "Get Order"()
     var
+        MappingFieldHeader: Record "Mapping Field Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetOrderPathTxt: Label 'https://api.lazada.co.th/rest//order/items/get?app_key=%1&timestamp=%2&access_token=%3&sign_method=sha256&sign=%4', Locked = true;
+        GetOrderPathTxt: Label 'https://api.lazada.co.th/rest/order/get?app_key=%1&timestamp=%2&access_token=%3&sign_method=sha256&sign=%4', Locked = true;
     begin
+        MappingFieldHeader.reset();
+        MappingFieldHeader.SetRange("Service Name", MappingFieldHeader."Service Name"::"Get Order");
+        if not MappingFieldHeader.Find() then
+            ERROR('');
         gvDateTime := CurrentDateTime();
         RefreshAccessToken();
         GetLazadaSetup();
@@ -147,21 +152,98 @@ codeunit 50100 "API Func"
         ltJsonArray := ltJsonToken.AsArray();
         for myLoop := 0 to ltJsonArray.Count - 1 do begin
             ltJsonArray.Get(myLoop, ltJsonToken);
-            InsertTransactionOrderItems(ltJsonToken);
+            InsertTransaction(ltJsonToken, MappingFieldHeader."Table ID");
         end;
     end;
 
-    local procedure InsertTransactionOrderItems(pJsonToken: JsonToken)
+    procedure "Get OrderItems"(pOrderID: code[50]; pTableSubform: integer)
     var
-        ltLazadaOrderTransaction: Record "Lazada Order Transaction";
+        MappingFieldHeader: Record "Mapping Field Header";
+        ltJsonToken: JsonToken;
+        ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
+        ltJsonArray: JsonArray;
+        GetOrderItemsPathTxt: Label 'https://api.lazada.co.th/rest/order/items/get?app_key=%1&timestamp=%2&access_token=%3&sign_method=sha256&sign=%4&order_id=%5', Locked = true;
+    begin
+        gvDateTime := CurrentDateTime();
+        RefreshAccessToken();
+        GetLazadaSetup();
+        gvtokenpath := StrSubstNo(refreshpathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Refresh Token", gvTimeStam);
+        gvUrlAddress := StrSubstNo(GetOrderItemsPathTxt, gvLazadaSetup."App Key", gvTimeStam, gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderID);
+        gvHttpRequestMessage.SetRequestUri(gvUrlAddress);
+        gvHttpRequestMessage.Method := 'GET';
+        gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
+        gvHttpResponseMessage.Content.ReadAs(gvResponseText);
+        ltJsonToken.ReadFrom(gvResponseText);
+        ltJsonObject := ltJsonToken.AsObject();
+        ltJsonObject.SelectToken('data', ltJsonToken);
+        ltJsonArray := ltJsonToken.AsArray();
+        for myLoop := 0 to ltJsonArray.Count - 1 do begin
+            ltJsonArray.Get(myLoop, ltJsonToken);
+            InsertTransactionDetail(ltJsonToken, MappingFieldHeader."Table ID", pTableSubform);
+        end;
+    end;
+
+    local procedure InsertTransaction(pJsonToken: JsonToken; pTableID: Integer)
+    var
+        MappingFieldLine: Record "Mapping Field Line";
+        ltJsonObject: JsonObject;
+        ltRecordRef: RecordRef;
+        ltFieldRef: FieldRef;
+        ltLoopField: Integer;
+        test: Text;
     begin
         ltJsonObject := pJsonToken.AsObject();
-        ltLazadaOrderTransaction.Init();
-        ltLazadaOrderTransaction."Entry No." := ltLazadaOrderTransaction."Get LastEntry"();
-        ltLazadaOrderTransaction."Interface DateTime" := gvDateTime;
-        //  Results.admCd := SelectJsonToken(JsonObject, '$.admCd')
-        ltLazadaOrderTransaction.Insert();
+        MappingFieldLine.reset();
+        MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
+        MappingFieldLine.SetRange("Table ID", pTableID);
+        MappingFieldLine.SetFilter("Mapping Field Name", '<>%1', '');
+        MappingFieldLine.SetRange("Table Subfrom", 0);
+        if MappingFieldLine.FindSet() then begin
+            ltRecordRef.Open(MappingFieldLine."Table ID");
+            ltRecordRef.Init();
+            repeat
+                ltFieldRef := ltRecordRef.FIELD(MappingFieldLine."Field ID");
+                ltFieldRef.Value := SelectJsonToken(ltJsonObject, '$.' + MappingFieldLine."Mapping Field Name");
+            until MappingFieldLine.Next() = 0;
+            ltRecordRef.Insert(true);
+            ltRecordRef.Close();
+            // Detail if have
+            MappingFieldLine.reset();
+            MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
+            MappingFieldLine.SetRange("Table ID", pTableID);
+            MappingFieldLine.SetFilter("Mapping Field Name", '<>%1', '');
+            MappingFieldLine.SetFilter("Table Subfrom", '<>%1', 0);
+            if MappingFieldLine.FindSet() then
+                "Get OrderItems"(SelectJsonToken(ltJsonObject, '$.order_id'), MappingFieldLine."Table Subfrom");
+        end;
+    end;
+
+    local procedure InsertTransactionDetail(pJsonToken: JsonToken; pTableID: Integer; pTablesubform: Integer)
+    var
+        MappingFieldLine: Record "Mapping Field Line";
+        ltJsonObject: JsonObject;
+        ltRecordRef: RecordRef;
+        ltFieldRef: FieldRef;
+        ltLoopField: Integer;
+        test: Text;
+    begin
+        ltJsonObject := pJsonToken.AsObject();
+        MappingFieldLine.reset();
+        MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
+        MappingFieldLine.SetRange("Table ID", pTableID);
+        MappingFieldLine.SetFilter("Mapping Field Name", '<>%1', '');
+        MappingFieldLine.SetRange("Table Subfrom", pTablesubform);
+        if MappingFieldLine.FindSet() then begin
+            ltRecordRef.Open(MappingFieldLine."Table ID");
+            ltRecordRef.Init();
+            repeat
+                ltFieldRef := ltRecordRef.FIELD(MappingFieldLine."Field ID");
+                ltFieldRef.Value := SelectJsonToken(ltJsonObject, '$.' + MappingFieldLine."Mapping Field Name");
+            until MappingFieldLine.Next() = 0;
+            ltRecordRef.Insert(true);
+            ltRecordRef.Close();
+        end;
     end;
 
     local procedure SelectJsonToken(JsonObject: JsonObject; Path: text): text;

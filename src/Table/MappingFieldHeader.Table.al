@@ -12,7 +12,7 @@ table 50102 "Mapping Field Header"
         {
             Caption = 'Table ID';
             DataClassification = ToBeClassified;
-            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = filter('Table'));
+            TableRelation = AllObjWithCaption."Object ID" where("Object Type" = filter('Table'), "Object ID" = filter(50104));
             trigger OnValidate()
             var
                 ltAllObjWithCaption: Record AllObjWithCaption;
@@ -20,6 +20,7 @@ table 50102 "Mapping Field Header"
                 ltRecordRef: RecordRef;
                 ltFieldRef: FieldRef;
                 ltLoopField: Integer;
+                NewText: Text;
             begin
                 if xRec."Table ID" <> rec."Table ID" then begin
                     if xRec."Table ID" <> 0 then begin
@@ -32,9 +33,7 @@ table 50102 "Mapping Field Header"
                         ltAllObjWithCaption.init();
                     rec."Table Name" := ltAllObjWithCaption."Object Caption";
                     ltRecordRef.Open(rec."Table ID");
-
-                    //    if ltRecordRef.Find() then
-                    FOR ltLoopField := 1 TO ltRecordRef.FieldCount do begin
+                    FOR ltLoopField := 1 TO ltRecordRef.FieldCount do
                         if ltRecordRef.FieldExist(ltLoopField) then begin
                             ltFieldRef := ltRecordRef.Field(ltLoopField);
                             ltMappingFieldLine.Init();
@@ -42,9 +41,31 @@ table 50102 "Mapping Field Header"
                             ltMappingFieldLine."Field ID" := ltFieldRef.Number;
                             ltMappingFieldLine."Field Name" := ltFieldRef.Name;
                             ltMappingFieldLine."Field Type" := format(ltFieldRef.Type);
+                            ltMappingFieldLine."Table Subfrom" := 0;
+                            NewText := LowerCase(ltFieldRef.Name);
+                            ltMappingFieldLine."Mapping Field Name" := NewText.Replace(' ', '_');
+                            ltMappingFieldLine.Square := 0;
+                            ltMappingFieldLine.Remark := 'Order Header';
                             ltMappingFieldLine.Insert();
                         end;
-                    END;
+                    ltRecordRef.Close();
+                    Clear(ltLoopField);
+                    ltRecordRef.Open(50101);
+                    FOR ltLoopField := 1 TO ltRecordRef.FieldCount do
+                        if ltRecordRef.FieldExist(ltLoopField) then begin
+                            ltFieldRef := ltRecordRef.Field(ltLoopField);
+                            ltMappingFieldLine.Init();
+                            ltMappingFieldLine."Table ID" := rec."Table ID";
+                            ltMappingFieldLine."Table Subfrom" := 50101;
+                            ltMappingFieldLine."Field ID" := ltFieldRef.Number;
+                            ltMappingFieldLine."Field Name" := ltFieldRef.Name;
+                            ltMappingFieldLine."Field Type" := format(ltFieldRef.Type);
+                            NewText := LowerCase(ltFieldRef.Name);
+                            ltMappingFieldLine."Mapping Field Name" := NewText.Replace(' ', '_');
+                            ltMappingFieldLine.Remark := 'Order Detail';
+                            ltMappingFieldLine.Square := 1;
+                            ltMappingFieldLine.Insert();
+                        end;
 
                 end;
 
@@ -56,7 +77,7 @@ table 50102 "Mapping Field Header"
             DataClassification = ToBeClassified;
             Editable = false;
         }
-        field(3; "Service Name"; Text[100])
+        field(3; "Service Name"; Enum "Lazada Service Type")
         {
             Caption = 'Service Name';
             DataClassification = ToBeClassified;

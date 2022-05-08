@@ -6,6 +6,7 @@ page 50103 "Mapping Field Subform"
     Caption = 'Mapping Field Subform';
     PageType = ListPart;
     SourceTable = "Mapping Field Line";
+    SourceTableView = sorting("Table ID", Square, "Field ID");
     AutoSplitKey = true;
     layout
     {
