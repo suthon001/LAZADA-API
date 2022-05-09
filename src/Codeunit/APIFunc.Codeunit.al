@@ -14,10 +14,11 @@ codeunit 50100 "API Func"
         ltJsonArray: JsonArray;
         generatetokenTxt: Label 'https://api.lazada.com/rest/auth/token/create?code=%1&app_key=%2&timestamp=%3&sign_method=sha256&sign=%4', Locked = true;
     begin
-        if gvLazadaSetup."Access Token" <> '' then
+        ClearHTTWebRequest();
+        GetLazadaSetup();
+        if gvLazadaSetup."Refresh Token" <> '' then
             RefreshAccessToken()
         else begin
-            GetLazadaSetup();
             gvTimeStam := GetTimestamp(CurrentDateTime);
             gvtokenpath := StrSubstNo(AccessTokenpathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Seller Code", gvTimeStam);
             gvUrlAddress := StrSubstNo(generatetokenTxt, gvLazadaSetup."Seller Code", gvLazadaSetup."App Key", gvTimeStam, GenerateSign(gvtokenpath));
@@ -27,13 +28,25 @@ codeunit 50100 "API Func"
             gvHttpResponseMessage.Content.ReadAs(gvResponseText);
             ltJsonToken.ReadFrom(gvResponseText);
             ltJsonObject := ltJsonToken.AsObject();
-            ltJsonObject.get('access_token', ltJsonToken);
-            gvLazadaSetup."Access Token" := ltJsonToken.AsValue().AsText();
-            ltJsonObject.get('refresh_token', ltJsonToken);
-            gvLazadaSetup."Refresh Token" := ltJsonToken.AsValue().AsText();
-            gvLazadaSetup.Modify();
+            if (gvHttpResponseMessage.IsSuccessStatusCode() AND (gvHttpResponseMessage.HttpStatusCode = 200)) then begin
+                ltJsonToken.ReadFrom(gvResponseText);
+                ltJsonObject := ltJsonToken.AsObject();
+                if ltJsonObject.get('type', ltJsonToken) then
+                    if ltJsonToken.AsValue().AsText() = 'ISV' then begin
+                        ltJsonObject.get('message', ltJsonToken);
+                        Message('%1', ltJsonToken.AsValue().AsText());
+                        exit;
+                    end;
+                ltJsonObject.get('access_token', ltJsonToken);
+                gvLazadaSetup."Access Token" := ltJsonToken.AsValue().AsText();
+                ltJsonObject.get('refresh_token', ltJsonToken);
+                gvLazadaSetup."Refresh Token" := ltJsonToken.AsValue().AsText();
+                gvLazadaSetup.Modify();
+                Commit();
+            end else
+                ERROR(LastMessageErr, GETLASTERRORTEXT);
         end;
-
+        ClearHTTWebRequest();
     end;
 
     local procedure RefreshAccessToken()
@@ -53,14 +66,23 @@ codeunit 50100 "API Func"
         gvHttpRequestMessage.Method := 'GET';
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
         gvHttpResponseMessage.Content.ReadAs(gvResponseText);
-        ltJsonToken.ReadFrom(gvResponseText);
-        ltJsonObject := ltJsonToken.AsObject();
-        ltJsonObject.get('access_token', ltJsonToken);
-        gvLazadaSetup."Access Token" := ltJsonToken.AsValue().AsText();
-        ltJsonObject.get('refresh_token', ltJsonToken);
-        gvLazadaSetup."Refresh Token" := ltJsonToken.AsValue().AsText();
-        gvLazadaSetup.Modify();
-        Commit();
+        if (gvHttpResponseMessage.IsSuccessStatusCode() AND (gvHttpResponseMessage.HttpStatusCode = 200)) then begin
+            ltJsonToken.ReadFrom(gvResponseText);
+            ltJsonObject := ltJsonToken.AsObject();
+            if ltJsonObject.get('type', ltJsonToken) then
+                if ltJsonToken.AsValue().AsText() = 'ISV' then begin
+                    ltJsonObject.get('message', ltJsonToken);
+                    Message('%1', ltJsonToken.AsValue().AsText());
+                    exit;
+                end;
+            ltJsonObject.get('access_token', ltJsonToken);
+            gvLazadaSetup."Access Token" := ltJsonToken.AsValue().AsText();
+            ltJsonObject.get('refresh_token', ltJsonToken);
+            gvLazadaSetup."Refresh Token" := ltJsonToken.AsValue().AsText();
+            gvLazadaSetup.Modify();
+            Commit();
+        end else
+            ERROR(LastMessageErr, GETLASTERRORTEXT);
     end;
 
     LOCAL PROCEDURE GetTimestamp(dt: DateTime) UtcTime: BigInteger;
@@ -124,36 +146,51 @@ codeunit 50100 "API Func"
         gvLazadaSetup.TestField("App Secret");
     end;
 
-    procedure "Get Order"()
+    procedure "Get Order"(pOrder: Text[50]; pOrderFilter: Text[1024])
     var
         MappingFieldHeader: Record "Mapping Field Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetOrderPathTxt: Label 'https://api.lazada.co.th/rest/order/get?app_key=%1&timestamp=%2&access_token=%3&sign_method=sha256&sign=%4', Locked = true;
+        GetOrderPathTxt: Label 'https://api.lazada.co.th/rest/%1/get?app_key=%2&timestamp=%3&access_token=%4&sign_method=sha256&sign=%5&order_id=%6', Locked = true;
+        GetOrderTxt: Label '/order/getaccess_token%1app_key%2order_id%3sign_methodsha256timestamp%4', Locked = true;
     begin
         MappingFieldHeader.reset();
         MappingFieldHeader.SetRange("Service Name", MappingFieldHeader."Service Name"::"Get Order");
-        if not MappingFieldHeader.Find() then
-            ERROR('');
+        if MappingFieldHeader.IsEmpty then
+            EXIT;
         gvDateTime := CurrentDateTime();
-        RefreshAccessToken();
+        GetAccessToken();
         GetLazadaSetup();
-        gvtokenpath := StrSubstNo(refreshpathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Refresh Token", gvTimeStam);
-        gvUrlAddress := StrSubstNo(GetOrderPathTxt, gvLazadaSetup."App Key", gvTimeStam, gvLazadaSetup."Access Token", GenerateSign(gvtokenpath));
+        pOrderFilter := pOrderFilter.Replace(':', '%3A');
+        pOrderFilter := pOrderFilter.Replace('+', '%2B');
+        pOrderFilter := pOrderFilter.Replace('[', '%5B');
+        pOrderFilter := pOrderFilter.Replace(']', '%5D');
+        pOrderFilter := pOrderFilter.Replace(',', ' %2C+');
+        gvtokenpath := StrSubstNo(GetOrderTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pOrderFilter, gvTimeStam);
+        gvUrlAddress := StrSubstNo(GetOrderPathTxt, pOrder, gvLazadaSetup."App Key", gvTimeStam, gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
         gvHttpRequestMessage.SetRequestUri(gvUrlAddress);
         gvHttpRequestMessage.Method := 'GET';
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
         gvHttpResponseMessage.Content.ReadAs(gvResponseText);
-        ltJsonToken.ReadFrom(gvResponseText);
-        ltJsonObject := ltJsonToken.AsObject();
-        ltJsonObject.SelectToken('data', ltJsonToken);
-        ltJsonArray := ltJsonToken.AsArray();
-        for myLoop := 0 to ltJsonArray.Count - 1 do begin
-            ltJsonArray.Get(myLoop, ltJsonToken);
-            InsertTransaction(ltJsonToken, MappingFieldHeader."Table ID");
-        end;
+        if (gvHttpResponseMessage.IsSuccessStatusCode() AND (gvHttpResponseMessage.HttpStatusCode = 200)) then begin
+            ltJsonToken.ReadFrom(gvResponseText);
+            ltJsonObject := ltJsonToken.AsObject();
+            if ltJsonObject.get('type', ltJsonToken) then
+                if ltJsonToken.AsValue().AsText() = 'ISV' then begin
+                    ltJsonObject.get('message', ltJsonToken);
+                    Message('%1', ltJsonToken.AsValue().AsText());
+                    error('');
+                end;
+            ltJsonObject.SelectToken('data', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                InsertTransaction(ltJsonToken, MappingFieldHeader."Table ID");
+            end;
+        end else
+            ERROR(LastMessageErr, GETLASTERRORTEXT);
     end;
 
     procedure "Get OrderItems"(pOrderID: code[50]; pTableSubform: integer)
@@ -164,11 +201,12 @@ codeunit 50100 "API Func"
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
         GetOrderItemsPathTxt: Label 'https://api.lazada.co.th/rest/order/items/get?app_key=%1&timestamp=%2&access_token=%3&sign_method=sha256&sign=%4&order_id=%5', Locked = true;
+        GetOrderTxt: Label '/order/items/getaccess_token%1app_key%2order_id%3sign_methodsha256timestamp%4', Locked = true;
     begin
         gvDateTime := CurrentDateTime();
-        RefreshAccessToken();
+        GetAccessToken();
         GetLazadaSetup();
-        gvtokenpath := StrSubstNo(refreshpathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Refresh Token", gvTimeStam);
+        gvtokenpath := StrSubstNo(GetOrderTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pOrderID, gvTimeStam);
         gvUrlAddress := StrSubstNo(GetOrderItemsPathTxt, gvLazadaSetup."App Key", gvTimeStam, gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderID);
         gvHttpRequestMessage.SetRequestUri(gvUrlAddress);
         gvHttpRequestMessage.Method := 'GET';
@@ -208,7 +246,7 @@ codeunit 50100 "API Func"
             until MappingFieldLine.Next() = 0;
             ltRecordRef.Insert(true);
             ltRecordRef.Close();
-            // Detail if have
+            //Detail if have
             MappingFieldLine.reset();
             MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
             MappingFieldLine.SetRange("Table ID", pTableID);
@@ -257,6 +295,22 @@ codeunit 50100 "API Func"
         exit(ltJsonToken.asvalue.astext);
     end;
 
+    procedure ConfirmBeforGetAPI()
+    var
+        ConfirmLazada: Page "Lazada Confirm Dialog";
+    begin
+        CLEAR(confirmLazada);
+        ConfirmLazada.RunModal();
+        Clear(confirmLazada);
+    end;
+
+    local procedure ClearHTTWebRequest()
+    begin
+        CLEAR(gvHttpRequestMessage);
+        CLEAR(gvHttpClient);
+        CLEAR(gvHttpResponseMessage);
+    end;
+
     var
         gvLazadaSetup: Record "Lazada Setup Entry";
         gvHttpClient: HttpClient;
@@ -272,5 +326,6 @@ codeunit 50100 "API Func"
         gvDateTime: DateTime;
         AccessTokenpathTxt: Label '/auth/token/createapp_key%1code%2sign_methodsha256timestamp%3', Locked = true;
         refreshpathTxt: Label '/auth/token/refreshapp_key%1refresh_token%2sign_methodsha256timestamp%3', Locked = true;
+        LastMessageErr: Label 'Error Connection :%1', Locked = true;
 
 }

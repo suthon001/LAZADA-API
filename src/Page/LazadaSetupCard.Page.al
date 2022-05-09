@@ -24,6 +24,11 @@ page 50100 "Lazada Setup Card"
                     ToolTip = 'Specifies the value of the App Key field.';
                     ApplicationArea = All;
                 }
+                field("App Secret"; rec."App Secret")
+                {
+                    ToolTip = 'Specifies the value of the App Secret field.';
+                    ApplicationArea = All;
+                }
                 field("Access Token"; rec."Access Token")
                 {
                     ToolTip = 'Specifies the value of the Access Token field.';

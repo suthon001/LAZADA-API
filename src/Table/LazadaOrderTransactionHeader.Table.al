@@ -140,6 +140,22 @@ table 50104 "Lazada Order Trans. Header"
             Caption = 'Phone2';
             DataClassification = ToBeClassified;
         }
+        field(28; "Voucher platform"; Decimal)
+        {
+            Caption = 'Voucher platform';
+            DataClassification = ToBeClassified;
+        }
+        field(29; "Created at"; Text[50])
+        {
+            Caption = 'Created at';
+            DataClassification = ToBeClassified;
+        }
+
+        field(30; "Updated at"; Text[50])
+        {
+            Caption = 'Updated at';
+            DataClassification = ToBeClassified;
+        }
 
     }
     keys
@@ -149,4 +165,12 @@ table 50104 "Lazada Order Trans. Header"
             Clustered = true;
         }
     }
+    trigger OnDelete()
+    var
+        ltLazadatransactionLine: Record "Lazada Order Transaction Line";
+    begin
+        ltLazadatransactionLine.reset();
+        ltLazadatransactionLine.SetRange("Order ID", rec."Order ID");
+        ltLazadatransactionLine.DeleteAll(true);
+    end;
 }
