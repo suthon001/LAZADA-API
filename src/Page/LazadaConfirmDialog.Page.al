@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Lazada Confirm Dialog (ID 50107).
+/// </summary>
 page 50107 "Lazada Confirm Dialog"
 {
     Caption = 'Lazada Confirm Dialog';
@@ -15,12 +18,12 @@ page 50107 "Lazada Confirm Dialog"
                     ApplicationArea = all;
                     ToolTip = 'Spacifies value of Order id field.';
                 }
-                field(gvstatus; gvstatus)
-                {
-                    Caption = 'Status';
-                    ApplicationArea = all;
-                    ToolTip = 'Spacifies value of Status field.';
-                }
+                // field(gvstatus; gvstatus)
+                // {
+                //     Caption = 'Status';
+                //     ApplicationArea = all;
+                //     ToolTip = 'Spacifies value of Status field.';
+                // }
                 group("Group Date")
                 {
                     ShowCaption = false;
@@ -99,14 +102,56 @@ page 50107 "Lazada Confirm Dialog"
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     var
         APIFunc: Codeunit "API Func";
+        lttimestamp: BigInteger;
     begin
         if CloseAction = Action::Yes then begin
+            lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
+            APIFunc.SetTimeStamp(lttimestamp);
+            ALLTextFilter := '';
             if gvOderID <> '' then begin
-                ALLTextFilter := gvOderID;
-                APIFunc."Get Order"('order', ALLTextFilter);
+                ALLTextFilter := '&order_id=' + gvOderID + '&sign_methodsha256&timestamp=' + format(lttimestamp);
+                SignPath := DelChr(ALLTextFilter, '=', '&=');
+                APIFunc."Get Order"('order', ALLTextFilter, SignPath);
             end else begin
-                // APIFunc."Get Order"('orders', ALLTextFilter);
-                //&update_before=2018-02-10T16%3A00%3A00%2B08%3A00&sort_direction=DESC&offset=0&limit=10&update_after=2017-02-10T09%3A00%3A00%2B08%3A00&sort_by=updated_at&created_before=2018-02-10T16%3A00%3A00%2B08%3A00&created_after=2017-02-10T09%3A00%3A00%2B08%3A00&status=shipped'
+                if gvcreatedafterDate <> 0D then
+                    ALLTextFilter := ALLTextFilter + '&created_after=' + format(gvcreatedafterDate, 0, '<Year4>-<Month,2>-<Day,2>');
+                if gvcreatedafterTime <> 0T then
+                    ALLTextFilter := ALLTextFilter + 'T' + format(gvcreatedafterTime, 0, '<Hours24>:<Minutes,2>:<Seconds,2>') + '+07:00'
+                else
+                    if gvcreatedafterDate <> 0D then
+                        ALLTextFilter := ALLTextFilter + 'T00:00:00' + '+07:00';
+
+                if gvcreatedbeforeDate <> 0D then
+                    ALLTextFilter := ALLTextFilter + '&created_before=' + format(gvcreatedbeforeDate, 0, '<Year4>-<Month,2>-<Day,2>');
+                if gvcreatedbeforeTime <> 0T then
+                    ALLTextFilter := ALLTextFilter + 'T' + format(gvcreatedbeforeTime, 0, '<Hours24>:<Minutes,2>:<Seconds,2>') + '+07:00'
+                else
+                    if gvcreatedbeforeDate <> 0D then
+                        ALLTextFilter := ALLTextFilter + 'T00:00:00' + '+07:00';
+
+                ALLTextFilter := ALLTextFilter + '&limit=10&offset=0&sign_methodsha256&sort_by=updated_at&sort_direction=DESC&status=pending&timestamp=' + format(lttimestamp);
+
+
+
+
+                if gvupdateafterDate <> 0D then
+                    ALLTextFilter := ALLTextFilter + '&update_after=' + format(gvupdateafterDate, 0, '<Year4>-<Month,2>-<Day,2>');
+                if gvupdateafterTime <> 0T then
+                    ALLTextFilter := ALLTextFilter + 'T' + format(gvupdateafterTime, 0, '<Hours24>:<Minutes,2>:<Seconds,2>') + '+07:00'
+                else
+                    if gvupdateafterDate <> 0D then
+                        ALLTextFilter := ALLTextFilter + 'T00:00:00' + '+07:00';
+
+                if gvupdatebeforDate <> 0D then
+                    ALLTextFilter := ALLTextFilter + '&update_before=' + format(gvupdatebeforDate, 0, '<Year4>-<Month,2>-<Day,2>');
+                if gvupdatebeforTIme <> 0T then
+                    ALLTextFilter := ALLTextFilter + 'T' + format(gvupdatebeforTIme, 0, '<Hours24>:<Minutes,2>:<Seconds,2>') + '+07:00'
+                else
+                    if gvupdatebeforDate <> 0D then
+                        ALLTextFilter := ALLTextFilter + 'T00:00:00+07:00';
+
+                SignPath := DelChr(ALLTextFilter, '=', '&=');
+                APIFunc."Get Order"('orders', ALLTextFilter, SignPath);
             end;
         end;
     end;
@@ -122,6 +167,6 @@ page 50107 "Lazada Confirm Dialog"
         gvcreatedbeforeTime: Time;
         gvcreatedafterDate: Date;
         gvcreatedafterTime: Time;
-        ALLTextFilter: Text[1024];
-        gvstatus: Option " ",unpaid,pending,shipped;
+        ALLTextFilter, SignPath : Text[1024];
+    //gvstatus: Option " ",unpaid,pending,shipped;
 }

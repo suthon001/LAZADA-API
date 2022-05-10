@@ -59,7 +59,10 @@ page 50100 "Lazada Setup Card"
                 trigger OnAction()
                 var
                     apifunc: Codeunit "API Func";
+                    lttimestamp: BigInteger;
                 begin
+                    lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
+                    APIFunc.SetTimeStamp(lttimestamp);
                     apifunc.GetAccessToken();
                 end;
             }

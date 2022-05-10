@@ -19,7 +19,6 @@ codeunit 50100 "API Func"
         if gvLazadaSetup."Refresh Token" <> '' then
             RefreshAccessToken()
         else begin
-            gvTimeStam := GetTimestamp(CurrentDateTime);
             gvtokenpath := StrSubstNo(AccessTokenpathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Seller Code", gvTimeStam);
             gvUrlAddress := StrSubstNo(generatetokenTxt, gvLazadaSetup."Seller Code", gvLazadaSetup."App Key", gvTimeStam, GenerateSign(gvtokenpath));
             gvHttpRequestMessage.SetRequestUri(gvUrlAddress);
@@ -59,7 +58,6 @@ codeunit 50100 "API Func"
     begin
         GetLazadaSetup();
         gvLazadaSetup.TestField("Refresh Token");
-        gvTimeStam := GetTimestamp(CurrentDateTime);
         gvtokenpath := StrSubstNo(refreshpathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Refresh Token", gvTimeStam);
         gvUrlAddress := StrSubstNo(generatetokenTxt, gvLazadaSetup."Refresh Token", gvLazadaSetup."App Key", gvTimeStam, GenerateSign(gvtokenpath));
         gvHttpRequestMessage.SetRequestUri(gvUrlAddress);
@@ -85,7 +83,7 @@ codeunit 50100 "API Func"
             ERROR(LastMessageErr, GETLASTERRORTEXT);
     end;
 
-    LOCAL PROCEDURE GetTimestamp(dt: DateTime) UtcTime: BigInteger;
+    PROCEDURE GetTimestamp(dt: DateTime) UtcTime: BigInteger;
     VAR
         ltmyTime: Time;
         ltmilliseconds: Decimal;
@@ -146,21 +144,27 @@ codeunit 50100 "API Func"
         gvLazadaSetup.TestField("App Secret");
     end;
 
-    procedure "Get Order"(pOrder: Text[50]; pOrderFilter: Text[1024])
+    /// <summary>
+    /// Get Order.
+    /// </summary>
+    /// <param name="pOrder">Text[50].</param>
+    /// <param name="pOrderFilter">Text[1024].</param>
+    /// <param name="pSignPath">text[1024].</param>
+    procedure "Get Order"(pOrder: Text[50]; pOrderFilter: Text[1024]; pSignPath: text[1024])
     var
         MappingFieldHeader: Record "Mapping Field Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetOrderPathTxt: Label 'https://api.lazada.co.th/rest/%1/get?app_key=%2&timestamp=%3&access_token=%4&sign_method=sha256&sign=%5&order_id=%6', Locked = true;
-        GetOrderTxt: Label '/order/getaccess_token%1app_key%2order_id%3sign_methodsha256timestamp%4', Locked = true;
+        GetOrderPathTxt: Label 'https://api.lazada.co.th/rest/%1/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4%5', Locked = true;
+        GetOrderTxt: Label '/%1/getaccess_token%2app_key%3%4', Locked = true;
     begin
         MappingFieldHeader.reset();
         MappingFieldHeader.SetRange("Service Name", MappingFieldHeader."Service Name"::"Get Order");
         if MappingFieldHeader.IsEmpty then
             EXIT;
-        gvDateTime := CurrentDateTime();
+
         GetAccessToken();
         GetLazadaSetup();
         pOrderFilter := pOrderFilter.Replace(':', '%3A');
@@ -168,8 +172,8 @@ codeunit 50100 "API Func"
         pOrderFilter := pOrderFilter.Replace('[', '%5B');
         pOrderFilter := pOrderFilter.Replace(']', '%5D');
         pOrderFilter := pOrderFilter.Replace(',', ' %2C+');
-        gvtokenpath := StrSubstNo(GetOrderTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pOrderFilter, gvTimeStam);
-        gvUrlAddress := StrSubstNo(GetOrderPathTxt, pOrder, gvLazadaSetup."App Key", gvTimeStam, gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
+        gvtokenpath := StrSubstNo(GetOrderTxt, pOrder, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pSignPath);
+        gvUrlAddress := StrSubstNo(GetOrderPathTxt, pOrder, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
         gvHttpRequestMessage.SetRequestUri(gvUrlAddress);
         gvHttpRequestMessage.Method := 'GET';
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
@@ -193,6 +197,11 @@ codeunit 50100 "API Func"
             ERROR(LastMessageErr, GETLASTERRORTEXT);
     end;
 
+    /// <summary>
+    /// Get OrderItems.
+    /// </summary>
+    /// <param name="pOrderID">code[50].</param>
+    /// <param name="pTableSubform">integer.</param>
     procedure "Get OrderItems"(pOrderID: code[50]; pTableSubform: integer)
     var
         MappingFieldHeader: Record "Mapping Field Header";
@@ -203,7 +212,7 @@ codeunit 50100 "API Func"
         GetOrderItemsPathTxt: Label 'https://api.lazada.co.th/rest/order/items/get?app_key=%1&timestamp=%2&access_token=%3&sign_method=sha256&sign=%4&order_id=%5', Locked = true;
         GetOrderTxt: Label '/order/items/getaccess_token%1app_key%2order_id%3sign_methodsha256timestamp%4', Locked = true;
     begin
-        gvDateTime := CurrentDateTime();
+
         GetAccessToken();
         GetLazadaSetup();
         gvtokenpath := StrSubstNo(GetOrderTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pOrderID, gvTimeStam);
@@ -246,7 +255,7 @@ codeunit 50100 "API Func"
             until MappingFieldLine.Next() = 0;
             ltRecordRef.Insert(true);
             ltRecordRef.Close();
-            //Detail if have
+            //if have Detail
             MappingFieldLine.reset();
             MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
             MappingFieldLine.SetRange("Table ID", pTableID);
@@ -292,9 +301,20 @@ codeunit 50100 "API Func"
             exit('');
         if ltJsonToken.AsValue.IsNull then
             exit('');
-        exit(ltJsonToken.asvalue.astext);
+        exit(ltJsonToken.asvalue.astext());
     end;
 
+    /// <summary>
+    /// SetTimeStamp.
+    /// </summary>
+    /// <param name="pTimeStamp">BigInteger.</param>
+    procedure SetTimeStamp(pTimeStamp: BigInteger)
+    begin
+        gvTimeStam := pTimeStamp;
+    end;
+    /// <summary>
+    /// ConfirmBeforGetAPI.
+    /// </summary>
     procedure ConfirmBeforGetAPI()
     var
         ConfirmLazada: Page "Lazada Confirm Dialog";
@@ -323,7 +343,7 @@ codeunit 50100 "API Func"
         gvTimeStam: BigInteger;
         gvResponseText, gvUrlAddress, gvtokenpath : Text;
         myLoop: Integer;
-        gvDateTime: DateTime;
+
         AccessTokenpathTxt: Label '/auth/token/createapp_key%1code%2sign_methodsha256timestamp%3', Locked = true;
         refreshpathTxt: Label '/auth/token/refreshapp_key%1refresh_token%2sign_methodsha256timestamp%3', Locked = true;
         LastMessageErr: Label 'Error Connection :%1', Locked = true;

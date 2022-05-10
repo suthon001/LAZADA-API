@@ -1,3 +1,6 @@
+/// <summary>
+/// Enum Lazada Service Type (ID 50100).
+/// </summary>
 enum 50100 "Lazada Service Type"
 {
     Extensible = true;
