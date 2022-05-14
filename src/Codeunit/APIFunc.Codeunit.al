@@ -37,6 +37,18 @@ codeunit 50100 "API Func"
                     "Set Status Dropship"(Rec."Lazada Order ID", rec."No.");
     end;
 
+    [EventSubscriber(ObjectType::Table, Database::"Sales Shipment Line", 'OnBeforeInsertInvLineFromShptLine', '', false, false)]
+    local procedure LazadaOnBeforeInsertInvLineFromShptLine(var SalesLine: Record "Sales Line"; var SalesShptLine: Record "Sales Shipment Line")
+    begin
+        SalesLine."Lazada Order ID" := SalesShptLine."Lazada Order ID";
+        SalesLine."Lazada Order Item Id" := SalesShptLine."Lazada Order Item Id";
+        SalesLine."Lazada Shipment provider" := SalesShptLine."Lazada Shipment provider";
+        SalesLine."Lazada Tracking number" := SalesShptLine."Lazada Tracking number";
+        SalesLine."Lazada Package id" := SalesShptLine."Lazada Package id";
+        SalesLine."Lazada Purchase order id" := SalesShptLine."Lazada Purchase order id";
+        SalesLine."Lazada Purchase order Number" := SalesShptLine."Lazada Purchase order Number";
+    end;
+
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterFinalizePosting', '', false, false)]
     local procedure LazadaOnAfterFinalizePostingSales(var SalesHeader: Record "Sales Header")
     var
@@ -55,6 +67,23 @@ codeunit 50100 "API Func"
             end;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnBeforeDeleteAfterPosting', '', false, false)]
+    local procedure LazadaOnBeforeDeleteAfterPosting(SalesInvoiceHeader: Record "Sales Invoice Header"; var SalesHeader: Record "Sales Header")
+    var
+        ltSalesInvoiceLine: Record "Sales Invoice Line";
+    begin
+        if SalesHeader."Document Type" = SalesHeader."Document Type"::Invoice then begin
+            ltSalesInvoiceLine.reset();
+            ltSalesInvoiceLine.SetRange("Document No.", SalesInvoiceHeader."No.");
+            ltSalesInvoiceLine.SetRange(Type, ltSalesInvoiceLine.Type::Item);
+            ltSalesInvoiceLine.SetFilter("Lazada Order Item Id", '<>%1', '');
+            if ltSalesInvoiceLine.FindFirst() then
+                repeat
+                    "Set Invoice"(ltSalesInvoiceLine."Lazada Order Item Id", ltSalesInvoiceLine."Document No.");
+                until ltSalesInvoiceLine.next() = 0;
+        end;
+    end;
+    // /OnAfterDeleteAfterPosting
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Purch.-Post", 'OnAfterFinalizePosting', '', false, false)]
     local procedure LazadaOnAfterFinalizePostingPurch(var PurchHeader: Record "Purchase Header")
     var
@@ -246,10 +275,24 @@ codeunit 50100 "API Func"
         gvLazadaSetup.TestField("App Secret");
     end;
 
+    procedure "Set Invoice"(pOderItemID: Code[50]; pInvoiceNo: Code[30])
+    var
+        ltJsonObject: JsonObject;
+        ltJsonToken: JsonToken;
+        SetInvoicePath: Label 'https://api.lazada.co.th/rest/order/invoice_number/set?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4&invoice_number=%5&order_item_id=%6', Locked = true;
+        SetInvoiceSign: Label '/order/invoice_number/setaccess_token%1app_key%2invoice_number&3order_item_id%4sign_methodsha256timestamp%5', Locked = true;
+    begin
+        if GetAccessToken() then begin
+            gvtokenpath := StrSubstNo(SetInvoiceSign, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pInvoiceNo, pOderItemID, gvTimeStam);
+            gvUrlAddress := StrSubstNo(SetInvoicePath, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, pInvoiceNo, pOderItemID);
+            ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+        end;
+    end;
     /// <summary>
     /// Create Product.
     /// </summary>
     /// <param name="pItemNo">Code[30].</param>
+
     procedure "Create Product"(pItemNo: Code[30])
     var
         ltItem: Record Item;
@@ -262,6 +305,7 @@ codeunit 50100 "API Func"
         ltJsonArray: JsonArray;
         CreateProductionPathTxt: Label 'https://api.lazada.co.th/rest/product/create?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4&payload=%5', Locked = true;
         CreateProductionSignTxt: Label '/product/createaccess_token%1app_key%2payload%3sign_methodsha256timestamp%4', Locked = true;
+
     begin
         if GetAccessToken() then begin
             ltItem.GET(pItemNo);
