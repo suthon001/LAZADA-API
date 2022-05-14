@@ -1,6 +1,9 @@
+/// <summary>
+/// Page Lazada Trans. Order Lists (ID 50104).
+/// </summary>
 page 50104 "Lazada Trans. Order Lists"
 {
-    Caption = 'Lazadat Trans. Order Lists';
+    Caption = 'Lazada Trans. Order Lists';
     PageType = List;
     SourceTable = "Lazada Order Trans. Header";
     Editable = false;

@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Lazada Trans. Subfrom (ID 50106).
+/// </summary>
 page 50106 "Lazada Trans. Subfrom"
 {
     Caption = 'Lazada Trans. Subfrom';

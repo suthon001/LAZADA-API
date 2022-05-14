@@ -275,6 +275,11 @@ codeunit 50100 "API Func"
         gvLazadaSetup.TestField("App Secret");
     end;
 
+    /// <summary>
+    /// Set Invoice.
+    /// </summary>
+    /// <param name="pOderItemID">Code[50].</param>
+    /// <param name="pInvoiceNo">Code[30].</param>
     procedure "Set Invoice"(pOderItemID: Code[50]; pInvoiceNo: Code[30])
     var
         ltJsonObject: JsonObject;
@@ -472,6 +477,7 @@ codeunit 50100 "API Func"
     /// Set Status Dropship.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
+    /// <param name="pOrderNo">Code[30].</param>
     procedure "Set Status Dropship"(pOrderID: Code[30]; pOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
@@ -520,6 +526,7 @@ codeunit 50100 "API Func"
     /// Set Status Package.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
+    /// <param name="pSalesOrderNo">Code[30].</param>
     procedure "Set Status Package"(pOrderID: Code[30]; pSalesOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
@@ -590,6 +597,7 @@ codeunit 50100 "API Func"
     /// Set Status Delivered.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
+    /// <param name="pSalesOrderNo">Code[30].</param>
     procedure "Set Status Delivered"(pOrderID: Code[30]; pSalesOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
@@ -634,6 +642,7 @@ codeunit 50100 "API Func"
     /// Set Status FailedDelivered.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
+    /// <param name="pSalesOrderNo">Code[30].</param>
     procedure "Set Status FailedDelivered"(pOrderID: Code[30]; pSalesOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
@@ -673,6 +682,49 @@ codeunit 50100 "API Func"
             ltSalesHeader.Modify();
         end;
     end;
+
+    /// <summary>
+    /// Get Finance.
+    /// </summary>
+    /// <param name="pOrder">Text[50].</param>
+    /// <param name="pOrderFilter">Text[1024].</param>
+    /// <param name="pSignPath">text[1024].</param>
+    procedure "Get Finance"(pOrder: Text[50]; pOrderFilter: Text[1024]; pSignPath: text[1024])
+    var
+        MappingFieldHeader: Record "Mapping Field Header";
+        ltJsonToken: JsonToken;
+        ltJsonValue: JsonValue;
+        ltJsonObject: JsonObject;
+        ltJsonArray: JsonArray;
+        GetOrderFinancePathTxt: Label 'https://api.lazada.co.th/rest/finance/transaction/details/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4%5', Locked = true;
+        GetOrderFinanceTxt: Label '/finance/transaction/details/getaccess_token%2app_key%3%4', Locked = true;
+        MappingFieldErr: Label 'not found get Finance please check lazada mapping field table';
+    begin
+        if GetAccessToken() then begin
+            MappingFieldHeader.reset();
+            MappingFieldHeader.SetRange("Service Name", MappingFieldHeader."Service Name"::"Get Finance");
+            if MappingFieldHeader.IsEmpty then
+                error(MappingFieldErr);
+
+
+            pOrderFilter := pOrderFilter.Replace(':', '%3A');
+            pOrderFilter := pOrderFilter.Replace('+', '%2B');
+            pOrderFilter := pOrderFilter.Replace('[', '%5B');
+            pOrderFilter := pOrderFilter.Replace(']', '%5D');
+            pOrderFilter := pOrderFilter.Replace(',', ' %2C');
+            gvtokenpath := StrSubstNo(GetOrderFinanceTxt, pOrder, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pSignPath);
+            gvUrlAddress := StrSubstNo(GetOrderFinancePathTxt, pOrder, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
+            ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltJsonObject.SelectToken('data', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                InsertTransaction(ltJsonToken, MappingFieldHeader."Table ID");
+            end;
+        end;
+    end;
+
+
     /// <summary>
     /// Get Order.
     /// </summary>
@@ -772,16 +824,17 @@ codeunit 50100 "API Func"
                 ltFieldRef := ltRecordRef.FIELD(MappingFieldLine."Field ID");
                 ltFieldRef.Value := SelectJsonToken(ltJsonObject, '$.' + MappingFieldLine."Mapping Field Name");
             until MappingFieldLine.Next() = 0;
-            ltRecordRef.Insert(true);
-            ltRecordRef.Close();
-            //if have Detail
-            MappingFieldLine.reset();
-            MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
-            MappingFieldLine.SetRange("Table ID", pTableID);
-            MappingFieldLine.SetFilter("Mapping Field Name", '<>%1', '');
-            MappingFieldLine.SetFilter("Table Subfrom", '<>%1', 0);
-            if MappingFieldLine.FindSet() then
-                "Get OrderItems"(SelectJsonToken(ltJsonObject, '$.order_id'), MappingFieldLine."Table Subfrom");
+            IF ltRecordRef.Insert(true) then begin
+                ltRecordRef.Close();
+                //if have Detail
+                MappingFieldLine.reset();
+                MappingFieldLine.SetCurrentKey("Table ID", Square, "Field ID");
+                MappingFieldLine.SetRange("Table ID", pTableID);
+                MappingFieldLine.SetFilter("Mapping Field Name", '<>%1', '');
+                MappingFieldLine.SetFilter("Table Subfrom", '<>%1', 0);
+                if MappingFieldLine.FindSet() then
+                    "Get OrderItems"(SelectJsonToken(ltJsonObject, '$.order_id'), MappingFieldLine."Table Subfrom");
+            end;
         end;
     end;
 

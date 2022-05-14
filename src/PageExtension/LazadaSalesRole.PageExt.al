@@ -1,3 +1,6 @@
+/// <summary>
+/// PageExtension Lazada Sales Role (ID 50107) extends Record Order Processor Role Center.
+/// </summary>
 pageextension 50107 "Lazada Sales Role" extends "Order Processor Role Center"
 {
     actions
@@ -27,7 +30,7 @@ pageextension 50107 "Lazada Sales Role" extends "Order Processor Role Center"
                 }
                 action(LazadaTransaction)
                 {
-                    Caption = 'Lazada Transaction';
+                    Caption = 'Lazada Order Transaction';
                     ApplicationArea = all;
                     RunObject = page "Lazada Trans. Order Lists";
                 }

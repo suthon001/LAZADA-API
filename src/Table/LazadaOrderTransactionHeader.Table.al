@@ -1,3 +1,6 @@
+/// <summary>
+/// Table Lazada Order Trans. Header (ID 50104).
+/// </summary>
 table 50104 "Lazada Order Trans. Header"
 {
     Caption = 'LazadaOrder Transaction Header';

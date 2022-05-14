@@ -1,6 +1,9 @@
+/// <summary>
+/// Page Lazada Trans. Order Card (ID 50105).
+/// </summary>
 page 50105 "Lazada Trans. Order Card"
 {
-    Caption = 'Lazadat Trans. Order Card';
+    Caption = 'Lazada Trans. Order Card';
     PageType = List;
     SourceTable = "Lazada Order Trans. Header";
     layout

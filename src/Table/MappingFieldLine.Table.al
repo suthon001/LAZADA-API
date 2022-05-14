@@ -1,3 +1,6 @@
+/// <summary>
+/// Table Mapping Field Line (ID 50103).
+/// </summary>
 table 50103 "Mapping Field Line"
 {
     Caption = 'Mapping Field Line';
