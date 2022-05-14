@@ -1,7 +1,7 @@
 /// <summary>
 /// Page Mapping FIeld Card (ID 50102).
 /// </summary>
-page 50102 "Mapping FIeld Card"
+page 50102 "Lazada Mapping FIeld Card"
 {
     Caption = 'Mapping FIeld Card';
     PageType = Card;
@@ -29,7 +29,7 @@ page 50102 "Mapping FIeld Card"
                     ApplicationArea = All;
                 }
             }
-            part(Lines; "Mapping Field Subform")
+            part(Lines; "Lazada Mapping Field Subform")
             {
                 SubPageLink = "Table ID" = field("Table ID");
                 SubPageView = sorting("Table ID", "Field ID");

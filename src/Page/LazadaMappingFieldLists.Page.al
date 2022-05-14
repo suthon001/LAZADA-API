@@ -1,7 +1,7 @@
 /// <summary>
 /// Page Mapping Field Lists (ID 50101).
 /// </summary>
-page 50101 "Mapping Field Lists"
+page 50101 "Lazada Mapping Field Lists"
 {
     ApplicationArea = All;
     Caption = 'Mapping Field Lists';
@@ -9,7 +9,7 @@ page 50101 "Mapping Field Lists"
     SourceTable = "Mapping Field Header";
     UsageCategory = Administration;
     Editable = false;
-    CardPageId = "Mapping FIeld Card";
+    CardPageId = "Lazada Mapping FIeld Card";
     layout
     {
         area(content)

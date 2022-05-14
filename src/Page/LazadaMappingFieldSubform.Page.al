@@ -1,7 +1,7 @@
 /// <summary>
 /// Page Mapping Field Subform (ID 50103).
 /// </summary>
-page 50103 "Mapping Field Subform"
+page 50103 "Lazada Mapping Field Subform"
 {
     Caption = 'Mapping Field Subform';
     PageType = ListPart;

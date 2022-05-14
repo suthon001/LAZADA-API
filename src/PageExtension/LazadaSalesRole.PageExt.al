@@ -17,7 +17,7 @@ pageextension 50107 "Lazada Sales Role" extends "Order Processor Role Center"
                 {
                     Caption = 'Lazada Mapping Field';
                     ApplicationArea = all;
-                    RunObject = page "Mapping Field Lists";
+                    RunObject = page "Lazada Mapping Field Lists";
                 }
                 action(LazadaProduct)
                 {
