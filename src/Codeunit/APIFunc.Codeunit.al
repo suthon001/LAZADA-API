@@ -337,6 +337,12 @@ codeunit 50100 "API Func"
             DataText := DataText + STRSUBSTNO('<package_weight>%1</package_weight>', 33);
             DataText := DataText + STRSUBSTNO('<package_width>%1</package_width>', 44);
             DataText := DataText + STRSUBSTNO('<package_content>%1</package_content>', ltItem.Description);
+            DataText := DataText + '</Images>';
+            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 1");
+            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 2");
+            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 3");
+            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 4");
+            DataText := DataText + '</Images>';
             DataText := DataText + '</Sku>';
             DataText := DataText + '</Skus>';
             DataText := DataText + '</Product>';

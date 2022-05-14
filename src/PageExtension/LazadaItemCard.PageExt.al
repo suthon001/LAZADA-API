@@ -32,6 +32,26 @@ pageextension 50100 "Lazada Item Card" extends "Item Card"
                     ApplicationArea = all;
                     ToolTip = 'Specifies the value of the Lazada Sku id field.';
                 }
+                field("Lazada Url Image 1"; rec."Lazada Url Image 1")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Specifies the value of the Lazada Url Image 1 field.';
+                }
+                field("Lazada Url Image 2"; rec."Lazada Url Image 2")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Specifies the value of the Lazada Url Image 2 field.';
+                }
+                field("Lazada Url Image 3"; rec."Lazada Url Image 3")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Specifies the value of the Lazada Url Image 3 field.';
+                }
+                field("Lazada Url Image 4"; rec."Lazada Url Image 4")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Specifies the value of the Lazada Url Image 4 field.';
+                }
             }
         }
     }
