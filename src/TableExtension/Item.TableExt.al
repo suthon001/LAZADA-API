@@ -1,4 +1,7 @@
-tableextension 50100 Item extends Item
+/// <summary>
+/// TableExtension Lazada Item (ID 50100) extends Record Item.
+/// </summary>
+tableextension 50100 "Lazada Item" extends Item
 {
     fields
     {

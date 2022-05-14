@@ -38,6 +38,11 @@ table 50100 "Lazada Setup Entry"
             Caption = 'Seller Code';
             DataClassification = ToBeClassified;
         }
+        field(7; "Active"; Boolean)
+        {
+            Caption = 'Active';
+            DataClassification = ToBeClassified;
+        }
     }
     keys
     {

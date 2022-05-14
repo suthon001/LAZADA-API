@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Lazada Create Update Product (ID 50108).
+/// </summary>
 page 50108 "Lazada Create & Update Product"
 {
     Caption = 'Lazada Create & Update Product';
@@ -71,6 +74,7 @@ page 50108 "Lazada Create & Update Product"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
+                Image = CreateInteraction;
                 trigger OnAction()
                 var
                     apifunc: Codeunit "API Func";
@@ -96,6 +100,7 @@ page 50108 "Lazada Create & Update Product"
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
+                Image = UpdateUnitCost;
                 trigger OnAction()
                 var
                     apifunc: Codeunit "API Func";
@@ -113,6 +118,34 @@ page 50108 "Lazada Create & Update Product"
                     lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
                     APIFunc.SetTimeStamp(lttimestamp);
                     apifunc.UpdateProductQuantity(rec."No.");
+                end;
+            }
+            action("Remove Product Lazada")
+            {
+                Caption = 'Remove Product Lazada';
+                ApplicationArea = all;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                Image = RemoveLine;
+                trigger OnAction()
+                var
+                    apifunc: Codeunit "API Func";
+                    lttimestamp: BigInteger;
+                    ConfirmMsg: Label 'Do you want Remove Item no. %1 on Lazada System.', Locked = true;
+                    CheckItemTxt: Label 'not found item no. %1 on lazada system.', Locked = true;
+                begin
+                    if rec."Lazada Item Id" = '' then begin
+                        Message(StrSubstNo(CheckItemTxt, rec."No."));
+                        exit;
+                    end;
+                    rec.CalcFields(Inventory);
+                    if not Confirm(StrSubstNo(ConfirmMsg, rec."No.")) then
+                        exit;
+                    lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
+                    APIFunc.SetTimeStamp(lttimestamp);
+                    apifunc."Remove Product"(rec."No.");
                 end;
             }
         }
