@@ -43,7 +43,7 @@ tableextension 50104 "Lazada Sales Shipment Line" extends "Sales Shipment Line"
         }
         field(50106; "Lazada Package id"; Code[50])
         {
-            Caption = 'Lazada Remark';
+            Caption = 'Lazada Package id';
             DataClassification = ToBeClassified;
             Editable = false;
         }

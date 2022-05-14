@@ -31,7 +31,7 @@ tableextension 50106 "Lazada Item Journal Line" extends "Item Journal Line"
         }
         field(50104; "Lazada Package id"; Code[50])
         {
-            Caption = 'Lazada Remark';
+            Caption = 'Lazada Package id';
             DataClassification = ToBeClassified;
             Editable = false;
         }

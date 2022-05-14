@@ -31,7 +31,7 @@ tableextension 50105 "Lazada Item Ledger Entry" extends "Item Ledger Entry"
         }
         field(50104; "Lazada Package id"; Code[50])
         {
-            Caption = 'Lazada Remark';
+            Caption = 'Lazada Package id';
             DataClassification = ToBeClassified;
             Editable = false;
         }
