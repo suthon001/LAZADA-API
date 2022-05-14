@@ -11,6 +11,9 @@ codeunit 50100 "API Func"
         NewItemLedgEntry."Lazada Order Item Id" := ItemJournalLine."Lazada Order Item Id";
         NewItemLedgEntry."Lazada Shipment provider" := ItemJournalLine."Lazada Shipment provider";
         NewItemLedgEntry."Lazada Tracking number" := ItemJournalLine."Lazada Tracking number";
+        NewItemLedgEntry."Lazada Package id" := ItemJournalLine."Lazada Package id";
+        NewItemLedgEntry."Lazada Purchase order id" := ItemJournalLine."Lazada Purchase order id";
+        NewItemLedgEntry."Lazada Purchase order Number" := ItemJournalLine."Lazada Purchase order Number";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnAfterCopyItemJnlLineFromSalesLine', '', false, false)]
@@ -20,6 +23,9 @@ codeunit 50100 "API Func"
         ItemJnlLine."Lazada Order Item Id" := SalesLine."Lazada Order Item Id";
         ItemJnlLine."Lazada Shipment provider" := SalesLine."Lazada Shipment provider";
         ItemJnlLine."Lazada Tracking number" := SalesLine."Lazada Tracking number";
+        ItemJnlLine."Lazada Package id" := SalesLine."Lazada Package id";
+        ItemJnlLine."Lazada Purchase order id" := SalesLine."Lazada Purchase order id";
+        ItemJnlLine."Lazada Purchase order Number" := SalesLine."Lazada Purchase order Number";
     end;
 
     [EventSubscriber(ObjectType::Table, Database::"Sales Header", 'OnAfterValidateEvent', 'Status', false, false)]
@@ -28,7 +34,7 @@ codeunit 50100 "API Func"
         if Rec."Lazada Order ID" <> '' then
             if rec.Status <> rec.Status then
                 if rec.Status = rec.Status::Released then
-                    "Set Status Dropship"(Rec."Lazada Order ID");
+                    "Set Status Dropship"(Rec."Lazada Order ID", rec."No.");
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post", 'OnAfterFinalizePosting', '', false, false)]
@@ -416,9 +422,10 @@ codeunit 50100 "API Func"
     /// Set Status Dropship.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
-    procedure "Set Status Dropship"(pOrderID: Code[30])
+    procedure "Set Status Dropship"(pOrderID: Code[30]; pOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
+        ltSalesHeader: Record "Sales Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
@@ -432,6 +439,7 @@ codeunit 50100 "API Func"
             ltshipmentprovider := '';
             ltTrackingCode := '';
             ltSalesLine.reset();
+            ltSalesLine.SetRange("Document No.", pOrderNo);
             ltSalesLine.SetRange("Lazada Order ID", pOrderID);
             ltSalesLine.SetFilter("Lazada Order Item Id", '<>%1', '');
             if ltSalesLine.FindSet() then begin
@@ -452,6 +460,9 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(SetStatusSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltorderitem, ltshipmentprovider, ltTrackingCode, gvTimeStam);
             gvUrlAddress := StrSubstNo(SetStatusPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, TotalFilter);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltSalesHeader.GET(ltSalesHeader."Document Type"::Order, pOrderNo);
+            ltSalesHeader."Lazada Status" := 'Ready to Ship';
+            ltSalesHeader.Modify();
         end;
     end;
 
@@ -459,12 +470,15 @@ codeunit 50100 "API Func"
     /// Set Status Package.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
-    procedure "Set Status Package"(pOrderID: Code[30])
+    procedure "Set Status Package"(pOrderID: Code[30]; pSalesOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
+        ltSalesHeader: Record "Sales Header";
+        ltOrderItemID: Code[50];
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
+        ltJsonArray: JsonArray;
         ltorderitem, ltorderitem2, ltshippingprovider, TotalFilter : Text;
         SetStatusPathTxt: Label 'https://api.lazada.co.th/rest/order/pack?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4%5', Locked = true;
         SetStatusSignTxt: Label '/order/packaccess_token%1app_key%2delivery_typedropshiporder_item_ids%3shipping_provider%4sign_methodsha256timestamp%5', Locked = true;
@@ -474,6 +488,7 @@ codeunit 50100 "API Func"
             ltorderitem := '';
             ltshippingprovider := '';
             ltSalesLine.reset();
+            ltSalesLine.SetRange("Document No.", pSalesOrderNo);
             ltSalesLine.SetRange("Lazada Order ID", pOrderID);
             ltSalesLine.SetFilter("Lazada Order Item Id", '<>%1', '');
             if ltSalesLine.FindSet() then begin
@@ -493,17 +508,42 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(SetStatusSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltorderitem, ltshippingprovider, gvTimeStam);
             gvUrlAddress := StrSubstNo(SetStatusPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, TotalFilter);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltSalesHeader.GET(ltSalesHeader."Document Type"::Order, pSalesOrderNo);
+            ltSalesHeader."Lazada Status" := 'Package';
+            ltSalesHeader.Modify();
+            ltJsonObject.SelectToken('order_items', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                ltJsonObject.get('$.order_item_id', ltJsonToken);
+                ltOrderItemID := ltJsonToken.AsValue().AsText();
+                ltSalesLine.reset();
+                ltSalesLine.SetRange("Document No.", pSalesOrderNo);
+                ltSalesLine.SetRange("Lazada Order ID", pOrderID);
+                ltSalesLine.SetRange("Lazada Order Item Id", ltOrderItemID);
+                if ltSalesLine.FindSet() then begin
+                    repeat
+                        ltJsonObject.get('$.tracking_number', ltJsonToken);
+                        ltSalesLine."Lazada Tracking number" := ltJsonToken.AsValue().AsText();
+                        ltJsonObject.get('$.shipment_provider', ltJsonToken);
+                        ltSalesLine."Lazada Shipment provider" := ltJsonToken.AsValue().AsText();
+                        ltJsonObject.get('$.package_id', ltJsonToken);
+                        ltSalesLine."Lazada Package id" := ltJsonToken.AsValue().AsText();
+                        ltSalesLine.Modify();
+                    until ltSalesLine.Next() = 0;
+                end;
+            end;
         end;
     end;
-
 
     /// <summary>
     /// Set Status Delivered.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
-    procedure "Set Status Delivered"(pOrderID: Code[30])
+    procedure "Set Status Delivered"(pOrderID: Code[30]; pSalesOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
+        ltSalesHeader: Record "Sales Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
@@ -515,6 +555,7 @@ codeunit 50100 "API Func"
             ltorderitem2 := '';
             ltorderitem := '';
             ltSalesLine.reset();
+            ltSalesLine.SetRange("Document No.", pSalesOrderNo);
             ltSalesLine.SetRange("Lazada Order ID", pOrderID);
             ltSalesLine.SetFilter("Lazada Order Item Id", '<>%1', '');
             if ltSalesLine.FindSet() then begin
@@ -533,6 +574,9 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(SetStatusSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltorderitem, gvTimeStam);
             gvUrlAddress := StrSubstNo(SetStatusPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, TotalFilter);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltSalesHeader.GET(ltSalesHeader."Document Type"::Order, pSalesOrderNo);
+            ltSalesHeader."Lazada Status" := 'Delivered';
+            ltSalesHeader.Modify();
         end;
     end;
 
@@ -540,9 +584,10 @@ codeunit 50100 "API Func"
     /// Set Status FailedDelivered.
     /// </summary>
     /// <param name="pOrderID">Code[30].</param>
-    procedure "Set Status FailedDelivered"(pOrderID: Code[30])
+    procedure "Set Status FailedDelivered"(pOrderID: Code[30]; pSalesOrderNo: Code[30])
     var
         ltSalesLine: Record "Sales Line";
+        ltSalesHeader: Record "Sales Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
@@ -554,6 +599,7 @@ codeunit 50100 "API Func"
             ltorderitem2 := '';
             ltorderitem := '';
             ltSalesLine.reset();
+            ltSalesLine.SetRange("Document No.", pSalesOrderNo);
             ltSalesLine.SetRange("Lazada Order ID", pOrderID);
             ltSalesLine.SetFilter("Lazada Order Item Id", '<>%1', '');
             if ltSalesLine.FindSet() then begin
@@ -572,6 +618,9 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(SetStatusSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltorderitem, gvTimeStam);
             gvUrlAddress := StrSubstNo(SetStatusPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, TotalFilter);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltSalesHeader.GET(ltSalesHeader."Document Type"::Order, pSalesOrderNo);
+            ltSalesHeader."Lazada Status" := 'Failed Delivered';
+            ltSalesHeader.Modify();
         end;
     end;
     /// <summary>

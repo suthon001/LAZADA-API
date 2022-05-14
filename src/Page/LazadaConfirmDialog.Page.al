@@ -5,6 +5,7 @@ page 50107 "Lazada Confirm Dialog"
 {
     Caption = 'Lazada Confirm Dialog';
     PageType = ConfirmationDialog;
+    UsageCategory = None;
     layout
     {
         area(content)

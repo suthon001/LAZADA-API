@@ -14,21 +14,25 @@ tableextension 50100 "Lazada Item" extends Item
         {
             Caption = 'Lazada Item Id';
             DataClassification = ToBeClassified;
+            Editable = false;
         }
         field(50102; "Lazada Shop sku"; Code[30])
         {
             Caption = 'Lazada Shop sku';
             DataClassification = ToBeClassified;
+            Editable = false;
         }
         field(50103; "Lazada Seller sku"; Code[30])
         {
             Caption = 'Lazada Seller sku';
             DataClassification = ToBeClassified;
+            Editable = false;
         }
         field(50104; "Lazada Sku id"; Code[30])
         {
             Caption = 'Lazada Sku id';
             DataClassification = ToBeClassified;
+            Editable = false;
         }
     }
 }

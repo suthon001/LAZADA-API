@@ -9,6 +9,7 @@ tableextension 50102 "Lazada Sales Header" extends "Sales Header"
         {
             Caption = 'Lazada Order ID';
             DataClassification = ToBeClassified;
+            Editable = false;
         }
         field(50101; "Lazada Status"; Text[50])
         {

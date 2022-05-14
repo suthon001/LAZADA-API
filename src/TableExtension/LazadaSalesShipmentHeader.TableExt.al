@@ -9,12 +9,14 @@ tableextension 50103 "Lazada Sales Shipment Header" extends "Sales Shipment Head
         {
             Caption = 'Lazada Order ID';
             DataClassification = ToBeClassified;
+            Editable = false;
         }
         field(50101; "Lazada Status"; Text[50])
         {
             Caption = 'Lazada Status';
             DataClassification = ToBeClassified;
             Editable = false;
+
         }
     }
 }

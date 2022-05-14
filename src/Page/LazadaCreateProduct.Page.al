@@ -18,6 +18,7 @@ page 50108 "Lazada Create & Update Product"
         {
             repeater(General)
             {
+
                 field("No."; Rec."No.")
                 {
                     ToolTip = 'Specifies the number of the item.';
@@ -56,6 +57,31 @@ page 50108 "Lazada Create & Update Product"
                 field(Inventory; Rec.Inventory)
                 {
                     ToolTip = 'Specifies the total quantity of the item that is currently in inventory at all locations.';
+                    ApplicationArea = All;
+                }
+                field("Lazada Item Id"; rec."Lazada Item Id")
+                {
+                    ToolTip = 'Specifies the value of the Lazada Item Id field.';
+                    ApplicationArea = All;
+                }
+                field("Lazada Price"; rec."Lazada Price")
+                {
+                    ToolTip = 'Specifies the value of the Lazada Price field.';
+                    ApplicationArea = All;
+                }
+                field("Lazada Seller sku"; rec."Lazada Seller sku")
+                {
+                    ToolTip = 'Specifies the value of the Lazada Seller sku field.';
+                    ApplicationArea = All;
+                }
+                field("Lazada Shop sku"; rec."Lazada Shop sku")
+                {
+                    ToolTip = 'Specifies the value of the Lazada Shop sku field.';
+                    ApplicationArea = All;
+                }
+                field("Lazada Sku id"; rec."Lazada Sku id")
+                {
+                    ToolTip = 'Specifies the value of the Lazada Sku id field.';
                     ApplicationArea = All;
                 }
             }
@@ -146,6 +172,11 @@ page 50108 "Lazada Create & Update Product"
                     lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
                     APIFunc.SetTimeStamp(lttimestamp);
                     apifunc."Remove Product"(rec."No.");
+                    rec."Lazada Item Id" := '';
+                    rec."Lazada Seller sku" := '';
+                    rec."Lazada Shop sku" := '';
+                    rec."Lazada Sku id" := '';
+                    rec.Modify();
                 end;
             }
         }
