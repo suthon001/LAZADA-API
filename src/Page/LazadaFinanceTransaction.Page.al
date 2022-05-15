@@ -141,15 +141,16 @@ page 50101 "Lazada Finance Transaction"
     {
         area(Processing)
         {
-            action("Get Lazada Entry")
+            action("Get Finance Entry")
             {
                 ApplicationArea = all;
-                ToolTip = 'Get Lazada Api';
+                ToolTip = 'Get Finance Entry';
                 Image = UserInterface;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
+                Caption = 'Get Finance Entry';
                 trigger OnAction()
                 var
                     APIFunc: Codeunit "API Func";

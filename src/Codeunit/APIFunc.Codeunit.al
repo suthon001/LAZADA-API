@@ -683,6 +683,28 @@ codeunit 50100 "API Func"
         end;
     end;
 
+    procedure "Get Shipment Providers"()
+    var
+        ltJsonToken: JsonToken;
+        ltJsonValue: JsonValue;
+        ltJsonObject: JsonObject;
+        ltJsonArray: JsonArray;
+        ltorderitem, ltorderitem2, TotalFilter : Text;
+        GetshipmentProvidersPath: Label 'https://api.lazada.co.th/rest/shipment/providers/get?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4', Locked = true;
+        GetshipmentProvidersSign: Label '/shipment/providers/getaccess_token%1app_key%2sign_methodsha256timestamp%3', Locked = true;
+    begin
+        if GetAccessToken() then begin
+            gvtokenpath := StrSubstNo(GetshipmentProvidersSign, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", gvTimeStam);
+            gvUrlAddress := StrSubstNo(GetshipmentProvidersPath, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam);
+            ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltJsonObject.SelectToken('shipment_providers', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                InsertTransaction(ltJsonToken, Database::"Lazada Shipment Providers", 0);
+            end;
+        end;
+    end;
     /// <summary>
     /// Get Finance.
     /// </summary>

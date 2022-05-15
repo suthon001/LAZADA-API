@@ -129,15 +129,16 @@ page 50104 "Lazada Trans. Order Lists"
     {
         area(Processing)
         {
-            action("Get Lazada Entry")
+            action("Get Order Entry")
             {
                 ApplicationArea = all;
-                ToolTip = 'Get Lazada Api';
+                ToolTip = 'Get Orders';
                 Image = UserInterface;
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 PromotedOnly = true;
+                Caption = 'Get Oders';
                 trigger OnAction()
                 var
                     APIFunc: Codeunit "API Func";

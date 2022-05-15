@@ -34,6 +34,12 @@ pageextension 50107 "Lazada Sales Role" extends "Order Processor Role Center"
                     ApplicationArea = all;
                     RunObject = page "Lazada Finance Transaction";
                 }
+                action(LazadaShipmentProvides)
+                {
+                    Caption = 'Lazada Shipment Providers';
+                    ApplicationArea = all;
+                    RunObject = page "Lazada Shipment Providers";
+                }
             }
         }
     }

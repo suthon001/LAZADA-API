@@ -64,6 +64,7 @@ pageextension 50102 "Lazada Sales Order Subform" extends "Sales Order Subform"
                 PromotedIsBig = true;
                 PromotedOnly = true;
                 ApplicationArea = all;
+                ToolTip = 'Cancel Item';
                 trigger OnAction()
                 var
                     ApiFunc: Codeunit "API Func";
