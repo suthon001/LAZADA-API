@@ -129,6 +129,7 @@ table 50101 "Lazada Finance Detail"
             DataClassification = ToBeClassified;
         }
     }
+
     keys
     {
         key(PK; order_no, "Line No.")
@@ -136,4 +137,24 @@ table 50101 "Lazada Finance Detail"
             Clustered = true;
         }
     }
+    trigger OnInsert()
+    begin
+        "Line No." := "Get LastEntry";
+    end;
+    /// <summary>
+    /// Get LastEntry.
+    /// </summary>
+    /// <returns>Return value of type Integer.</returns>
+    procedure "Get LastEntry"(): Integer
+    var
+        ltLazadaFinanaceDetail: Record "Lazada Finance Detail";
+    begin
+        ltLazadaFinanaceDetail.reset();
+        ltLazadaFinanaceDetail.SetCurrentKey(order_no, "Line No.");
+        ltLazadaFinanaceDetail.SetRange(order_no, Rec.order_no);
+        if ltLazadaFinanaceDetail.FindLast() then
+            exit(ltLazadaFinanaceDetail."line No." + 1);
+        exit(1);
+    end;
+
 }

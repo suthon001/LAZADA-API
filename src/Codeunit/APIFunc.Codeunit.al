@@ -686,19 +686,17 @@ codeunit 50100 "API Func"
     /// <summary>
     /// Get Finance.
     /// </summary>
-    /// <param name="pOrder">Text[50].</param>
     /// <param name="pOrderFilter">Text[1024].</param>
     /// <param name="pSignPath">text[1024].</param>
-    procedure "Get Finance"(pOrder: Text[50]; pOrderFilter: Text[1024]; pSignPath: text[1024])
+    procedure "Get Finance"(pOrderFilter: Text[1024]; pSignPath: text[1024])
     var
 
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetOrderFinancePathTxt: Label 'https://api.lazada.co.th/rest/finance/transaction/details/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4%5', Locked = true;
-        GetOrderFinanceTxt: Label '/finance/transaction/details/getaccess_token%2app_key%3%4', Locked = true;
-        MappingFieldErr: Label 'not found get Finance please check lazada mapping field table';
+        GetOrderFinancePathTxt: Label 'https://api.lazada.co.th/rest/finance/transaction/details/get?app_key=%1&access_token=%2&sign_method=sha256&sign=%3%4', Locked = true;
+        GetOrderFinanceTxt: Label '/finance/transaction/details/getaccess_token%1app_key%2%3', Locked = true;
     begin
         if GetAccessToken() then begin
             pOrderFilter := pOrderFilter.Replace(':', '%3A');
@@ -706,8 +704,8 @@ codeunit 50100 "API Func"
             pOrderFilter := pOrderFilter.Replace('[', '%5B');
             pOrderFilter := pOrderFilter.Replace(']', '%5D');
             pOrderFilter := pOrderFilter.Replace(',', ' %2C');
-            gvtokenpath := StrSubstNo(GetOrderFinanceTxt, pOrder, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pSignPath);
-            gvUrlAddress := StrSubstNo(GetOrderFinancePathTxt, pOrder, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
+            gvtokenpath := StrSubstNo(GetOrderFinanceTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pSignPath);
+            gvUrlAddress := StrSubstNo(GetOrderFinancePathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
             ltJsonObject.SelectToken('data', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
@@ -734,7 +732,7 @@ codeunit 50100 "API Func"
         ltJsonArray: JsonArray;
         GetOrderPathTxt: Label 'https://api.lazada.co.th/rest/%1/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4%5', Locked = true;
         GetOrderTxt: Label '/%1/getaccess_token%2app_key%3%4', Locked = true;
-        MappingFieldErr: Label 'not found get order please check lazada mapping field table';
+
     begin
         if GetAccessToken() then begin
 
@@ -857,6 +855,7 @@ codeunit 50100 "API Func"
         CLEAR(gvHttpClient);
         CLEAR(gvHttpResponseMessage);
         CLEAR(gvResponseText);
+        CLEAR(gvHttpContent);
         gvHttpRequestMessage.Content := gvHttpContent;
         gvHttpRequestMessage.SetRequestUri(pBaseUrl);
         gvHttpRequestMessage.Method := pMethod;
@@ -896,6 +895,9 @@ codeunit 50100 "API Func"
         Clear(confirmLazada);
     end;
 
+    /// <summary>
+    /// ConfirmBeforGetFinanceAPI.
+    /// </summary>
     procedure ConfirmBeforGetFinanceAPI()
     var
         ConfirmLazada: Page "Lazada Confirm Dialog Finance";

@@ -1,3 +1,6 @@
+/// <summary>
+/// Page Lazada Finance Transaction (ID 50101).
+/// </summary>
 page 50101 "Lazada Finance Transaction"
 {
     Caption = 'Lazada Finance Transaction';

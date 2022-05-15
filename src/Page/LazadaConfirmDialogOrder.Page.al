@@ -19,12 +19,6 @@ page 50107 "Lazada Confirm Dialog Order"
                     ApplicationArea = all;
                     ToolTip = 'Spacifies value of Order id field.';
                 }
-                // field(gvstatus; gvstatus)
-                // {
-                //     Caption = 'Status';
-                //     ApplicationArea = all;
-                //     ToolTip = 'Spacifies value of Status field.';
-                // }
                 group("Group Date")
                 {
                     ShowCaption = false;
