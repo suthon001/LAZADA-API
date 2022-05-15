@@ -697,7 +697,7 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(GetshipmentProvidersSign, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", gvTimeStam);
             gvUrlAddress := StrSubstNo(GetshipmentProvidersPath, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
-            ltJsonObject.SelectToken('shipment_providers', ltJsonToken);
+            ltJsonObject.SelectToken('shipment_providers', ltJsonToken);  //shipment_providers
             ltJsonArray := ltJsonToken.AsArray();
             for myLoop := 0 to ltJsonArray.Count - 1 do begin
                 ltJsonArray.Get(myLoop, ltJsonToken);
@@ -767,7 +767,8 @@ codeunit 50100 "API Func"
             gvUrlAddress := StrSubstNo(GetOrderPathTxt, pOrder, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
             if pOrder = 'order' then begin
-                ltJsonObject.SelectToken('data', ltJsonToken);
+                ltJsonArray := ltJsonToken.AsArray();
+                ltJsonArray.Get(0, ltJsonToken);
                 InsertTransaction(ltJsonToken, Database::"Lazada Order Trans. Header", Database::"Lazada Order Transaction Line")
             end else
                 if pOrder = 'orders' then begin
@@ -826,11 +827,14 @@ codeunit 50100 "API Func"
         FOR ltLoopField := 1 TO ltRecordRef.FieldCount do
             if ltRecordRef.FieldExist(ltLoopField) then begin
                 ltFieldRef := ltRecordRef.FIELD(ltLoopField);
-                ltFieldRef.Value := SelectJsonToken(ltJsonObject, '$.' + ltFieldRef.Name);
+                if UpperCase(format(ltFieldRef.Type)) IN ['CODE', 'TEXT'] then
+                    ltFieldRef.Value := SelectJsonTokenText(ltJsonObject, '$.' + ltFieldRef.Name);
+                if UpperCase(format(ltFieldRef.Type)) IN ['INTEGER', 'DECIMAL'] then
+                    ltFieldRef.Value := SelectJsonTokenInterger(ltJsonObject, '$.' + ltFieldRef.Name);
             end;
         IF ltRecordRef.Insert(true) then
             if pTableSubformID <> 0 then
-                "Get OrderItems"(SelectJsonToken(ltJsonObject, '$.order_id'), pTableSubformID);
+                "Get OrderItems"(SelectJsonTokenText(ltJsonObject, '$.order_id'), pTableSubformID);
 
         ltRecordRef.Close();
     end;
@@ -849,13 +853,16 @@ codeunit 50100 "API Func"
         FOR ltLoopField := 1 TO ltRecordRef.FieldCount do
             if ltRecordRef.FieldExist(ltLoopField) then begin
                 ltFieldRef := ltRecordRef.FIELD(ltLoopField);
-                ltFieldRef.Value := SelectJsonToken(ltJsonObject, '$.' + ltFieldRef.Name);
+                if UpperCase(format(ltFieldRef.Type)) IN ['CODE', 'TEXT'] then
+                    ltFieldRef.Value := SelectJsonTokenText(ltJsonObject, '$.' + ltFieldRef.Name);
+                if UpperCase(format(ltFieldRef.Type)) IN ['INTEGER', 'DECIMAL'] then
+                    ltFieldRef.Value := SelectJsonTokenInterger(ltJsonObject, '$.' + ltFieldRef.Name);
             end;
         ltRecordRef.Insert(true);
         ltRecordRef.Close();
     end;
 
-    local procedure SelectJsonToken(JsonObject: JsonObject; Path: text): text;
+    local procedure SelectJsonTokenText(JsonObject: JsonObject; Path: text): text;
     var
         ltJsonToken: JsonToken;
     begin
@@ -864,6 +871,17 @@ codeunit 50100 "API Func"
         if ltJsonToken.AsValue.IsNull then
             exit('');
         exit(ltJsonToken.asvalue.astext());
+    end;
+
+    local procedure SelectJsonTokenInterger(JsonObject: JsonObject; Path: text): Decimal;
+    var
+        ltJsonToken: JsonToken;
+    begin
+        if not JsonObject.SelectToken(Path, ltJsonToken) then
+            exit(0);
+        if ltJsonToken.AsValue.IsNull then
+            exit(0);
+        exit(ltJsonToken.asvalue.AsInteger());
     end;
 
     local procedure ConnectToLazada(pMethod: Code[30]; pBaseUrl: Text; var pJsonObject: JsonObject; var pJsonToken: JsonToken)
@@ -878,10 +896,10 @@ codeunit 50100 "API Func"
         CLEAR(gvHttpResponseMessage);
         CLEAR(gvResponseText);
         CLEAR(gvHttpContent);
-        //  gvHttpRequestMessage.Content := gvHttpContent;
         gvHttpRequestMessage.SetRequestUri(pBaseUrl);
         gvHttpRequestMessage.Method := pMethod;
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
+
         gvHttpResponseMessage.Content.ReadAs(gvResponseText);
         if (gvHttpResponseMessage.IsSuccessStatusCode() AND (gvHttpResponseMessage.HttpStatusCode = 200)) then begin
             ltJsonToken.ReadFrom(gvResponseText);
