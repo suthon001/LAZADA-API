@@ -16,23 +16,22 @@ page 50104 "Lazada Trans. Order Lists"
         {
             repeater(General)
             {
-                field("Order ID"; Rec."Order ID")
+                field(order_id; rec.order_id)
                 {
                     ToolTip = 'Specifies the value of the Order ID field.';
                     ApplicationArea = All;
                 }
-                field("Order Number"; Rec."Order Number")
+                field(order_number; rec.order_number)
                 {
                     ToolTip = 'Specifies the value of the Order Number field.';
                     ApplicationArea = All;
                 }
-
-                field("Customer first name"; Rec."Customer first name")
+                field(customer_first_name; rec.customer_first_name)
                 {
                     ToolTip = 'Specifies the value of the Customer first name field.';
                     ApplicationArea = All;
                 }
-                field("Customer last name"; Rec."Customer last name")
+                field(customer_last_name; rec.customer_last_name)
                 {
                     ToolTip = 'Specifies the value of the Customer last name field.';
                     ApplicationArea = All;
@@ -62,47 +61,52 @@ page 50104 "Lazada Trans. Order Lists"
                     ToolTip = 'Specifies the value of the Phone field.';
                     ApplicationArea = All;
                 }
-                field("Branch number"; Rec."Branch number")
+                field(branch_number; rec.branch_number)
                 {
                     ToolTip = 'Specifies the value of the Branch number field.';
                     ApplicationArea = All;
                 }
-                field("Payment method"; Rec."Payment method")
+                field(payment_method; rec.payment_method)
                 {
                     ToolTip = 'Specifies the value of the Payment method field.';
                     ApplicationArea = All;
                 }
-                field("Tax code"; Rec."Tax code")
+                field(tax_code; rec.tax_code)
                 {
                     ToolTip = 'Specifies the value of the Tax code field.';
                     ApplicationArea = All;
                 }
-                field("Voucher Code"; Rec."Voucher Code")
+                field(voucher; rec.voucher)
+                {
+                    ToolTip = 'Specifies the value of the Voucher field.';
+                    ApplicationArea = All;
+                }
+                field(voucher_code; rec.voucher_code)
                 {
                     ToolTip = 'Specifies the value of the Voucher Code field.';
                     ApplicationArea = All;
                 }
-                field("Voucher platform"; Rec."Voucher platform")
+                field(voucher_platform; rec.voucher_platform)
                 {
                     ToolTip = 'Specifies the value of the Voucher platform field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee original"; Rec."Shipping fee original")
+                field(shipping_fee_original; rec.shipping_fee_original)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee original field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee"; Rec."Shipping fee")
+                field(shipping_fee; rec.shipping_fee)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee discount platform"; Rec."Shipping fee discount platform")
+                field(shipping_fee_discount_platform; rec.shipping_fee_discount_platform)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee discount platform field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee discount seller"; Rec."Shipping fee discount seller")
+                field(shipping_fee_discount_seller; rec.shipping_fee_discount_seller)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee discount seller field.';
                     ApplicationArea = All;
@@ -113,7 +117,7 @@ page 50104 "Lazada Trans. Order Lists"
                     ApplicationArea = All;
                 }
 
-                field("Delivery info"; Rec."Delivery info")
+                field(delivery_info; rec.delivery_info)
                 {
                     ToolTip = 'Specifies the value of the Delivery info field.';
                     ApplicationArea = All;
@@ -138,7 +142,7 @@ page 50104 "Lazada Trans. Order Lists"
                 var
                     APIFunc: Codeunit "API Func";
                 begin
-                    APIFunc.ConfirmBeforGetAPI();
+                    APIFunc.ConfirmBeforGetOrderAPI();
                 end;
             }
         }

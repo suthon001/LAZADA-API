@@ -15,148 +15,159 @@ page 50106 "Lazada Trans. Subfrom"
         {
             repeater(General)
             {
-                field("Buyer ID"; Rec."Buyer ID")
+                field(buyer_id; rec.buyer_id)
                 {
                     ToolTip = 'Specifies the value of the Buyer ID field.';
                     ApplicationArea = All;
                 }
-                field("Order Item ID"; Rec."Order Item ID")
+                field(order_item_id; rec.order_item_id)
                 {
                     ToolTip = 'Specifies the value of the Order Item ID field.';
                     ApplicationArea = All;
                 }
-                field("Product ID"; Rec."Product ID")
+                field(product_id; rec.product_id)
                 {
                     ToolTip = 'Specifies the value of the Product ID field.';
                     ApplicationArea = All;
                 }
-                field(Name; Rec.Name)
+                field(name; rec.name)
                 {
                     ToolTip = 'Specifies the value of the Name field.';
                     ApplicationArea = All;
                 }
-                field(Sku; Rec.Sku)
+                field(sku; rec.sku)
                 {
                     ToolTip = 'Specifies the value of the Sku field.';
                     ApplicationArea = All;
                 }
-                field("Sku ID"; Rec."Sku ID")
+                field(sku_id; rec.sku_id)
                 {
                     ToolTip = 'Specifies the value of the Sku ID field.';
                     ApplicationArea = All;
                 }
-                field("Shop ID"; Rec."Shop ID")
+                field(shop_id; rec.shop_id)
                 {
                     ToolTip = 'Specifies the value of the Shop ID field.';
                     ApplicationArea = All;
                 }
-                field("Invoice Number"; Rec."Invoice Number")
+                field(invoice_number; rec.invoice_number)
                 {
                     ToolTip = 'Specifies the value of the Invoice Number field.';
                     ApplicationArea = All;
                 }
 
-                field("Purchase Order ID"; Rec."Purchase Order ID")
+                field(purchase_order_id; rec.purchase_order_id)
                 {
                     ToolTip = 'Specifies the value of the Purchase Order ID field.';
                     ApplicationArea = All;
                 }
-                field("Purchase Order Number"; Rec."Purchase Order Number")
+                field(purchase_order_number; rec.purchase_order_number)
                 {
                     ToolTip = 'Specifies the value of the Purchase Order Number field.';
                     ApplicationArea = All;
                 }
-                field("Voucher Code"; Rec."Voucher Code")
+                field(status; rec.status)
+                {
+                    ToolTip = 'Specifies the value of the status field.';
+                    ApplicationArea = All;
+                }
+                field(voucher_code; rec.voucher_code)
                 {
                     ToolTip = 'Specifies the value of the Voucher Code field.';
                     ApplicationArea = All;
                 }
-                field("Voucher Code Seller"; Rec."Voucher Code Seller")
+                field(voucher_code_seller; rec.voucher_code_seller)
                 {
                     ToolTip = 'Specifies the value of the Voucher Code Seller field.';
                     ApplicationArea = All;
                 }
-                field("Voucher Amount"; Rec."Voucher Amount")
-                {
-                    ToolTip = 'Specifies the value of the Voucher Amoun field.';
-                    ApplicationArea = All;
-                }
-                field("Voucher Platform"; Rec."Voucher Platform")
-                {
-                    ToolTip = 'Specifies the value of the Voucher Platform field.';
-                    ApplicationArea = All;
-                }
-                field("Voucher Seller"; Rec."Voucher Seller")
+                field(voucher_seller; rec.voucher_seller)
                 {
                     ToolTip = 'Specifies the value of the Voucher Seller field.';
                     ApplicationArea = All;
                 }
-                field("Voucher Seller lpi"; Rec."Voucher Seller lpi")
+                field(voucher_seller_lpi; rec.voucher_seller_lpi)
                 {
                     ToolTip = 'Specifies the value of the Voucher Seller lpi field.';
                     ApplicationArea = All;
                 }
-                field("Voucher code Platform"; Rec."Voucher code Platform")
+                field(voucher_amount; rec.voucher_amount)
+                {
+                    ToolTip = 'Specifies the value of the Voucher Amoun field.';
+                    ApplicationArea = All;
+                }
+                field(voucher_platform; rec.voucher_platform)
+                {
+                    ToolTip = 'Specifies the value of the Voucher Platform field.';
+                    ApplicationArea = All;
+                }
+
+                field(voucher_code_platform; rec.voucher_code_platform)
                 {
                     ToolTip = 'Specifies the value of the Voucher code Platform field.';
                     ApplicationArea = All;
                 }
-                field("Voucher platform lpi"; Rec."Voucher platform lpi")
+                field(voucher_platform_lpi; rec.voucher_platform_lpi)
                 {
                     ToolTip = 'Specifies the value of the Voucher platform lpi field.';
                     ApplicationArea = All;
                 }
-                field("Tracking code"; Rec."Tracking code")
+                field(tracking_code; rec.tracking_code)
                 {
                     ToolTip = 'Specifies the value of the Tracking code field.';
                     ApplicationArea = All;
                 }
-                field("Item price"; Rec."Item price")
+                field(item_price; rec.item_price)
                 {
                     ToolTip = 'Specifies the value of the Item price field.';
                     ApplicationArea = All;
                 }
-                field("Wallet credits"; Rec."Wallet credits")
+                field(wallet_credits; rec.wallet_credits)
                 {
                     ToolTip = 'Specifies the value of the Wallet credits field.';
                     ApplicationArea = All;
                 }
-                field("Tax Amount"; Rec."Tax Amount")
+                field(tax_amount; rec.tax_amount)
                 {
                     ToolTip = 'Specifies the value of the Tax Amount field.';
                     ApplicationArea = All;
                 }
-                field("Warehouse Code"; Rec."Warehouse Code")
+                field(warehouse_code; rec.warehouse_code)
                 {
                     ToolTip = 'Specifies the value of the Warehouse Code field.';
                     ApplicationArea = All;
                 }
-                field("Shipping amount"; Rec."Shipping amount")
+                field(shipping_amount; rec.shipping_amount)
                 {
                     ToolTip = 'Specifies the value of the Shipping amount field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee discount platform"; Rec."Shipping fee discount platform")
+                field(shipping_fee_discount_platform; rec.shipping_fee_discount_platform)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee discount platform field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee discount seller"; Rec."Shipping fee discount seller")
+                field(shipping_fee_discount_seller; rec.shipping_fee_discount_seller)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee discount seller field.';
                     ApplicationArea = All;
                 }
-                field("Shipping fee original"; Rec."Shipping fee original")
+                field(shipping_fee_original; rec.shipping_fee_original)
                 {
                     ToolTip = 'Specifies the value of the Shipping fee original field.';
                     ApplicationArea = All;
                 }
-                field("Reason detail"; Rec."Reason detail")
+                field(reason; rec.reason)
                 {
                     ToolTip = 'Specifies the value of the Reason detail field.';
                     ApplicationArea = All;
                 }
-                field("Return status"; Rec."Return status")
+                field(reason_detail; rec.reason_detail)
+                {
+                    ToolTip = 'Specifies the value of the Reason detail field.';
+                    ApplicationArea = All;
+                }
+                field(return_status; rec.return_status)
                 {
                     ToolTip = 'Specifies the value of the Return status field.';
                     ApplicationArea = All;

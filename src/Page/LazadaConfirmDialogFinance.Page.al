@@ -1,7 +1,5 @@
-/// <summary>
-/// Page Lazada Confirm Dialog (ID 50107).
-/// </summary>
-page 50107 "Lazada Confirm Dialog"
+
+page 50109 "Lazada Confirm Dialog Finance"
 {
     Caption = 'Lazada Confirm Dialog';
     PageType = ConfirmationDialog;

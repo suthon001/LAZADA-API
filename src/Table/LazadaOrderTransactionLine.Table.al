@@ -1,7 +1,7 @@
 /// <summary>
-/// Table Lazada Order Transaction (ID 50101).
+/// Table Lazada Order Transaction (ID 50103).
 /// </summary>
-table 50101 "Lazada Order Transaction Line"
+table 50103 "Lazada Order Transaction Line"
 {
     Caption = 'Lazada Order Transaction Line';
     DataClassification = ToBeClassified;
@@ -13,262 +13,262 @@ table 50101 "Lazada Order Transaction Line"
             Caption = 'Entry No.';
             DataClassification = ToBeClassified;
         }
-        field(2; "Tax Amount"; Decimal)
+        field(2; "tax_amount"; Decimal)
         {
             Caption = 'Tax Amount';
             DataClassification = ToBeClassified;
         }
-        field(3; "Voucher Seller"; Decimal)
+        field(3; "voucher_seller"; Decimal)
         {
             Caption = 'Voucher Seller';
             DataClassification = ToBeClassified;
         }
-        field(5; "Purchase Order ID"; Code[50])
+        field(5; "purchase_order_id"; Code[50])
         {
             Caption = 'Purchase Order ID';
             DataClassification = ToBeClassified;
         }
-        field(6; "Voucher Code Seller"; Code[50])
+        field(6; "voucher_code_seller"; Code[50])
         {
             Caption = 'Voucher Code Seller';
             DataClassification = ToBeClassified;
         }
-        field(7; "Voucher Code"; Code[50])
+        field(7; "voucher_code"; Code[50])
         {
             Caption = 'Voucher Code';
             DataClassification = ToBeClassified;
         }
-        field(8; "Package ID"; Code[50])
+        field(8; "package_id"; Code[50])
         {
             Caption = 'Package ID';
             DataClassification = ToBeClassified;
         }
-        field(9; "Buyer ID"; Code[50])
+        field(9; "buyer_id"; Code[50])
         {
             Caption = 'Buyer ID';
             DataClassification = ToBeClassified;
         }
-        field(10; "Variation"; Code[50])
+        field(10; "variation"; Code[50])
         {
             Caption = 'Variation';
             DataClassification = ToBeClassified;
         }
-        field(11; "Product ID"; Code[50])
+        field(11; "product_id"; Code[50])
         {
             Caption = 'Product ID';
             DataClassification = ToBeClassified;
         }
-        field(12; "Voucher code Platform"; Code[50])
+        field(12; "voucher_code_platform"; Code[50])
         {
             Caption = 'Voucher code Platform';
             DataClassification = ToBeClassified;
         }
-        field(13; "Purchase Order Number"; Code[50])
+        field(13; "purchase_order_number"; Code[50])
         {
             Caption = 'Purchase Order Number';
             DataClassification = ToBeClassified;
         }
-        field(14; "Sku"; Code[50])
+        field(14; "sku"; Code[50])
         {
             Caption = 'Sku';
             DataClassification = ToBeClassified;
         }
-        field(15; "Order type"; text[50])
+        field(15; "order_type"; text[50])
         {
             Caption = 'Order type';
             DataClassification = ToBeClassified;
         }
-        field(16; "Invoice Number"; Code[50])
+        field(16; "invoice_number"; Code[50])
         {
             Caption = 'Invoice Number';
             DataClassification = ToBeClassified;
         }
-        field(17; "Cancel Return initiator"; Text[100])
+        field(17; "cancel_return_initiator"; Text[100])
         {
             Caption = 'Cancel Return initiator';
             DataClassification = ToBeClassified;
         }
-        field(18; "Shop Sku"; Code[50])
+        field(18; "shop_sku"; Code[50])
         {
             Caption = 'Shop Sku';
             DataClassification = ToBeClassified;
         }
-        field(19; "Is reroute"; Code[10])
+        field(19; "is_reroute"; Code[10])
         {
             Caption = 'Is reroute';
             DataClassification = ToBeClassified;
         }
-        field(20; "Stage Pay Status"; text[50])
+        field(20; "stage_pay_status"; text[50])
         {
             Caption = 'Stage Pay Status';
             DataClassification = ToBeClassified;
         }
-        field(21; "Sku ID"; Code[50])
+        field(21; "sku_id"; Code[50])
         {
             Caption = 'Sku ID';
             DataClassification = ToBeClassified;
         }
-        field(22; "Tracking code pre"; Code[50])
+        field(22; "tracking_code_pre"; Code[50])
         {
             Caption = 'Tracking code pre';
             DataClassification = ToBeClassified;
         }
-        field(23; "Order Item ID"; Code[50])
+        field(23; "order_item_id"; Code[50])
         {
             Caption = 'Order Item ID';
             DataClassification = ToBeClassified;
         }
-        field(24; "Shop ID"; Code[50])
+        field(24; "shop_id"; Code[50])
         {
             Caption = 'Shop ID';
             DataClassification = ToBeClassified;
         }
-        field(25; "Order flag"; Code[10])
+        field(25; "order_flag"; Code[10])
         {
             Caption = 'Order fla';
             DataClassification = ToBeClassified;
         }
-        field(26; "Is fbl"; Code[10])
+        field(26; "is_fbl"; Code[10])
         {
             Caption = 'Is fbl';
             DataClassification = ToBeClassified;
         }
-        field(27; "Name"; text[150])
+        field(27; "name"; text[150])
         {
             Caption = 'Name';
             DataClassification = ToBeClassified;
         }
-        field(28; "Delivery option sof"; Code[10])
+        field(28; "delivery_option_sof"; Code[10])
         {
             Caption = 'Delivery option sof';
             DataClassification = ToBeClassified;
         }
-        field(29; "Order ID"; Code[50])
+        field(29; "order_id"; Code[50])
         {
             Caption = 'Order ID';
             DataClassification = ToBeClassified;
         }
-        field(30; "Voucher Platform"; Decimal)
+        field(30; "voucher_platform"; Decimal)
         {
             Caption = 'Voucher Platform';
             DataClassification = ToBeClassified;
         }
-        field(31; "Product main image"; text[250])
+        field(31; "product_main_image"; text[250])
         {
             Caption = 'Product main image';
             DataClassification = ToBeClassified;
         }
-        field(32; "Paid price"; Decimal)
+        field(32; "paid_price"; Decimal)
         {
             Caption = 'Paid price';
             DataClassification = ToBeClassified;
         }
-        field(33; "Product detail url"; text[250])
+        field(33; "product_detail_url"; text[250])
         {
             Caption = 'Product detail url';
             DataClassification = ToBeClassified;
         }
-        field(34; "Warehouse Code"; Code[20])
+        field(34; "warehouse_code"; Code[20])
         {
             Caption = 'Warehouse Code';
             DataClassification = ToBeClassified;
         }
-        field(35; "Shipping type"; Text[100])
+        field(35; "shipping_type"; Text[100])
         {
             Caption = 'Shipping type';
             DataClassification = ToBeClassified;
         }
-        field(36; "Voucher Seller lpi"; Decimal)
+        field(36; "voucher_seller_lpi"; Decimal)
         {
             Caption = 'Voucher Seller lpi';
             DataClassification = ToBeClassified;
         }
-        field(37; "Shipping fee discount platform"; Decimal)
+        field(37; "shipping_fee_discount_platform"; Decimal)
         {
             Caption = 'Shipping fee discount platform';
             DataClassification = ToBeClassified;
         }
-        field(38; "Wallet credits"; Decimal)
+        field(38; "wallet_credits"; Decimal)
         {
             Caption = 'Wallet credits';
             DataClassification = ToBeClassified;
         }
-        field(39; "Currency"; Code[10])
+        field(39; "currency"; Code[10])
         {
             Caption = 'Currency';
             DataClassification = ToBeClassified;
         }
-        field(40; "Shipping provider type"; text[50])
+        field(40; "shipping_provider_type"; text[50])
         {
             Caption = 'Shipping provider type';
             DataClassification = ToBeClassified;
         }
-        field(41; "Voucher platform lpi"; Decimal)
+        field(41; "voucher_platform_lpi"; Decimal)
         {
             Caption = 'Voucher platform lpi';
             DataClassification = ToBeClassified;
         }
-        field(42; "Shipping fee original"; Decimal)
+        field(42; "shipping_fee_original"; Decimal)
         {
             Caption = 'Shipping fee original';
             DataClassification = ToBeClassified;
         }
-        field(43; "Item price"; Decimal)
+        field(43; "item_price"; Decimal)
         {
             Caption = 'Item price';
             DataClassification = ToBeClassified;
         }
-        field(44; "Is digital"; Code[10])
+        field(44; "is_digital"; Code[10])
         {
             Caption = 'Is digital';
             DataClassification = ToBeClassified;
         }
-        field(45; "Shipping service cost"; Decimal)
+        field(45; "shipping_service_cost"; Decimal)
         {
             Caption = 'Shipping service cost';
             DataClassification = ToBeClassified;
         }
-        field(46; "Tracking code"; Code[50])
+        field(46; "tracking_code"; Code[50])
         {
             Caption = 'Tracking code';
             DataClassification = ToBeClassified;
         }
-        field(47; "Shipping fee discount seller"; Decimal)
+        field(47; "shipping_fee_discount_seller"; Decimal)
         {
             Caption = 'Shipping fee discount seller';
             DataClassification = ToBeClassified;
         }
-        field(48; "Shipping amount"; Decimal)
+        field(48; "shipping_amount"; Decimal)
         {
             Caption = 'Shipping amount';
             DataClassification = ToBeClassified;
         }
-        field(49; "Reason detail"; text[100])
+        field(49; "reason_detail"; text[100])
         {
             Caption = 'Reason detail';
             DataClassification = ToBeClassified;
         }
-        field(50; "Return status"; Code[10])
+        field(50; "return_status"; Code[10])
         {
             Caption = 'Return status';
             DataClassification = ToBeClassified;
         }
-        field(51; "Shipment provider"; Code[50])
+        field(51; "shipment_provider"; Code[50])
         {
             Caption = 'Shipment provider';
             DataClassification = ToBeClassified;
         }
-        field(52; "Voucher Amount"; Decimal)
+        field(52; "voucher_amount"; Decimal)
         {
             Caption = 'Voucher Amoun';
             DataClassification = ToBeClassified;
         }
-        field(53; "Digital delivery info"; Text[50])
+        field(53; "digital_delivery_info"; Text[50])
         {
             Caption = 'Digital delivery info';
             DataClassification = ToBeClassified;
         }
-        field(54; "Extra attributes"; Text[50])
+        field(54; "extra_attributes"; Text[50])
         {
             Caption = 'Extra attribute';
             DataClassification = ToBeClassified;
@@ -283,17 +283,17 @@ table 50101 "Lazada Order Transaction Line"
             Caption = 'Sla Time';
             DataClassification = ToBeClassified;
         }
-        field(57; "Pick up store address"; Text[150])
+        field(57; "pick_up_store_address"; Text[150])
         {
             Caption = 'Pick up store address';
             DataClassification = ToBeClassified;
         }
-        field(58; "Pick up store name"; Text[150])
+        field(58; "pick_up_store_name"; Text[150])
         {
             Caption = 'Pick up store name';
             DataClassification = ToBeClassified;
         }
-        field(59; "Pick up store code"; Text[100])
+        field(59; "pick_up_store_code"; Text[100])
         {
             Caption = 'Pick up store code';
             DataClassification = ToBeClassified;
@@ -303,10 +303,20 @@ table 50101 "Lazada Order Transaction Line"
             Caption = 'Interface DateTime';
             DataClassification = ToBeClassified;
         }
+        field(61; "reason"; Text[100])
+        {
+            Caption = 'Reason';
+            DataClassification = ToBeClassified;
+        }
+        field(62; "status"; Text[50])
+        {
+            Caption = 'Status';
+            DataClassification = ToBeClassified;
+        }
     }
     keys
     {
-        key(PK; "Order ID", "Entry No.")
+        key(PK; order_id, "Entry No.")
         {
             Clustered = true;
         }
@@ -324,8 +334,8 @@ table 50101 "Lazada Order Transaction Line"
         ltLazadatransaction: Record "Lazada Order Transaction Line";
     begin
         ltLazadatransaction.reset();
-        ltLazadatransaction.SetCurrentKey("Order ID", "Entry No.");
-        ltLazadatransaction.SetRange("Order ID", rec."Order ID");
+        ltLazadatransaction.SetCurrentKey(order_id, "Entry No.");
+        ltLazadatransaction.SetRange(order_id, Rec.order_id);
         if ltLazadatransaction.FindLast() then
             exit(ltLazadatransaction."Entry No." + 1);
         exit(1);

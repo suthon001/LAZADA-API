@@ -16,23 +16,23 @@ pageextension 50107 "Lazada Sales Role" extends "Order Processor Role Center"
                     ApplicationArea = all;
                     RunObject = page "Lazada Setup Card";
                 }
-                action(LazadaMappinFields)
-                {
-                    Caption = 'Lazada Mapping Field';
-                    ApplicationArea = all;
-                    RunObject = page "Lazada Mapping Field Lists";
-                }
                 action(LazadaProduct)
                 {
                     Caption = 'Lazada Product';
                     ApplicationArea = all;
                     RunObject = page "Lazada Create & Update Product";
                 }
-                action(LazadaTransaction)
+                action(LazadaOrderTransaction)
                 {
                     Caption = 'Lazada Order Transaction';
                     ApplicationArea = all;
                     RunObject = page "Lazada Trans. Order Lists";
+                }
+                action(LazadaFinanceTransaction)
+                {
+                    Caption = 'Lazada Finance Transaction';
+                    ApplicationArea = all;
+                    RunObject = page "Lazada Finance Transaction";
                 }
             }
         }
