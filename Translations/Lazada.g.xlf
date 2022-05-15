@@ -1,0 +1,2129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="en-US" original="Lazada">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3743956190 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Finance Detail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 1121446808 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 2998405077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field comment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 526532270 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Details</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field details - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 586594458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fee Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field fee_name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 4048648147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fee Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field fee_type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 1337286683 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada sku</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field lazada_sku - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 588787591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RrderItem no</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field orderItem_no - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 3510942044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>OrderItem_status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field orderItem_status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 2715653564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field order_no - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 2266766241 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paid status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field paid_status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 1289203370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment Ref. id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field payment_ref_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 2846309565 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field reference - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 3907983261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Seller sku</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field seller_sku - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 1090546857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field shipment_type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 3067451400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field shipping_provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 4051217646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping Speed</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field shipping_speed - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 407292087 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sstatement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field statement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 2740286273 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field transaction_date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 507141708 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field transaction_number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 1760299085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transaction type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field transaction_type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 2723709812 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT in Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field VAT_in_amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 3381950804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WHT Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field WHT_amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3743956190 - Field 3692251385 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WHT included in amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Finance Detail - Field WHT_included_in_amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Order Transaction Header</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2230889905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1593193288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 955496671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Address3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2678674004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Branch number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field branch_number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2754366897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field city - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2807065388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field country - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 340792511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Created at</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field Created at - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3654870435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer first name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field customer_first_name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1720110027 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer last name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field customer_last_name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 4016792383 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery info</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field delivery_info - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3138021588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gift message</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field gift_message - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 761906228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gift option</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field gift_option - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 393819918 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Items count</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field items_count - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1172669648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>National registration number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field national_registration_number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3114402264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field order_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 4125979022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field order_number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 583009950 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Payment method</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field payment_method - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2524668112 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field phone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 4169984794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field phone2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3328426687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 596559819 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remarks</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field remarks - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3988829781 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field shipping_fee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2624585147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee discount platform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field shipping_fee_discount_platform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3322124857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee discount seller</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field shipping_fee_discount_seller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1343391343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee original</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field shipping_fee_original - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3272994406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Statuses</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field statuses - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 84429753 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field tax_code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1997323748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Updated at</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field Updated at - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1451094852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field voucher - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2644006646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field voucher_code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3499953220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher platform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field voucher_platform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Order Transaction Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3101453077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Buyer ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field buyer_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1727605993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cancel Return initiator</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field cancel_return_initiator - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3429870193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Currency</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field currency - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1818541103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery option sof</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field delivery_option_sof - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1300803484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Digital delivery info</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field digital_delivery_info - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3846699998 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Extra attribute</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field extra_attributes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 431011072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Interface DateTime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field Interface DateTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2897790647 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field invoice_number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3874107193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is digital</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field is_digital - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3493209647 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is fbl</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field is_fbl - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1993150821 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is reroute</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field is_reroute - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 383077865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field item_price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3558812865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 543674495 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order fla</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field order_flag - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3114402264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field order_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 764902810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order Item ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field order_item_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 4132586187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field order_type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 776556044 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Package ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field package_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2769549986 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Paid price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field paid_price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 4219183614 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pick up store address</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field pick_up_store_address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3532275491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pick up store code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field pick_up_store_code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3492472301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pick up store name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field pick_up_store_name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 4236220539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product detail url</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field product_detail_url - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3334113371 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field product_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 4177124321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Product main image</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field product_main_image - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1116248436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field purchase_order_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2509366674 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Purchase Order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field purchase_order_number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 903647472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field reason - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 389812766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reason detail</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field reason_detail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2185018763 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Return status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field return_status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3823001426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipment provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipment_provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1865496707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2624585147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee discount platform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_fee_discount_platform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3322124857 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee discount seller</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_fee_discount_seller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1343391343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping fee original</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_fee_original - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1555711245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping provider type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_provider_type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3382917856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping service cost</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_service_cost - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2087781167 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shipping type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shipping_type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 797364258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shop_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 12809074 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shop Sku</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field shop_sku - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2414180447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sku</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field sku - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2698495129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sku ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field sku_id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1260275502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sla Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field Sla Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1748889357 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sla Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field Sla Time - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3880621684 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stage Pay Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field stage_pay_status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 998393528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1715999146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field tax_amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3041418119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field tracking_code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1059818535 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking code pre</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field tracking_code_pre - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1823562539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Variation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field variation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 229232245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Amoun</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2644006646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3970733766 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher code Platform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_code_platform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3478671984 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Code Seller</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_code_seller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3499953220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Platform</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_platform - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 3861307510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher platform lpi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_platform_lpi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1729636882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Seller</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_seller - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2935271680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Voucher Seller lpi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field voucher_seller_lpi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 2623726970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Wallet credits</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field wallet_credits - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3874754161 - Field 1771407961 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warehouse Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Transaction Line - Field warehouse_code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 3174535945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Access Token</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field Access Token - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 1090351696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Active</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field Active - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 635152450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field App Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 943741593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>App Secret</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field App Secret - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 1513319962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Refresh Token</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field Refresh Token - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 2570830848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Seller Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field Seller Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Shipment Providers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 2490299923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Api integration</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field api_integration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 3397655244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cod</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field cod - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 4031520595 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enabled elivery options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field enabled_delivery_options - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 2367494282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Is default</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field is_default - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 3558812865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 1597184966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking code example</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field tracking_code_example - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 388656637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking code validation regex</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field tracking_code_validation_regex - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1136141987 - Field 178911245 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tracking url</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Shipment Providers - Field tracking_url - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Confirm Dialog</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 3955146646 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of End Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control gvEndDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 3955146646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control gvEndDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 969103012 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Order id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control gvOderID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 969103012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control gvOderID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 221776223 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Start Date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control gvStartDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 221776223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control gvStartDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 3853468602 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Order Item ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control OrderITemID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 173544859 - Control 3853468602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Oder Item ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Finance - Control OrderITemID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Confirm Dialog</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Filter</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 4288674107 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Create After Date Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedafterDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 4288674107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create After Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedafterDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 3011333964 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Create Befor Time Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedafterTime - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 3011333964 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create After Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedafterTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 81069776 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Create Befor Date Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedbeforeDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 81069776 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create befor Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedbeforeDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 1033790991 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Create Befor Time Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedbeforeTime - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 1033790991 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create befor Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvcreatedbeforeTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 2492238900 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Update after Date Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdateafterDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 2492238900 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update after Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdateafterDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 3444960115 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Update after Time Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdateafterTime - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 3444960115 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update after Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdateafterTime - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 3593836868 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Update Befor Date Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdatebeforDate - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 3593836868 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update befor Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdatebeforDate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 1636910691 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Update Befor Time Field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdatebeforTIme - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 1636910691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update befor Time</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvupdatebeforTIme - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 969103012 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Spacifies value of Order id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvOderID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3038838073 - Control 969103012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Confirm Dialog Order - Control gvOderID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Create &amp; Update Product</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies what you are selling.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 47657272 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Description 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Description 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 1303377601 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Global Dimension 1 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Global Dimension 1 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 1337243520 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Global Dimension 2 Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Global Dimension 2 Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 2105307182 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the total quantity of the item that is currently in inventory at all locations.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Inventory - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 688565669 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lazada Item Id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Lazada Item Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 3601150146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lazada Price field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Lazada Price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 2973142441 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lazada Seller sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Lazada Seller sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 3078403990 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lazada Shop sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Lazada Shop sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 3476527605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lazada Sku id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Lazada Sku id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 4200184881 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the item.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 4230565839 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the No. 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control No. 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Control 2937233469 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the price of one unit of the item or resource. You can enter a price manually or have it entered according to the Price/Profit Calculation field on the related card.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Control Unit Price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Action 1563808368 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Product Lazada</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Action Create Product Lazada - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Action 849473098 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove Product Lazada</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Action Remove Product Lazada - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2513104501 - Action 3254774155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Product Lazada</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Create &amp; Update Product - Action Update Product Lazada - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Finance Transaction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 1121446808 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Amount field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 2998405077 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Comment field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control comment - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 526532270 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Details field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control details - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 586594458 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Fee Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control fee_name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 4048648147 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Fee Type field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control fee_type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 1337286683 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Lazada sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control lazada_sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 588787591 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RrderItem no field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control orderItem_no - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 3510942044 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the OrderItem_status field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control orderItem_status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 2715653564 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order No. field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control order_no - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 2266766241 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Paid status field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control paid_status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 1289203370 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Payment Ref. id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control payment_ref_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 2846309565 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reference field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control reference - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 3907983261 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Seller sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control seller_sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 1090546857 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipment type field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control shipment_type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 3067451400 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping provider field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control shipping_provider - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 4051217646 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping Speed field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control shipping_speed - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 407292087 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sstatement field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control statement - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 2740286273 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Transaction date field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control transaction_date - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 507141708 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Transaction number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control transaction_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 1760299085 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Transaction type field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control transaction_type - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 2723709812 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the VAT in Amount field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control VAT_in_amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 3381950804 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the WHT Amount field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control WHT_amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Control 3692251385 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the WHT included in amount field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Control WHT_included_in_amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Action 2705236742 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Finance Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Action Get Finance Entry - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3968904345 - Action 2705236742 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Finance Entry</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Finance Transaction - Action Get Finance Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 3174535945 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Access Token field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control Access Token - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 1090351696 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Active field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control Active - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 635152450 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the App Key field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control App Key - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 943741593 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the App Secret field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control App Secret - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 1513319962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Refresh Token field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control Refresh Token - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 2570830848 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Seller Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control Seller Code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Action 2593274563 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Access Token</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Action Get Access Token - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Shipment Providers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Control 3397655244 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Cod field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Control cod - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Control 3558812865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Control name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Control 1597184966 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tracking code example field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Control tracking_code_example - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Control 388656637 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tracking code validation regex field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Control tracking_code_validation_regex - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Control 178911245 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tracking url field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Control tracking_url - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Action 3592122064 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Shipment Providers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Action Get Shipment Providers - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1136141987 - Action 3592122064 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Shipment Providers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Shipment Providers - Action Get Shipment Providers - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Trans. Order Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 817061969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Address1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control Address1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 179365352 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Address2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control Address2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 2678674004 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Branch number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control branch_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 714791889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the City field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 1856816140 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Country field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control Country - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 3654870435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer first name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control customer_first_name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 1720110027 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer last name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control customer_last_name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 4016792383 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Delivery info field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control delivery_info - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 3114402264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control order_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 4125979022 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control order_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 583009950 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Payment method field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control payment_method - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 646935216 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Phone field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control Phone - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 3635338911 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Price field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control Price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 3988829781 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control shipping_fee - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 2624585147 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee discount platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control shipping_fee_discount_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 3322124857 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee discount seller field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control shipping_fee_discount_seller - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 1343391343 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee original field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control shipping_fee_original - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 84429753 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tax code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control tax_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 1451094852 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control voucher - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 2644006646 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control voucher_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1050474351 - Control 3499953220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Card - Control voucher_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Trans. Order Lists</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 817061969 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Address1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control Address1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 179365352 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Address2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control Address2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 2678674004 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Branch number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control branch_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 714791889 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the City field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control City - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 1856816140 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Country field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control Country - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 3654870435 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer first name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control customer_first_name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 1720110027 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Customer last name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control customer_last_name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 4016792383 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Delivery info field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control delivery_info - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 3114402264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control order_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 4125979022 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control order_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 583009950 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Payment method field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control payment_method - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 646935216 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Phone field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control Phone - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 3635338911 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Price field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control Price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 3988829781 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control shipping_fee - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 2624585147 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee discount platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control shipping_fee_discount_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 3322124857 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee discount seller field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control shipping_fee_discount_seller - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 1343391343 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee original field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control shipping_fee_original - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 84429753 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tax code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control tax_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 1451094852 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control voucher - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 2644006646 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control voucher_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Control 3499953220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Control voucher_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Action 3949258912 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Action Get Order Entry - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1810878460 - Action 3949258912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Get Oders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Order Lists - Action Get Order Entry - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lazada Trans. Subfrom</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3101453077 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Buyer ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control buyer_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2897790647 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Invoice Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control invoice_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 383077865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Item price field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control item_price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3558812865 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Name field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 764902810 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Order Item ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control order_item_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3334113371 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Product ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control product_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 1116248436 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Purchase Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control purchase_order_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2509366674 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Purchase Order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control purchase_order_number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 903647472 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reason detail field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control reason - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 389812766 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Reason detail field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control reason_detail - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2185018763 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Return status field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control return_status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 1865496707 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping amount field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control shipping_amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2624585147 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee discount platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control shipping_fee_discount_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3322124857 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee discount seller field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control shipping_fee_discount_seller - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 1343391343 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shipping fee original field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control shipping_fee_original - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 797364258 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Shop ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control shop_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2414180447 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2698495129 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Sku ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control sku_id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 998393528 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the status field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 1715999146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tax Amount field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control tax_amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3041418119 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Tracking code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control tracking_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 229232245 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Amoun field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_amount - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2644006646 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3970733766 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher code Platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_code_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3478671984 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Code Seller field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_code_seller - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3499953220 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Platform field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_platform - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 3861307510 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher platform lpi field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_platform_lpi - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 1729636882 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Seller field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_seller - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2935271680 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Voucher Seller lpi field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control voucher_seller_lpi - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 2623726970 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Wallet credits field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control wallet_credits - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1592164455 - Control 1771407961 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Warehouse Code field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Trans. Subfrom - Control warehouse_code - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 1423260249 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Lazada Information</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Information - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 688565669 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Item Id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Item Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 3601150146 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Price field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Price - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 2973142441 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Seller sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Seller sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 3078403990 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Shop sku field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Shop sku - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 3476527605 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Sku id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Sku id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 1191056730 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Url Image 1 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Url Image 1 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 3572934175 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Url Image 2 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Url Image 2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 4210630792 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Url Image 3 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Url Image 3 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3188128854 - Control 3104146581 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1434786627">
+          <source>Specifies the value of the Lazada Url Image 4 field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Card - Control Lazada Url Image 4 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 3850590324 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Order ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 2660186895 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Order Item Id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Order Item Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 824866976 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Package id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Package id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 3426927253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Purchase order id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Purchase order id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 3348803263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Purchase order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Purchase order Number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 3268632214 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Shipment provider field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Shipment provider - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1261872353 - Control 122136073 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3595318222">
+          <source>Specifies the value of the Lazada Tracking number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada item ledger Entry - Control Lazada Tracking number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 3850590324 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Order ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 2660186895 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Order Item Id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Order Item Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 824866976 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Package id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Package id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 3426927253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Purchase order id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Purchase order id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 3348803263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Purchase order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Purchase order Number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 3268632214 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Shipment provider field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Shipment provider - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 865911539 - Control 122136073 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2405093420">
+          <source>Specifies the value of the Lazada Tracking number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Item Ledger Preview - Control Lazada Tracking number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Property 2019332006" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>New,Process,Report,Approve,Release,Posting,Prepare,Order,Request Approval,History,Print/Send,Navigate,Lazada</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Property PromotedActionCategories</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 2255980829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Lazada</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 821572041 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set Status Delivered to Lazada System</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Delivered - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 821572041 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set Status to Delivered</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Delivered - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 821572041 - Method 1377591017 - NamedType 1670776125" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1546368075">
+          <source>Nothing to Send</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Delivered - Method OnAction - NamedType PackageMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 1347511248 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set Status Failed Delivered to Lazada System</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Failed Delivered - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 1347511248 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set Status to Failed Delivered</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Failed Delivered - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 1347511248 - Method 1377591017 - NamedType 1670776125" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1546368075">
+          <source>Nothing to Send</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Failed Delivered - Method OnAction - NamedType PackageMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 1573681083 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set Status Package to Lazada System</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Package - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 1573681083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Set Status to Package</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Package - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Action 1573681083 - Method 1377591017 - NamedType 1670776125" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 1546368075">
+          <source>Nothing to Send</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Action Lazada Package - Method OnAction - NamedType PackageMsg</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Control 3850590324 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Specifies the value of the Lazada Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Control Lazada Order ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1546368075 - Control 570332289 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>Specifies the value of the Lazada Status field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Card - Control Lazada Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Action 833700975 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Cancel Item</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Action CancelProduct - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Action 833700975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Lazada Cancel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Action CancelProduct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 1205684183 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Cancel field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Cancel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 3850590324 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Order ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 2660186895 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Order Item Id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Order Item Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 824866976 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Package id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Package id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 3426927253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Purchase order id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Purchase order id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 3348803263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Purchase order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Purchase order Number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 3617433843 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Remark field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Remark - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 3268632214 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Shipment provider field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Shipment provider - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 3887038793 - Control 122136073 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Specifies the value of the Lazada Tracking number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Order Subform - Control Lazada Tracking number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 330219105 - Action 2255980829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2747922353">
+          <source>Lazada</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Role - Action Lazada - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 330219105 - Action 3789691193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2747922353">
+          <source>Lazada Finance Transaction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Role - Action LazadaFinanceTransaction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 330219105 - Action 1356150731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2747922353">
+          <source>Lazada Order Transaction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Role - Action LazadaOrderTransaction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 330219105 - Action 4050453940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2747922353">
+          <source>Lazada Product</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Role - Action LazadaProduct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 330219105 - Action 3267465328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2747922353">
+          <source>Lazada Setup</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Role - Action LazadaSetup - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 330219105 - Action 2547919885 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2747922353">
+          <source>Lazada Shipment Providers</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Role - Action LazadaShipmentProvides - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4251640657 - Control 3850590324 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3373253667">
+          <source>Specifies the value of the Lazada Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Card - Control Lazada Order ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4251640657 - Control 570332289 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3373253667">
+          <source>Specifies the value of the Lazada Status field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Card - Control Lazada Status - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 1205684183 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Cancel field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Cancel - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 3850590324 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Order ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Order ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 2660186895 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Order Item Id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Order Item Id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 824866976 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Package id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Package id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 3426927253 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Purchase order id field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Purchase order id - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 3348803263 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Purchase order Number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Purchase order Number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 3617433843 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Remark field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Remark - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 3268632214 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Shipment provider field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Shipment provider - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2797248963 - Control 122136073 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1227332174">
+          <source>Specifies the value of the Lazada Tracking number field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Lazada Sales Shipment Subform - Control Lazada Tracking number - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 688565669 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Item Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Item Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 3601150146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 2973142441 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Seller sku</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Seller sku - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 3078403990 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Shop sku</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Shop sku - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 3476527605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Sku id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Sku id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 1191056730 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Url Image 1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Url Image 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 3572934175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Url Image 2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Url Image 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 4210630792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Url Image 3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Url Image 3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 527053234 - Field 3104146581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Lazada Url Image 4</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item - Field Lazada Url Image 4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 2660186895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Order Item Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Order Item Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 824866976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Package id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Package id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 3426927253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Purchase order id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Purchase order id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 3348803263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Purchase order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Purchase order Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 3268632214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Shipment provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Shipment provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2295871011 - Field 122136073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 346005766">
+          <source>Lazada Tracking number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Journal Line - Field Lazada Tracking number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 2660186895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Order Item Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Order Item Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 824866976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Package id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Package id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 3426927253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Purchase order id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Purchase order id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 3348803263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Purchase order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Purchase order Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 3268632214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Shipment provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Shipment provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 447044641 - Field 122136073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4089294192">
+          <source>Lazada Tracking number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Item Ledger Entry - Field Lazada Tracking number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4091039136 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Header - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4091039136 - Field 570332289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Lazada Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Header - Field Lazada Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 1205684183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Cancel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Cancel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 2660186895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Order Item Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Order Item Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 824866976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Package id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Package id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 3426927253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Purchase order id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Purchase order id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 3348803263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Purchase order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Purchase order Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 3617433843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Remark - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 3268632214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Shipment provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Shipment provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3427776504 - Field 122136073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Lazada Tracking number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Invoice Line - Field Lazada Tracking number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 1205684183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Cancel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Cancel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 2660186895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Order Item Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Order Item Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 824866976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Package id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Package id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 3426927253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Purchase order id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Purchase order id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 3348803263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Purchase order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Purchase order Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 3617433843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Remark - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 3268632214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Shipment provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Shipment provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 513723079 - Field 122136073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Lazada Tracking number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Line - Field Lazada Tracking number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3797635656 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Header - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3797635656 - Field 570332289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
+          <source>Lazada Status</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Header - Field Lazada Status - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 1205684183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Cancel</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Cancel - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 3850590324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Order ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Order ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 2660186895 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Order Item Id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Order Item Id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 824866976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Package id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Package id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 3426927253 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Purchase order id</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Purchase order id - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 3348803263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Purchase order Number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Purchase order Number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 3617433843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Remark</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Remark - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 3268632214 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Shipment provider</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Shipment provider - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2376226607 - Field 122136073 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1114148978">
+          <source>Lazada Tracking number</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Lazada Sales Shipment Line - Field Lazada Tracking number - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 4088713267 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PermissionSet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet PermissionSet - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

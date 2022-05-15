@@ -878,7 +878,7 @@ codeunit 50100 "API Func"
         CLEAR(gvHttpResponseMessage);
         CLEAR(gvResponseText);
         CLEAR(gvHttpContent);
-        gvHttpRequestMessage.Content := gvHttpContent;
+        //  gvHttpRequestMessage.Content := gvHttpContent;
         gvHttpRequestMessage.SetRequestUri(pBaseUrl);
         gvHttpRequestMessage.Method := pMethod;
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
