@@ -697,12 +697,13 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(GetshipmentProvidersSign, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", gvTimeStam);
             gvUrlAddress := StrSubstNo(GetshipmentProvidersPath, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
-            ltJsonObject.SelectToken('shipment_providers', ltJsonToken);  //shipment_providers
-            ltJsonArray := ltJsonToken.AsArray();
-            for myLoop := 0 to ltJsonArray.Count - 1 do begin
-                ltJsonArray.Get(myLoop, ltJsonToken);
-                InsertTransaction(ltJsonToken, Database::"Lazada Shipment Providers", 0);
-            end;
+            // ltJsonObject.Get('data', ltJsonToken);  //shipment_providers
+            //   ltJsonArray := ltJsonToken.AsArray();
+
+            // for myLoop := 0 to ltJsonArray.Count - 1 do begin
+            //     ltJsonArray.Get(myLoop, ltJsonToken);
+            //     InsertTransaction(ltJsonToken, Database::"Lazada Shipment Providers", 0);
+            // end;
         end;
     end;
     /// <summary>
@@ -899,7 +900,6 @@ codeunit 50100 "API Func"
         gvHttpRequestMessage.SetRequestUri(pBaseUrl);
         gvHttpRequestMessage.Method := pMethod;
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
-
         gvHttpResponseMessage.Content.ReadAs(gvResponseText);
         if (gvHttpResponseMessage.IsSuccessStatusCode() AND (gvHttpResponseMessage.HttpStatusCode = 200)) then begin
             ltJsonToken.ReadFrom(gvResponseText);
