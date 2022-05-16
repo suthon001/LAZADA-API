@@ -108,37 +108,37 @@ table 50102 "Lazada Order Trans. Header"
             Caption = 'Remarks';
             DataClassification = ToBeClassified;
         }
-        field(21; "country"; Text[50])
+        field(21; "address_billing.country"; Text[50])
         {
             Caption = 'Country';
             DataClassification = ToBeClassified;
         }
-        field(22; "address1"; Text[100])
+        field(22; "address_billing.address1"; Text[100])
         {
             Caption = 'Address1';
             DataClassification = ToBeClassified;
         }
-        field(23; "address2"; Text[100])
+        field(23; "address_billing.address2"; Text[100])
         {
             Caption = 'Address2';
             DataClassification = ToBeClassified;
         }
-        field(24; "address3"; Text[100])
+        field(24; "address_billing.address3"; Text[100])
         {
             Caption = 'Address3';
             DataClassification = ToBeClassified;
         }
-        field(25; "city"; Text[100])
+        field(25; "address_billing.city"; Text[100])
         {
             Caption = 'City';
             DataClassification = ToBeClassified;
         }
-        field(26; "phone"; text[50])
+        field(26; "address_billing.phone"; text[50])
         {
             Caption = 'Phone';
             DataClassification = ToBeClassified;
         }
-        field(27; "phone2"; Text[50])
+        field(27; "address_billing.phone2"; Text[50])
         {
             Caption = 'Phone2';
             DataClassification = ToBeClassified;

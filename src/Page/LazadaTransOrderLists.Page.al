@@ -36,27 +36,27 @@ page 50104 "Lazada Trans. Order Lists"
                     ToolTip = 'Specifies the value of the Customer last name field.';
                     ApplicationArea = All;
                 }
-                field(Address1; Rec.Address1)
+                field(Address1; Rec."address_billing.Address1")
                 {
                     ToolTip = 'Specifies the value of the Address1 field.';
                     ApplicationArea = All;
                 }
-                field(Address2; Rec.Address2)
+                field(Address2; Rec."address_billing.Address2")
                 {
                     ToolTip = 'Specifies the value of the Address2 field.';
                     ApplicationArea = All;
                 }
-                field(Country; Rec.Country)
+                field(Country; Rec."address_billing.Country")
                 {
                     ToolTip = 'Specifies the value of the Country field.';
                     ApplicationArea = All;
                 }
-                field(City; Rec.City)
+                field(City; Rec."address_billing.City")
                 {
                     ToolTip = 'Specifies the value of the City field.';
                     ApplicationArea = All;
                 }
-                field(Phone; Rec.Phone)
+                field(Phone; Rec."address_billing.Phone")
                 {
                     ToolTip = 'Specifies the value of the Phone field.';
                     ApplicationArea = All;

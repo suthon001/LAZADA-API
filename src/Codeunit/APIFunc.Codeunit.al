@@ -359,14 +359,13 @@ codeunit 50100 "API Func"
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
             ltJsonObject.get('$.data.item_id', ltJsonToken);
             ltItem."Lazada Item Id" := ltJsonToken.AsValue().AsText();
-            ltJsonObject.SelectToken('sku_list', ltJsonToken);
+            ltJsonObject.SelectToken('$data.sku_list', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
-            ltJsonArray.GET(0, ltJsonToken);
-            ltJsonObject.get('$.seller_sku', ltJsonToken);
+            ltJsonObject.get('$.seller_sku[0]', ltJsonToken);
             ltItem."Lazada Seller sku" := ltJsonToken.AsValue().AsText();
-            ltJsonObject.get('$.shop_sku', ltJsonToken);
+            ltJsonObject.get('$.shop_sku[0]', ltJsonToken);
             ltItem."Lazada Shop sku" := ltJsonToken.AsValue().AsText();
-            ltJsonObject.get('$.sku_id', ltJsonToken);
+            ltJsonObject.get('$.sku_id[0]', ltJsonToken);
             ltItem."Lazada Sku id" := ltJsonToken.AsValue().AsText();
             ltItem.Modify();
         end;
@@ -568,7 +567,8 @@ codeunit 50100 "API Func"
             ltSalesHeader.GET(ltSalesHeader."Document Type"::Order, pSalesOrderNo);
             ltSalesHeader."Lazada Status" := 'Package';
             ltSalesHeader.Modify();
-            ltJsonObject.SelectToken('order_items', ltJsonToken);
+            // ltJsonObject.get('data', ltJsonToken);
+            ltJsonObject.SelectToken('$.data.order_items', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
             for myLoop := 0 to ltJsonArray.Count - 1 do begin
                 ltJsonArray.Get(myLoop, ltJsonToken);
@@ -685,6 +685,7 @@ codeunit 50100 "API Func"
 
     procedure "Get Shipment Providers"()
     var
+        ltShipmentProviders: Record "Lazada Shipment Providers";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
@@ -697,13 +698,13 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(GetshipmentProvidersSign, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", gvTimeStam);
             gvUrlAddress := StrSubstNo(GetshipmentProvidersPath, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
-            // ltJsonObject.Get('data', ltJsonToken);  //shipment_providers
-            //   ltJsonArray := ltJsonToken.AsArray();
-
-            // for myLoop := 0 to ltJsonArray.Count - 1 do begin
-            //     ltJsonArray.Get(myLoop, ltJsonToken);
-            //     InsertTransaction(ltJsonToken, Database::"Lazada Shipment Providers", 0);
-            // end;
+            ltShipmentProviders.DeleteAll();
+            ltJsonObject.SelectToken('$.data.shipment_providers', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                InsertTransaction(ltJsonToken, Database::"Lazada Shipment Providers", 0);
+            end;
         end;
     end;
     /// <summary>
@@ -768,12 +769,11 @@ codeunit 50100 "API Func"
             gvUrlAddress := StrSubstNo(GetOrderPathTxt, pOrder, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pOrderFilter);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
             if pOrder = 'order' then begin
-                ltJsonArray := ltJsonToken.AsArray();
-                ltJsonArray.Get(0, ltJsonToken);
+                ltJsonObject.Get('data', ltJsonToken);
                 InsertTransaction(ltJsonToken, Database::"Lazada Order Trans. Header", Database::"Lazada Order Transaction Line")
             end else
                 if pOrder = 'orders' then begin
-                    ltJsonObject.SelectToken('orders', ltJsonToken);
+                    ltJsonObject.SelectToken('$.data.orders', ltJsonToken);
                     ltJsonArray := ltJsonToken.AsArray();
                     for myLoop := 0 to ltJsonArray.Count - 1 do begin
                         ltJsonArray.Get(myLoop, ltJsonToken);
@@ -901,7 +901,7 @@ codeunit 50100 "API Func"
         gvHttpRequestMessage.Method := pMethod;
         gvHttpClient.Send(gvHttpRequestMessage, gvHttpResponseMessage);
         gvHttpResponseMessage.Content.ReadAs(gvResponseText);
-        if (gvHttpResponseMessage.IsSuccessStatusCode() AND (gvHttpResponseMessage.HttpStatusCode = 200)) then begin
+        if (gvHttpResponseMessage.IsSuccessStatusCode()) then begin
             ltJsonToken.ReadFrom(gvResponseText);
             ltJsonObject := ltJsonToken.AsObject();
             if ltJsonObject.get('type', ltJsonToken) then
@@ -913,7 +913,7 @@ codeunit 50100 "API Func"
             pJsonObject := ltJsonObject;
             pJsonToken := ltJsonToken;
         end else
-            ERROR(LastMessageErr, GETLASTERRORTEXT);
+            ERROR(LastMessageErr, gvHttpResponseMessage.ReasonPhrase());
     end;
     /// <summary>
     /// SetTimeStamp.
