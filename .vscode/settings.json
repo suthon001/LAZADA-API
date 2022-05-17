@@ -1,0 +1,19 @@
+{
+    "editor.wordWrap": "on",
+    "al.codeAnalyzers": [
+        "${CodeCop}",
+        "${UICop}",
+        "${PerTenantExtensionCop}"
+    ],
+    "editor.suggest.localityBonus": true,
+    "al.browser": "Chrome",
+    "al.incognito": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSurroundingLines": 2,
+    "editor.fontSize": 16,
+    "editor.formatOnPaste": true,
+    "files.maxMemoryForLargeFilesMB": 6144,
+    "workbench.list.smoothScrolling": true,
+    "workbench.tree.renderIndentGuides": "always",
+    "editor.mouseWheelZoom": true
+}
