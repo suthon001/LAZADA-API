@@ -58,5 +58,35 @@ tableextension 50100 "Lazada Item" extends Item
             DataClassification = ToBeClassified;
 
         }
+        field(50109; "Package length"; Decimal)
+        {
+            Caption = 'Package length';
+            DataClassification = ToBeClassified;
+
+        }
+        field(50110; "Package height"; Decimal)
+        {
+            Caption = 'Package height';
+            DataClassification = ToBeClassified;
+
+        }
+        field(50111; "Package weight"; Decimal)
+        {
+            Caption = 'Package weight';
+            DataClassification = ToBeClassified;
+
+        }
+        field(50112; "Package width"; Decimal)
+        {
+            Caption = 'Package width';
+            DataClassification = ToBeClassified;
+
+        }
+        field(50113; "Package content"; Text[250])
+        {
+            Caption = 'Package content';
+            DataClassification = ToBeClassified;
+
+        }
     }
 }

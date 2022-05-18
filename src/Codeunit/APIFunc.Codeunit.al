@@ -337,11 +337,11 @@ codeunit 50100 "API Func"
             DataText := DataText + STRSUBSTNO('<SellerSku>%1</SellerSku>', ltItem.Description);
             DataText := DataText + STRSUBSTNO('<quantity>%1</quantity>', ltItem.Inventory);
             DataText := DataText + STRSUBSTNO('<price>%1</price>', DELCHR(format(ltItem."Lazada Price"), '=', ','));
-            DataText := DataText + STRSUBSTNO('<package_length>%1</package_length>', 11);
-            DataText := DataText + STRSUBSTNO('<package_height>%1</package_height>', 22);
-            DataText := DataText + STRSUBSTNO('<package_weight>%1</package_weight>', 33);
-            DataText := DataText + STRSUBSTNO('<package_width>%1</package_width>', 44);
-            DataText := DataText + STRSUBSTNO('<package_content>%1</package_content>', ltItem.Description);
+            DataText := DataText + STRSUBSTNO('<package_length>%1</package_length>', ltItem."Package length");
+            DataText := DataText + STRSUBSTNO('<package_height>%1</package_height>', ltItem."Package height");
+            DataText := DataText + STRSUBSTNO('<package_weight>%1</package_weight>', ltItem."Package weight");
+            DataText := DataText + STRSUBSTNO('<package_width>%1</package_width>', ltItem."Package width");
+            DataText := DataText + STRSUBSTNO('<package_content>%1</package_content>', ltItem."Package content");
             DataText := DataText + '</Images>';
             DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 1");
             DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 2");
@@ -376,23 +376,24 @@ codeunit 50100 "API Func"
     /// </summary>
     procedure "Get Product"()
     var
-        ltItem: Record Item;
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        ltSkulit: Text;
-        RemovePatchTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4&seller_sku_list=%5', Locked = true;
-        RemoveProductTxt: Label '/product/getaccess_token%2app_key%3seller_sku_list%4', Locked = true;
+        GetPatchPathTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4&seller_sku_list=%5', Locked = true;
+        GetProductSignTxt: Label '/product/getaccess_token%1app_key%2seller_sku_list%3', Locked = true;
     begin
         if GetAccessToken() then begin
 
-            ltSkulit := '[SkuId_' + ltItem."Lazada Item Id" + '_' + ltItem."Lazada Sku id" + ']';
-            gvtokenpath := StrSubstNo(RemoveProductTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSkulit);
-            ltSkulit := ltSkulit.Replace('[', '%5B');
-            ltSkulit := ltSkulit.Replace(']', '%5D');
-            gvUrlAddress := StrSubstNo(RemovePatchTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), ltSkulit);
+            //  gvtokenpath := StrSubstNo(GetProductSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSkulit);
+            //  gvUrlAddress := StrSubstNo(GetPatchPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), ltSkulit);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltJsonObject.SelectToken('$.data.products', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                InsertTransaction(ltJsonToken, Database::"Lazada Product", 0);
+            end;
         end;
     end;
     /// <summary>
@@ -407,8 +408,8 @@ codeunit 50100 "API Func"
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
         ltSkulit: Text;
-        RemovePatchTxt: Label 'https://api.lazada.co.th/rest/product/remove?app_key=%2&access_token=%3&sign_method=sha256&sign=%4&seller_sku_list=%5', Locked = true;
-        RemoveProductTxt: Label '/product/removeaccess_token%2app_key%3seller_sku_list%4', Locked = true;
+        RemovePatchTxt: Label 'https://api.lazada.co.th/rest/product/remove?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&seller_sku_list=%4', Locked = true;
+        RemoveProductTxt: Label '/product/removeaccess_token%1app_key%2seller_sku_list%3', Locked = true;
 
     begin
         if GetAccessToken() then begin

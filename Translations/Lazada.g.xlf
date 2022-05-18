@@ -133,35 +133,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 2230889905 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3058559386 - Field 4217085653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address1</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address1 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.address1 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 1593193288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3058559386 - Field 3579389036 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address2</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address2 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.address2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 955496671 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 3058559386 - Field 2941692419 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Address3</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address3 - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.address3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 3247245973 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.city - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 268038440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Country</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.country - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 2466298836 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.phone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3058559386 - Field 1722230718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Phone2</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field address_billing.phone2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3058559386 - Field 2678674004 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Branch number</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field branch_number - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 2754366897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>City</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field city - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 2807065388 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Country</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field country - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3058559386 - Field 340792511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Created at</source>
@@ -217,16 +227,6 @@
           <source>Payment method</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field payment_method - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 2524668112 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Phone</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field phone - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3058559386 - Field 4169984794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Phone2</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Order Trans. Header - Field phone2 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3058559386 - Field 3328426687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Price</source>

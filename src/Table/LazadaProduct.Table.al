@@ -18,87 +18,87 @@ table 50105 "Lazada Product"
             Caption = 'Images';
             DataClassification = ToBeClassified;
         }
-        field(3; "Status"; text[50])
+        field(3; "skus.Status"; text[50])
         {
             Caption = 'Status';
             DataClassification = ToBeClassified;
         }
-        field(4; "quantity"; Decimal)
+        field(4; "skus.quantity"; Decimal)
         {
             Caption = 'Quantity';
             DataClassification = ToBeClassified;
         }
-        field(5; "product_weight"; Decimal)
+        field(5; "skus.product_weight"; Decimal)
         {
             Caption = 'Product weight';
             DataClassification = ToBeClassified;
         }
-        field(6; "SellerSku"; text[50])
+        field(6; "skus.SellerSku"; text[50])
         {
             Caption = 'Seller Sku';
             DataClassification = ToBeClassified;
         }
-        field(7; "ShopSku"; text[50])
+        field(7; "skus.ShopSku"; text[50])
         {
             Caption = 'Shop Sku';
             DataClassification = ToBeClassified;
         }
-        field(8; "Url"; text[250])
+        field(8; "skus.Url"; text[250])
         {
             Caption = 'Url';
             DataClassification = ToBeClassified;
         }
-        field(9; "package_width"; Decimal)
+        field(9; "skus.package_width"; Decimal)
         {
             Caption = 'Package width';
             DataClassification = ToBeClassified;
         }
-        field(10; "special_to_time"; text[50])
+        field(10; "skus.special_to_time"; text[50])
         {
             Caption = 'Special to time';
             DataClassification = ToBeClassified;
         }
-        field(11; "special_from_time"; text[50])
+        field(11; "skus.special_from_time"; text[50])
         {
             Caption = 'Special from time';
             DataClassification = ToBeClassified;
         }
-        field(12; "package_height"; Decimal)
+        field(12; "skus.package_height"; Decimal)
         {
             Caption = 'Package_height';
             DataClassification = ToBeClassified;
         }
-        field(13; "special_price"; Decimal)
+        field(13; "skus.special_price"; Decimal)
         {
             Caption = 'Special price';
             DataClassification = ToBeClassified;
         }
-        field(14; "price"; Decimal)
+        field(14; "skus.price"; Decimal)
         {
             Caption = 'Price';
             DataClassification = ToBeClassified;
         }
-        field(15; "package_length"; Decimal)
+        field(15; "skus.package_length"; Decimal)
         {
             Caption = 'Package length';
             DataClassification = ToBeClassified;
         }
-        field(16; "package_weight"; Decimal)
+        field(16; "skus.package_weight"; Decimal)
         {
             Caption = 'Package weight';
             DataClassification = ToBeClassified;
         }
-        field(17; "Available"; text[50])
+        field(17; "skus.Available"; text[50])
         {
             Caption = 'Available';
             DataClassification = ToBeClassified;
         }
-        field(18; "SkuId"; text[50])
+        field(18; "skus.SkuId"; text[50])
         {
             Caption = 'Sku Id';
             DataClassification = ToBeClassified;
         }
-        field(19; "special_to_date"; text[50])
+        field(19; "skus.special_to_date"; text[50])
         {
             Caption = 'Special to date';
             DataClassification = ToBeClassified;
@@ -118,27 +118,27 @@ table 50105 "Lazada Product"
             Caption = 'Market Images';
             DataClassification = ToBeClassified;
         }
-        field(23; "short_description"; text[250])
+        field(23; "attributes.short_description"; text[250])
         {
             Caption = 'Short description';
             DataClassification = ToBeClassified;
         }
-        field(24; "name"; text[250])
+        field(24; "attributes.name"; text[250])
         {
             Caption = 'Name';
             DataClassification = ToBeClassified;
         }
-        field(25; "description"; text[250])
+        field(25; "attributes.description"; text[250])
         {
             Caption = 'Description';
             DataClassification = ToBeClassified;
         }
-        field(26; "warranty_type"; text[50])
+        field(26; "attributes.warranty_type"; text[50])
         {
             Caption = 'Warranty type';
             DataClassification = ToBeClassified;
         }
-        field(27; "brand"; text[50])
+        field(27; "attributes.brand"; text[50])
         {
             Caption = 'Brand';
             DataClassification = ToBeClassified;

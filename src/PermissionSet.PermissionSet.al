@@ -15,7 +15,7 @@ permissionset 50100 "PermissionSet"
         tabledata "Lazada Shipment Providers" = RMID,
         codeunit "API Func" = X,
         page "Lazada Confirm Dialog Order" = X,
-        page "Lazada Create & Update Product" = X,
+        page "Lazada Product" = X,
         page "Lazada Setup Card" = X,
         page "Lazada Trans. Subfrom" = X,
         page "Lazada Trans. Order Card" = X,

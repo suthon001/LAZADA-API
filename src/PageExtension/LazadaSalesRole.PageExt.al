@@ -20,7 +20,7 @@ pageextension 50107 "Lazada Sales Role" extends "Order Processor Role Center"
                 {
                     Caption = 'Lazada Product';
                     ApplicationArea = all;
-                    RunObject = page "Lazada Create & Update Product";
+                    RunObject = page "Lazada Product";
                 }
                 action(LazadaOrderTransaction)
                 {
