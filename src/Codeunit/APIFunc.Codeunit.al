@@ -371,7 +371,30 @@ codeunit 50100 "API Func"
         end;
     end;
 
+    /// <summary>
+    /// Get Product.
+    /// </summary>
+    procedure "Get Product"()
+    var
+        ltItem: Record Item;
+        ltJsonToken: JsonToken;
+        ltJsonValue: JsonValue;
+        ltJsonObject: JsonObject;
+        ltJsonArray: JsonArray;
+        ltSkulit: Text;
+        RemovePatchTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4&seller_sku_list=%5', Locked = true;
+        RemoveProductTxt: Label '/product/getaccess_token%2app_key%3seller_sku_list%4', Locked = true;
+    begin
+        if GetAccessToken() then begin
 
+            ltSkulit := '[SkuId_' + ltItem."Lazada Item Id" + '_' + ltItem."Lazada Sku id" + ']';
+            gvtokenpath := StrSubstNo(RemoveProductTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSkulit);
+            ltSkulit := ltSkulit.Replace('[', '%5B');
+            ltSkulit := ltSkulit.Replace(']', '%5D');
+            gvUrlAddress := StrSubstNo(RemovePatchTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), ltSkulit);
+            ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
+        end;
+    end;
     /// <summary>
     /// Remove Product.
     /// </summary>

@@ -1,3 +1,6 @@
+/// <summary>
+/// PageExtension Lazada Sales Order Card (ID 50101) extends Record Sales Order.
+/// </summary>
 pageextension 50101 "Lazada Sales Order Card" extends "Sales Order"
 {
     PromotedActionCategories = 'New,Process,Report,Approve,Release,Posting,Prepare,Order,Request Approval,History,Print/Send,Navigate,Lazada';

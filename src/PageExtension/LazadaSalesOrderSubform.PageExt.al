@@ -1,3 +1,6 @@
+/// <summary>
+/// PageExtension Lazada Sales Order Subform (ID 50102) extends Record Sales Order Subform.
+/// </summary>
 pageextension 50102 "Lazada Sales Order Subform" extends "Sales Order Subform"
 {
     layout
