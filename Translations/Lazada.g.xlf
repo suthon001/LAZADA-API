@@ -873,6 +873,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field Primary Key - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2892155780 - Field 2300085706 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RealTime Update Stock</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Lazada Setup Entry - Field RealTime Update Stock - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2892155780 - Field 1513319962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Refresh Token</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1987,6 +1992,11 @@
           <source>Specifies the value of the App Secret field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control App Secret - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2135054484 - Control 2300085706 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the RealTime Update Stock field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Setup Card - Control RealTime Update Stock - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2135054484 - Control 1513319962 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the Refresh Token field.</source>

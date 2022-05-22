@@ -43,6 +43,11 @@ table 50100 "Lazada Setup Entry"
             Caption = 'Active';
             DataClassification = ToBeClassified;
         }
+        field(8; "RealTime Update Stock"; Boolean)
+        {
+            Caption = 'RealTime Update Stock';
+            DataClassification = ToBeClassified;
+        }
     }
     keys
     {

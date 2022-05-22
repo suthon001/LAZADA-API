@@ -53,17 +53,21 @@ codeunit 50100 "API Func"
     local procedure LazadaOnAfterFinalizePostingSales(var SalesHeader: Record "Sales Header")
     var
         ltSalesLine: Record "Sales Line";
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
         if SalesHeader."Document Type" IN [SalesHeader."Document Type"::Order, SalesHeader."Document Type"::"Return Order"] then
             if SalesHeader."Lazada Order ID" <> '' then begin
-                ltSalesLine.reset();
-                ltSalesLine.SetRange("Document Type", SalesHeader."Document Type");
-                ltSalesLine.SetRange("Document No.", SalesHeader."No.");
-                ltSalesLine.SetRange(type, ltSalesLine.type::Item);
-                if ltSalesLine.findset() then
-                    repeat
-                        UpdateProductQuantity(ltSalesLine."No.");
-                    until ltSalesLine.next() = 0;
+                IF ltLazadaSetup.GET() then
+                    if ltLazadaSetup."RealTime Update Stock" then begin
+                        ltSalesLine.reset();
+                        ltSalesLine.SetRange("Document Type", SalesHeader."Document Type");
+                        ltSalesLine.SetRange("Document No.", SalesHeader."No.");
+                        ltSalesLine.SetRange(type, ltSalesLine.type::Item);
+                        if ltSalesLine.findset() then
+                            repeat
+                                UpdateProductQuantity(ltSalesLine."No.");
+                            until ltSalesLine.next() = 0;
+                    end;
             end;
     end;
 
@@ -89,18 +93,22 @@ codeunit 50100 "API Func"
     var
         ltPurchaseLine: Record "Purchase Line";
         ltItem: Record Item;
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
         if PurchHeader."Document Type" IN [PurchHeader."Document Type"::Order, PurchHeader."Document Type"::"Return Order"] then begin
-            ltPurchaseLine.reset();
-            ltPurchaseLine.SetRange("Document Type", PurchHeader."Document Type");
-            ltPurchaseLine.SetRange("Document No.", PurchHeader."No.");
-            ltPurchaseLine.SetRange(type, ltPurchaseLine.type::Item);
-            if ltPurchaseLine.findset() then
-                repeat
-                    ltItem.GET(ltPurchaseLine."No.");
-                    if ltItem."Lazada Item Id" <> '' then
-                        UpdateProductQuantity(ltPurchaseLine."No.");
-                until ltPurchaseLine.next() = 0;
+            IF ltLazadaSetup.GET() then
+                if ltLazadaSetup."RealTime Update Stock" then begin
+                    ltPurchaseLine.reset();
+                    ltPurchaseLine.SetRange("Document Type", PurchHeader."Document Type");
+                    ltPurchaseLine.SetRange("Document No.", PurchHeader."No.");
+                    ltPurchaseLine.SetRange(type, ltPurchaseLine.type::Item);
+                    if ltPurchaseLine.findset() then
+                        repeat
+                            ltItem.GET(ltPurchaseLine."No.");
+                            if ltItem."Lazada Item Id" <> '' then
+                                UpdateProductQuantity(ltPurchaseLine."No.");
+                        until ltPurchaseLine.next() = 0;
+                end;
         end;
     end;
 
@@ -109,26 +117,34 @@ codeunit 50100 "API Func"
     var
         ltitemjournalline: Record "Item Journal Line";
         ltItem: record "Item";
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
-        ltitemjournalline.reset();
-        ltitemjournalline.CopyFilters(ItemJournalLine);
-        ltitemjournalline.SetFilter("Entry Type", '%1|%2', ltitemjournalline."Entry Type"::"Negative Adjmt.", ltitemjournalline."Entry Type"::"Positive Adjmt.");
-        if ltitemjournalline.FindSet() then
-            repeat
-                ltItem.GET(ltitemjournalline."Item No.");
-                if ltItem."Lazada Item Id" <> '' then
-                    UpdateProductQuantity(ltitemjournalline."Item No.");
-            until ltitemjournalline.next() = 0;
+        IF ltLazadaSetup.GET() then
+            if ltLazadaSetup."RealTime Update Stock" then begin
+                ltitemjournalline.reset();
+                ltitemjournalline.CopyFilters(ItemJournalLine);
+                ltitemjournalline.SetFilter("Entry Type", '%1|%2', ltitemjournalline."Entry Type"::"Negative Adjmt.", ltitemjournalline."Entry Type"::"Positive Adjmt.");
+                if ltitemjournalline.FindSet() then
+                    repeat
+                        ltItem.GET(ltitemjournalline."Item No.");
+                        if ltItem."Lazada Item Id" <> '' then
+                            UpdateProductQuantity(ltitemjournalline."Item No.");
+                    until ltitemjournalline.next() = 0;
+            end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Undo Sales Shipment Line", 'OnAfterSalesShptLineModify', '', false, false)]
     local procedure LazadaOnAfterSalesShptLineModify(var SalesShptLine: Record "Sales Shipment Line")
     var
         ltItem: Record Item;
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
-        if ltItem.get(SalesShptLine."No.") then
-            if ltItem."Lazada Item Id" <> '' then
-                UpdateProductQuantity(ltItem."No.");
+        IF ltLazadaSetup.GET() then
+            if ltLazadaSetup."RealTime Update Stock" then begin
+                if ltItem.get(SalesShptLine."No.") then
+                    if ltItem."Lazada Item Id" <> '' then
+                        UpdateProductQuantity(ltItem."No.");
+            end;
     end;
 
 
@@ -136,30 +152,42 @@ codeunit 50100 "API Func"
     local procedure LazadaOnAfterReturnShptLineModify(var ReturnShptLine: Record "Return Shipment Line")
     var
         ltItem: Record Item;
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
-        if ltItem.get(ReturnShptLine."No.") then
-            if ltItem."Lazada Item Id" <> '' then
-                UpdateProductQuantity(ltItem."No.");
+        IF ltLazadaSetup.GET() then
+            if ltLazadaSetup."RealTime Update Stock" then begin
+                if ltItem.get(ReturnShptLine."No.") then
+                    if ltItem."Lazada Item Id" <> '' then
+                        UpdateProductQuantity(ltItem."No.");
+            end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Undo Purchase Receipt Line", 'OnAfterPurchRcptLineModify', '', false, false)]
     local procedure LazadaOnAfterPurchRcptLineModify(var PurchRcptLine: Record "Purch. Rcpt. Line")
     var
         ltItem: Record Item;
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
-        if ltItem.get(PurchRcptLine."No.") then
-            if ltItem."Lazada Item Id" <> '' then
-                UpdateProductQuantity(ltItem."No.");
+        IF ltLazadaSetup.GET() then
+            if ltLazadaSetup."RealTime Update Stock" then begin
+                if ltItem.get(PurchRcptLine."No.") then
+                    if ltItem."Lazada Item Id" <> '' then
+                        UpdateProductQuantity(ltItem."No.");
+            end;
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Undo Return Receipt Line", 'OnAfterReturnRcptLineModify', '', false, false)]
     local procedure LazadaOnAfterReturnRcptLineModify(var ReturnRcptLine: Record "Return Receipt Line")
     var
         ltItem: Record Item;
+        ltLazadaSetup: Record "Lazada Setup Entry";
     begin
-        if ltItem.get(ReturnRcptLine."No.") then
-            if ltItem."Lazada Item Id" <> '' then
-                UpdateProductQuantity(ltItem."No.");
+        IF ltLazadaSetup.GET() then
+            if ltLazadaSetup."RealTime Update Stock" then begin
+                if ltItem.get(ReturnRcptLine."No.") then
+                    if ltItem."Lazada Item Id" <> '' then
+                        UpdateProductQuantity(ltItem."No.");
+            end;
     end;
 
     /// <summary>

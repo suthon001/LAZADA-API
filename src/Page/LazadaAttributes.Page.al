@@ -23,6 +23,7 @@ page 50114 "Lazada Attributes"
                 }
                 repeater(General)
                 {
+                    Editable = false;
                     field(name; Rec.name)
                     {
                         ToolTip = 'Specifies the value of the Name field.';

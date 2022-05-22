@@ -39,6 +39,11 @@ page 50100 "Lazada Setup Card"
                     ToolTip = 'Specifies the value of the Refresh Token field.';
                     ApplicationArea = All;
                 }
+                field("RealTime Update Stock"; rec."RealTime Update Stock")
+                {
+                    ToolTip = 'Specifies the value of the RealTime Update Stock field.';
+                    ApplicationArea = All;
+                }
                 field(Active; rec.Active)
                 {
                     ToolTip = 'Specifies the value of the Active field.';

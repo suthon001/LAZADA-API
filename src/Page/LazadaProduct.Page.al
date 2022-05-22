@@ -176,6 +176,7 @@ page 50108 "Lazada Product"
                 end;
             }
 
+
             action("Create Product Lazada")
             {
                 Caption = 'Create Product Lazada';
