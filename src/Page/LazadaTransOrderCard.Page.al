@@ -6,6 +6,7 @@ page 50105 "Lazada Trans. Order Card"
     Caption = 'Lazada Trans. Order Card';
     PageType = List;
     SourceTable = "Lazada Order Trans. Header";
+    SourceTableView = sorting(order_id) where("Created to Sales Order" = const(false));
     layout
     {
         area(content)
@@ -128,4 +129,67 @@ page 50105 "Lazada Trans. Order Card"
             }
         }
     }
+    actions
+    {
+        area(Processing)
+        {
+            action("Create to Sales Order")
+            {
+                ApplicationArea = all;
+                ToolTip = 'Create Sales Order';
+                Image = CreateForm;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                Caption = 'Create Sales Order';
+                trigger OnAction()
+                begin
+                    rec."Create to Sales Order"();
+                end;
+            }
+            action(CancelProductALLLine)
+            {
+                Caption = 'Lazada Cancel ALL Line';
+                Image = Cancel;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                PromotedOnly = true;
+                ApplicationArea = all;
+                ToolTip = 'Cancel Item';
+                trigger OnAction()
+                var
+                    ltTransactionDetail: Record "Lazada Order Transaction Line";
+                    ApiFunc: Codeunit "API Func";
+                    lttimestamp: BigInteger;
+                    CancelTxt: Label 'Do you want to cancel ALL Line', Locked = true;
+                begin
+                    if not Confirm(StrSubstNo(CancelTxt, '')) then
+                        exit;
+                    ltTransactionDetail.reset();
+                    ltTransactionDetail.SetRange(order_id, rec.order_id);
+                    ltTransactionDetail.SetRange(Cancel, false);
+                    if ltTransactionDetail.FindSet() then begin
+                        repeat
+                            lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
+                            APIFunc.SetTimeStamp(lttimestamp);
+                            APIFunc."Set Status Cancel"(ltTransactionDetail.order_item_id, 'Cancel Order');
+                            ltTransactionDetail."Cancel" := true;
+                            ltTransactionDetail.status := 'Cancel';
+                            ltTransactionDetail.Modify();
+                        until ltTransactionDetail.Next() = 0;
+                        rec."Created to Sales Order By" := COPYSTR(UserId(), 1, 50);
+                        rec."Created to Sales DateTime" := CurrentDateTime();
+                        rec."Created to Sales Order" := true;
+                        rec.statuses := 'Cancel';
+                        rec.Modify();
+                        Commit();
+                    end;
+                end;
+            }
+        }
+
+    }
 }
+

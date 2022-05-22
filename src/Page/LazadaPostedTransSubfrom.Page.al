@@ -1,9 +1,7 @@
-/// <summary>
-/// Page Lazada Trans. Subfrom (ID 50106).
-/// </summary>
-page 50106 "Lazada Trans. Subfrom"
+
+page 50112 "Lazada Posted Trans. Subfrom"
 {
-    Caption = 'Lazada Trans. Subfrom';
+    Caption = 'Lazada Posted Trans. Subfrom';
     PageType = ListPart;
     SourceTable = "Lazada Order Transaction Line";
     ModifyAllowed = false;
@@ -183,52 +181,6 @@ page 50106 "Lazada Trans. Subfrom"
                     ApplicationArea = All;
                 }
 
-            }
-        }
-    }
-    actions
-    {
-        area(Processing)
-        {
-            action(CancelProduct)
-            {
-                Caption = 'Lazada Cancel';
-                Image = Cancel;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                PromotedOnly = true;
-                ApplicationArea = all;
-                ToolTip = 'Cancel Item';
-                trigger OnAction()
-                var
-                    ltTransactionHeader: Record "Lazada Order Trans. Header";
-                    ApiFunc: Codeunit "API Func";
-                    lttimestamp: BigInteger;
-                    CancelTxt: Label 'Do you want to cancel Product No. %1 on lazada', Locked = true;
-                begin
-                    if Rec.Cancel then
-                        exit;
-                    rec.TestField("Remark");
-                    if not Confirm(StrSubstNo(CancelTxt, '')) then
-                        exit;
-
-                    lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
-                    APIFunc.SetTimeStamp(lttimestamp);
-                    APIFunc."Set Status Cancel"(rec.order_item_id, rec.Remark);
-                    rec."Cancel" := true;
-                    rec.status := 'Cancel';
-                    rec.Modify();
-                    ltTransactionHeader.GET(rec.order_id);
-                    ltTransactionHeader.CalcFields("Completely Cancel Order");
-                    if ltTransactionHeader."Completely Cancel Order" then begin
-                        ltTransactionHeader."Created to Sales Order By" := COPYSTR(UserId(), 1, 50);
-                        ltTransactionHeader."Created to Sales DateTime" := CurrentDateTime();
-                        ltTransactionHeader."Created to Sales Order" := true;
-                        ltTransactionHeader.statuses := 'Cancel';
-                        ltTransactionHeader.Modify();
-                    end;
-                end;
             }
         }
     }

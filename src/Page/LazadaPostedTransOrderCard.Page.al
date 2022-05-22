@@ -1,22 +1,22 @@
 /// <summary>
-/// Page Lazada Trans. Order Lists (ID 50104).
+/// Page Lazada Trans. Order Card (ID 50105).
 /// </summary>
-page 50104 "Lazada Trans. Order Lists"
+page 50111 "Lazada Posted Order Card"
 {
-    Caption = 'Lazada Trans. Order Lists';
+    Caption = 'Lazada Posted Trans. Order Card';
     PageType = List;
     SourceTable = "Lazada Order Trans. Header";
-    SourceTableView = sorting(order_id) where("Created to Sales Order" = const(false));
-    Editable = false;
-    CardPageId = "Lazada Trans. Order Card";
-    ApplicationArea = all;
-    UsageCategory = Lists;
+    SourceTableView = sorting(order_id) where("Created to Sales Order" = const(true));
+    DeleteAllowed = false;
+    InsertAllowed = false;
+    ModifyAllowed = false;
     layout
     {
         area(content)
         {
             repeater(General)
             {
+                Editable = false;
                 field(order_id; rec.order_id)
                 {
                     ToolTip = 'Specifies the value of the Order ID field.';
@@ -123,29 +123,18 @@ page 50104 "Lazada Trans. Order Lists"
                     ToolTip = 'Specifies the value of the Delivery info field.';
                     ApplicationArea = All;
                 }
+                field("Ref. Sales Order No."; rec."Ref. Sales Order No.")
+                {
+                    ToolTip = 'Specifies the value of the Ref. Sales Order No. field.';
+                    ApplicationArea = All;
+                }
             }
-        }
-    }
-    actions
-    {
-        area(Processing)
-        {
-            action("Get Order Entry")
+            part(Line; "Lazada Posted Trans. Subfrom")
             {
+                SubPageLink = order_id = field(order_id);
+                SubPageView = sorting(order_id, "Entry No.");
+                Editable = false;
                 ApplicationArea = all;
-                ToolTip = 'Get Orders';
-                Image = UserInterface;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                PromotedOnly = true;
-                Caption = 'Get Oders';
-                trigger OnAction()
-                var
-                    APIFunc: Codeunit "API Func";
-                begin
-                    APIFunc.ConfirmBeforGetOrderAPI();
-                end;
             }
         }
     }

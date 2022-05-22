@@ -313,6 +313,18 @@ table 50103 "Lazada Order Transaction Line"
             Caption = 'Status';
             DataClassification = ToBeClassified;
         }
+        field(63; "Cancel"; Boolean)
+        {
+            Caption = 'Cancel';
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+        field(64; "Remark"; Text[100])
+        {
+            Caption = 'Remark';
+            DataClassification = ToBeClassified;
+
+        }
     }
     keys
     {

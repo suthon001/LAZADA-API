@@ -182,6 +182,19 @@ table 50102 "Lazada Order Trans. Header"
             DataClassification = ToBeClassified;
             Editable = false;
         }
+        field(35; "Completely Cancel Order"; Boolean)
+        {
+            Caption = 'Completely Cancel Order';
+            FieldClass = FlowField;
+            CalcFormula = min("Lazada Order Transaction Line".Cancel where(order_id = field(order_id)));
+            Editable = false;
+        }
+        field(36; "Ref. Sales Order No."; Code[30])
+        {
+            Caption = 'Ref. Sales Order No.';
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
 
     }
     keys
@@ -217,6 +230,11 @@ table 50102 "Lazada Order Trans. Header"
         ltSalesSetup.TestField("Order Nos.");
         NewNoSeries := '';
         ltLineNo := 0;
+        Rec.CalcFields("Completely Cancel Order");
+        if rec."Completely Cancel Order" then begin
+            Message('Nothing to Create');
+            exit;
+        end;
         if not Confirm(StrSubstNo(ConfirmOrderMsg, order_id)) then
             exit;
         if NoSeriesMgt.SelectSeries(ltSalesSetup."Order Nos.", ltSalesSetup."Order Nos.", NewNoSeries) then begin
@@ -232,6 +250,7 @@ table 50102 "Lazada Order Trans. Header"
             IF ltSalesHeader.Insert(true) then begin
                 ltTransactionDetail.reset();
                 ltTransactionDetail.SetRange(order_id, rec.order_id);
+                ltTransactionDetail.SetRange(Cancel, false);
                 if ltTransactionDetail.FindSet() then begin
                     repeat
                         ltLineNo := ltLineNo + 10000;
@@ -243,7 +262,7 @@ table 50102 "Lazada Order Trans. Header"
                         ltSalesLine.Validate("No.", ltTransactionDetail.product_id);
                         ltSalesLine.Insert(true);
                         ltSalesLine.Validate(Quantity, 1);
-                        ltSalesLine.Validate("Unit Price", 0);
+                        ltSalesLine.Validate("Unit Price", ltTransactionDetail.item_price);
                         ltSalesLine."Lazada Order ID" := rec.order_id;
                         ltSalesLine."Lazada Order Item Id" := ltTransactionDetail.order_item_id;
                         ltSalesLine."Lazada Purchase order id" := ltTransactionDetail.purchase_order_id;
@@ -257,6 +276,7 @@ table 50102 "Lazada Order Trans. Header"
                     Message('Nothing to Create');
                     Error('');
                 end;
+                rec."Ref. Sales Order No." := ltSalesHeader."No.";
                 rec."Created to Sales Order By" := COPYSTR(UserId(), 1, 50);
                 rec."Created to Sales DateTime" := CurrentDateTime();
                 rec."Created to Sales Order" := true;

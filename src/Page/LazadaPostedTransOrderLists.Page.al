@@ -1,22 +1,27 @@
-/// <summary>
-/// Page Lazada Trans. Order Lists (ID 50104).
-/// </summary>
-page 50104 "Lazada Trans. Order Lists"
+
+page 50110 "Lazada Posted Order Lists"
 {
-    Caption = 'Lazada Trans. Order Lists';
+    Caption = 'Lazada Posted Trans. Order Lists';
     PageType = List;
     SourceTable = "Lazada Order Trans. Header";
-    SourceTableView = sorting(order_id) where("Created to Sales Order" = const(false));
+    SourceTableView = sorting(order_id) where("Created to Sales Order" = const(true));
     Editable = false;
-    CardPageId = "Lazada Trans. Order Card";
+    CardPageId = "Lazada Posted Order Card";
     ApplicationArea = all;
     UsageCategory = Lists;
+    DeleteAllowed = false;
+    InsertAllowed = false;
     layout
     {
         area(content)
         {
             repeater(General)
             {
+                field("Ref. Sales Order No."; rec."Ref. Sales Order No.")
+                {
+                    ToolTip = 'Specifies the value of the Ref. Sales Order No. field.';
+                    ApplicationArea = All;
+                }
                 field(order_id; rec.order_id)
                 {
                     ToolTip = 'Specifies the value of the Order ID field.';
@@ -123,29 +128,6 @@ page 50104 "Lazada Trans. Order Lists"
                     ToolTip = 'Specifies the value of the Delivery info field.';
                     ApplicationArea = All;
                 }
-            }
-        }
-    }
-    actions
-    {
-        area(Processing)
-        {
-            action("Get Order Entry")
-            {
-                ApplicationArea = all;
-                ToolTip = 'Get Orders';
-                Image = UserInterface;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                PromotedOnly = true;
-                Caption = 'Get Oders';
-                trigger OnAction()
-                var
-                    APIFunc: Codeunit "API Func";
-                begin
-                    APIFunc.ConfirmBeforGetOrderAPI();
-                end;
             }
         }
     }
