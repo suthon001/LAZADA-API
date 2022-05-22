@@ -301,7 +301,7 @@ codeunit 50100 "API Func"
     procedure "Create Product"(pItemNo: Code[30])
     var
         ltItem: Record Item;
-        ltdefaultdimension: Record "Default Dimension";
+        ltdefaultdimension, ltdefaultdimension2, ltdefaultdimension3 : Record "Default Dimension";
         Tempblob: Codeunit "Temp Blob";
         DataText, ltPayload : Text[2048];
         ltJsonToken: JsonToken;
@@ -321,20 +321,29 @@ codeunit 50100 "API Func"
 
             if not ltdefaultdimension.GET(Database::Item, ltItem."No.", 'BRAND') then
                 ltdefaultdimension.init();
+            if not ltdefaultdimension2.GET(Database::Item, ltItem."No.", 'MODEL') then
+                ltdefaultdimension2.init();
+            if not ltdefaultdimension3.GET(Database::Item, ltItem."No.", 'SIZE') then
+                ltdefaultdimension3.init();
             Tempblob.CreateOutStream(PayloadOutStream, TextEncoding::UTF8);
             DataText := '<Request>';
             DataText := DataText + '<Product>';
-            DataText := DataText + STRSUBSTNO('<PrimaryCategory>%1</PrimaryCategory>', 10002019);
+            DataText := DataText + STRSUBSTNO('<PrimaryCategory>%1</PrimaryCategory>', ltItem."Item Category Id");
             DataText := DataText + STRSUBSTNO('<SPUId>%1</SPUId>', '');
             DataText := DataText + STRSUBSTNO('<AssociatedSku>%1</AssociatedSku>', '');
             DataText := DataText + '<Attributes>';
             DataText := DataText + STRSUBSTNO('<name>%1</name>', ltItem.Description);
-            DataText := DataText + STRSUBSTNO('<description>%1</description>', ltItem.Description);
+            DataText := DataText + STRSUBSTNO('<description>%1</description>', ltItem.Description + ' ' + ltItem."Description 2");
+            DataText := DataText + STRSUBSTNO('<short_description>%1</short_description>', ltItem."Search Description");
             DataText := DataText + STRSUBSTNO('<brand>%1</brand>', ltdefaultdimension."Dimension Value Code");
+            DataText := DataText + STRSUBSTNO('<model>%1</model>', ltdefaultdimension2."Dimension Value Code");
+            DataText := DataText + STRSUBSTNO('<warranty_type>%1</warranty_type>', ltItem."Lazada Warranty type");
+            DataText := DataText + STRSUBSTNO('<warranty>%1</warranty>', ltItem."Lazada Warranty");
             DataText := DataText + '</Attributes>';
             DataText := DataText + '<Skus>';
             DataText := DataText + '<Sku>';
-            DataText := DataText + STRSUBSTNO('<SellerSku>%1</SellerSku>', ltItem.Description);
+            DataText := DataText + STRSUBSTNO('<SellerSku>%1</SellerSku>', ltItem."Lazada Seller sku");
+            DataText := DataText + STRSUBSTNO('<size>%1</size>', ltdefaultdimension3."Dimension Value Code");
             DataText := DataText + STRSUBSTNO('<quantity>%1</quantity>', ltItem.Inventory);
             DataText := DataText + STRSUBSTNO('<price>%1</price>', DELCHR(format(ltItem."Lazada Price"), '=', ','));
             DataText := DataText + STRSUBSTNO('<package_length>%1</package_length>', ltItem."Package length");
@@ -343,10 +352,14 @@ codeunit 50100 "API Func"
             DataText := DataText + STRSUBSTNO('<package_width>%1</package_width>', ltItem."Package width");
             DataText := DataText + STRSUBSTNO('<package_content>%1</package_content>', ltItem."Package content");
             DataText := DataText + '</Images>';
-            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 1");
-            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 2");
-            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 3");
-            DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 4");
+            if ltItem."Lazada Url Image 1" <> '' then
+                DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 1");
+            if ltItem."Lazada Url Image 2" <> '' then
+                DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 2");
+            if ltItem."Lazada Url Image 3" <> '' then
+                DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 3");
+            if ltItem."Lazada Url Image 4" <> '' then
+                DataText := DataText + STRSUBSTNO('<Image>%1</Image>', ltItem."Lazada Url Image 4");
             DataText := DataText + '</Images>';
             DataText := DataText + '</Sku>';
             DataText := DataText + '</Skus>';
@@ -374,19 +387,20 @@ codeunit 50100 "API Func"
     /// <summary>
     /// Get Product.
     /// </summary>
-    procedure "Get Product"()
+    procedure "Get Product"(pProductFilter: Text[1024]; pSignPath: text[1024])
     var
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetPatchPathTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%2&access_token=%3&sign_method=sha256&sign=%4&seller_sku_list=%5', Locked = true;
-        GetProductSignTxt: Label '/product/getaccess_token%1app_key%2seller_sku_list%3', Locked = true;
+
+        GetPatchPathTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%1&access_token=%2&sign_method=sha256&sign=%3%4', Locked = true;
+        GetProductSignTxt: Label '/product/getaccess_token%1app_key%2%3', Locked = true;
     begin
         if GetAccessToken() then begin
 
-            //  gvtokenpath := StrSubstNo(GetProductSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSkulit);
-            //  gvUrlAddress := StrSubstNo(GetPatchPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), ltSkulit);
+            gvtokenpath := StrSubstNo(GetProductSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pSignPath);
+            gvUrlAddress := StrSubstNo(GetPatchPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), pProductFilter);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
             ltJsonObject.SelectToken('$.data.products', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
@@ -773,7 +787,7 @@ codeunit 50100 "API Func"
     /// <param name="pSignPath">text[1024].</param>
     procedure "Get Order"(pOrder: Text[50]; pOrderFilter: Text[1024]; pSignPath: text[1024])
     var
-
+        ltLazadaOrderTransaction: Record "Lazada Order Trans. Header";
         ltJsonToken: JsonToken;
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
@@ -783,7 +797,6 @@ codeunit 50100 "API Func"
 
     begin
         if GetAccessToken() then begin
-
             pOrderFilter := pOrderFilter.Replace(':', '%3A');
             pOrderFilter := pOrderFilter.Replace('+', '%2B');
             pOrderFilter := pOrderFilter.Replace('[', '%5B');
@@ -857,10 +870,12 @@ codeunit 50100 "API Func"
                 if UpperCase(format(ltFieldRef.Type)) IN ['INTEGER', 'DECIMAL'] then
                     ltFieldRef.Value := SelectJsonTokenInterger(ltJsonObject, '$.' + ltFieldRef.Name);
             end;
-        IF ltRecordRef.Insert(true) then
+        IF ltRecordRef.Insert(true) then begin
             if pTableSubformID <> 0 then
                 "Get OrderItems"(SelectJsonTokenText(ltJsonObject, '$.order_id'), pTableSubformID);
-
+        end else
+            if pTableID = Database::"Lazada Product" then
+                ltRecordRef.Modify();
         ltRecordRef.Close();
     end;
 
@@ -971,6 +986,14 @@ codeunit 50100 "API Func"
         Clear(confirmLazada);
     end;
 
+    procedure ConfirmBeforGetProductAPI()
+    var
+        ConfirmLazada: Page "Lazada Confirm Dialog Product";
+    begin
+        CLEAR(confirmLazada);
+        ConfirmLazada.RunModal();
+        Clear(confirmLazada);
+    end;
 
     var
         gvLazadaSetup: Record "Lazada Setup Entry";

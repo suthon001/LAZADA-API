@@ -170,10 +170,9 @@ page 50108 "Lazada Product"
                 Image = UserInterface;
                 trigger OnAction()
                 var
-                    apifunc: Codeunit "API Func";
-                    lttimestamp: BigInteger;
+                    APIFunc: Codeunit "API Func";
                 begin
-
+                    APIFunc.ConfirmBeforGetProductAPI();
                 end;
             }
 

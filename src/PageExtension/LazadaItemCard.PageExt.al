@@ -32,6 +32,16 @@ pageextension 50100 "Lazada Item Card" extends "Item Card"
                     ApplicationArea = all;
                     ToolTip = 'Specifies the value of the Lazada Sku id field.';
                 }
+                field("Lazada Warranty type"; rec."Lazada Warranty type")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Specifies the value of the Lazada Warranty Type field.';
+                }
+                field("Lazada Warranty"; rec."Lazada Warranty")
+                {
+                    ApplicationArea = all;
+                    ToolTip = 'Specifies the value of the Warranty field.';
+                }
                 field("Package length"; rec."Package length")
                 {
 

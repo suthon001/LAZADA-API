@@ -164,6 +164,24 @@ table 50102 "Lazada Order Trans. Header"
             Caption = 'Voucher';
             DataClassification = ToBeClassified;
         }
+        field(32; "Created to Sales Order"; Boolean)
+        {
+            Caption = 'Created to Sales Order';
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+        field(33; "Created to Sales Order By"; Code[50])
+        {
+            Caption = 'Created to Sales Order By';
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
+        field(34; "Created to Sales DateTime"; DateTime)
+        {
+            Caption = 'Created to Sales Order DateTime';
+            DataClassification = ToBeClassified;
+            Editable = false;
+        }
 
     }
     keys
@@ -180,5 +198,77 @@ table 50102 "Lazada Order Trans. Header"
         ltLazadatransactionLine.reset();
         ltLazadatransactionLine.SetRange(order_id, rec.order_id);
         ltLazadatransactionLine.DeleteAll(true);
+    end;
+
+    procedure "Create to Sales Order"()
+    var
+        ltTransactionDetail: Record "Lazada Order Transaction Line";
+        ltSalesHeader: Record "Sales Header";
+        ltSalesLine: Record "Sales Line";
+        ltSalesSetup: Record "Sales & Receivables Setup";
+        ltSalesOrderCard: Page "Sales Order";
+        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NewNoSeries: Code[20];
+        ltLineNo: Integer;
+        ConfirmOrderMsg: Label 'Do you want Create %1 to Sale Order ?', Locked = true;
+        ConfirmOpenOrderMsg: Label 'Do you want open sales order %1 ?', Locked = true;
+    begin
+        ltSalesSetup.GET();
+        ltSalesSetup.TestField("Order Nos.");
+        NewNoSeries := '';
+        ltLineNo := 0;
+        if not Confirm(StrSubstNo(ConfirmOrderMsg, order_id)) then
+            exit;
+        if NoSeriesMgt.SelectSeries(ltSalesSetup."Order Nos.", ltSalesSetup."Order Nos.", NewNoSeries) then begin
+            ltTransactionDetail.Get(rec.order_id, 1);
+            ltSalesHeader.init();
+            ltSalesHeader."Document Type" := ltSalesHeader."Document Type"::Order;
+            ltSalesHeader."No." := NoSeriesMgt.GetNextNo(NewNoSeries, WorkDate(), true);
+            ltSalesHeader."Posting Date" := WorkDate();
+            ltSalesHeader."Document Date" := WorkDate();
+            ltSalesHeader.Validate("Sell-to Customer No.", ltTransactionDetail.buyer_id);
+            ltSalesHeader."Lazada Order ID" := rec.order_id;
+            ltSalesHeader."Lazada Status" := rec.statuses;
+            IF ltSalesHeader.Insert(true) then begin
+                ltTransactionDetail.reset();
+                ltTransactionDetail.SetRange(order_id, rec.order_id);
+                if ltTransactionDetail.FindSet() then begin
+                    repeat
+                        ltLineNo := ltLineNo + 10000;
+                        ltSalesLine.init();
+                        ltSalesLine."Document Type" := ltSalesHeader."Document Type";
+                        ltSalesLine."Document No." := ltSalesHeader."No.";
+                        ltSalesLine."Line No." := ltLineNo;
+                        ltSalesLine.Type := ltSalesLine.Type::Item;
+                        ltSalesLine.Validate("No.", ltTransactionDetail.product_id);
+                        ltSalesLine.Insert(true);
+                        ltSalesLine.Validate(Quantity, 1);
+                        ltSalesLine.Validate("Unit Price", 0);
+                        ltSalesLine."Lazada Order ID" := rec.order_id;
+                        ltSalesLine."Lazada Order Item Id" := ltTransactionDetail.order_item_id;
+                        ltSalesLine."Lazada Purchase order id" := ltTransactionDetail.purchase_order_id;
+                        ltSalesLine."Lazada Purchase order Number" := ltTransactionDetail.purchase_order_id;
+                        ltSalesLine."Lazada Tracking number" := ltTransactionDetail.tracking_code;
+                        ltSalesLine."Lazada Package id" := ltTransactionDetail.package_id;
+                        ltSalesLine."Lazada Shipment provider" := ltTransactionDetail.shipment_provider;
+                        ltSalesLine.Modify();
+                    until ltTransactionDetail.Next() = 0;
+                end else begin
+                    Message('Nothing to Create');
+                    Error('');
+                end;
+                rec."Created to Sales Order By" := COPYSTR(UserId(), 1, 50);
+                rec."Created to Sales DateTime" := CurrentDateTime();
+                rec."Created to Sales Order" := true;
+                rec.Modify();
+                Commit();
+                if NOT Confirm(StrSubstNo(ConfirmOpenOrderMsg, ltSalesHeader."No.")) then
+                    exit;
+                CLEAR(ltSalesOrderCard);
+                ltSalesOrderCard.SetTableView(ltSalesHeader);
+                ltSalesOrderCard.RunModal();
+                CLEAR(ltSalesOrderCard);
+            end;
+        end;
     end;
 }

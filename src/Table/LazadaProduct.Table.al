@@ -148,38 +148,15 @@ table 50105 "Lazada Product"
             Caption = 'Sub Status';
             DataClassification = ToBeClassified;
         }
-        field(29; "Entry No."; Integer)
-        {
-            Caption = 'Entry No.';
-            DataClassification = ToBeClassified;
-        }
 
 
     }
     keys
     {
-        key(PK; item_id, "Entry No.")
+        key(PK; item_id)
         {
             Clustered = true;
         }
     }
-    trigger OnInsert()
-    begin
-        "Entry No." := "Get LastEntry";
-    end;
-    /// <summary>
-    /// Get LastEntry.
-    /// </summary>
-    /// <returns>Return value of type Integer.</returns>
-    procedure "Get LastEntry"(): Integer
-    var
-        ltLazadaProduct: Record "Lazada Product";
-    begin
-        ltLazadaProduct.reset();
-        ltLazadaProduct.SetCurrentKey(item_id, "Entry No.");
-        ltLazadaProduct.SetRange(item_id, Rec.item_id);
-        if ltLazadaProduct.FindLast() then
-            exit(ltLazadaProduct."Entry No." + 1);
-        exit(1);
-    end;
+
 }

@@ -26,7 +26,6 @@ tableextension 50100 "Lazada Item" extends Item
         {
             Caption = 'Lazada Seller sku';
             DataClassification = ToBeClassified;
-            Editable = false;
         }
         field(50104; "Lazada Sku id"; Code[30])
         {
@@ -82,9 +81,21 @@ tableextension 50100 "Lazada Item" extends Item
             DataClassification = ToBeClassified;
 
         }
-        field(50113; "Package content"; Text[250])
+        field(50113; "Package content"; Text[100])
         {
             Caption = 'Package content';
+            DataClassification = ToBeClassified;
+
+        }
+        field(50114; "Lazada Warranty type"; Text[100])
+        {
+            Caption = 'Warranty type';
+            DataClassification = ToBeClassified;
+
+        }
+        field(50115; "Lazada Warranty"; Text[100])
+        {
+            Caption = 'Warranty';
             DataClassification = ToBeClassified;
 
         }
