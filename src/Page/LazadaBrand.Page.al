@@ -7,6 +7,7 @@ page 50113 "Lazada Brand"
     ModifyAllowed = false;
     ApplicationArea = all;
     UsageCategory = Lists;
+    InsertAllowed = false;
     layout
     {
         area(content)
@@ -52,7 +53,10 @@ page 50113 "Lazada Brand"
                 trigger OnAction()
                 var
                     APIFunc: Codeunit "API Func";
+                    lttimestamp: BigInteger;
                 begin
+                    lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
+                    APIFunc.SetTimeStamp(lttimestamp);
                     APIFunc."Get Brand"();
                 end;
             }

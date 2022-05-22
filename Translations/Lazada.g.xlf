@@ -943,6 +943,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Attributes - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 139315880 - Control 488087836 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Category ID field.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Attributes - Control gvPrimaryCategoryid - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 139315880 - Control 488087836 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Category ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Attributes - Control gvPrimaryCategoryid - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 139315880 - Control 3754374559 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Specifies the value of the label field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -977,16 +987,6 @@
           <source>Specifies the value of the Option Name field.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Attributes - Control Option Name - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 139315880 - Control 488087836 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specifies the value of the Category ID field.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Attributes - Control gvPrimaryCategoryid - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 139315880 - Control 488087836 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Category ID</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Lazada Attributes - Control gvPrimaryCategoryid - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 139315880 - Action 2658085163 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Get Attributes</source>

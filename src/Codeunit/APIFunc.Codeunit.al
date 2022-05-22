@@ -420,17 +420,20 @@ codeunit 50100 "API Func"
         ltJsonObject, ltJsonObject2 : JsonObject;
         ltJsonArray: JsonArray;
         ltSignPath, ltBrandFilter : Text[1024];
-        GetBrandPathTxt: Label 'https://api.lazada.co.th/rest/category/brands/query?app_key=%1&access_token=%2&sign_method=sha256&sign=%3%4', Locked = true;
-        GetBrandSignTxt: Label '/category/brands/queryaccess_token%1app_key%2%3', Locked = true;
+        GetBrandPathTxt: Label 'https://api.lazada.co.th/rest/category/brands/query?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4%5', Locked = true;
+        GetBrandSignTxt: Label '/category/brands/queryaccess_token%1app_key%2%3timestamp%4', Locked = true;
     begin
         if GetAccessToken() then begin
-            ltSignPath := 'languageCodeth_THpageSize10startRow0';
+            ltSignPath := 'languageCodeth_THpageSize10sign_methodsha256startRow0';
             ltBrandFilter := '&startRow=0&pageSize=10&languageCode=th_TH';
-            gvtokenpath := StrSubstNo(GetBrandSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSignPath);
-            gvUrlAddress := StrSubstNo(GetBrandPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), ltBrandFilter);
+            gvtokenpath := StrSubstNo(GetBrandSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSignPath, gvTimeStam);
+            gvUrlAddress := StrSubstNo(GetBrandPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, ltBrandFilter);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
             ltJsonObject.SelectToken('$.data.module', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
+            ltBrandAttr.reset();
+            ltBrandAttr.SetRange(Type, ltBrandAttr.Type::BRAND);
+            ltBrandAttr.DeleteAll();
             for myLoop := 0 to ltJsonArray.Count - 1 do begin
                 ltJsonArray.Get(myLoop, ltJsonToken);
                 ltJsonObject2 := ltJsonToken.AsObject();
@@ -453,15 +456,19 @@ codeunit 50100 "API Func"
         ltJsonObject, ltJsonObject2 : JsonObject;
         ltJsonArray: JsonArray;
         ltSignPath, ltBrandFilter : Text[1024];
-        GetAttributesPathTxt: Label 'https://api.lazada.co.th/rest/category/attributes/get?app_key=%1&access_token=%2&sign_method=sha256&sign=%3%4', Locked = true;
-        GetAttributesSignTxt: Label '/category/attributes/getaccess_token%1app_key%2%3', Locked = true;
+        GetAttributesPathTxt: Label 'https://api.lazada.co.th/rest/category/attributes/get?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4%5', Locked = true;
+        GetAttributesSignTxt: Label '/category/attributes/getaccess_token%1app_key%2%3timestamp%4', Locked = true;
     begin
         if GetAccessToken() then begin
-            ltSignPath := 'languageCodeth_THprimary_category_id' + pCategoryid;
+            ltSignPath := 'languageCodeth_THprimary_category_id' + pCategoryid + 'sign_methodsha256';
             ltBrandFilter := '&primary_category_id=' + pCategoryid + '&languageCode=th_TH';
-            gvtokenpath := StrSubstNo(GetAttributesSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSignPath);
-            gvUrlAddress := StrSubstNo(GetAttributesPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), ltBrandFilter);
+            gvtokenpath := StrSubstNo(GetAttributesSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltSignPath, gvTimeStam);
+            gvUrlAddress := StrSubstNo(GetAttributesPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, ltBrandFilter);
             ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltBrandAttr.reset();
+            ltBrandAttr.SetRange(Type, ltBrandAttr.Type::ATTRIBUTES);
+            ltBrandAttr.DeleteAll();
+
             ltJsonObject.SelectToken('data', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
             for myLoop := 0 to ltJsonArray.Count - 1 do begin
@@ -490,7 +497,7 @@ codeunit 50100 "API Func"
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetProductPathTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%1&access_token=%2&sign_method=sha256&sign=%3%4', Locked = true;
+        GetProductPathTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%1&access_token=%2&sign=%3%4', Locked = true;
         GetProductSignTxt: Label '/product/getaccess_token%1app_key%2%3', Locked = true;
     begin
         if GetAccessToken() then begin
@@ -1040,7 +1047,7 @@ codeunit 50100 "API Func"
             ltJsonToken.ReadFrom(gvResponseText);
             ltJsonObject := ltJsonToken.AsObject();
             if ltJsonObject.get('type', ltJsonToken) then
-                if ltJsonToken.AsValue().AsText() = 'ISV' then begin
+                if ltJsonToken.AsValue().AsText() IN ['ISV', 'ISP'] then begin
                     ltJsonObject.get('message', ltJsonToken);
                     Message('%1', ltJsonToken.AsValue().AsText());
                     error('');

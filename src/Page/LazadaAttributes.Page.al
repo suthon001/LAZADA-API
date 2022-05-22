@@ -1,12 +1,12 @@
 page 50114 "Lazada Attributes"
 {
     Caption = 'Lazada Attributes';
-    PageType = List;
+    PageType = Worksheet;
     SourceTable = "Lazada Get Brand & Attributes";
     SourceTableView = sorting(Type, "Entry No.") where(Type = const(ATTRIBUTES));
-    ModifyAllowed = false;
     ApplicationArea = all;
     UsageCategory = Lists;
+    InsertAllowed = false;
     layout
     {
         area(content)
@@ -21,46 +21,47 @@ page 50114 "Lazada Attributes"
                     ToolTip = 'Specifies the value of the Category ID field.';
                     ApplicationArea = all;
                 }
-                repeater(General)
+            }
+            repeater(General)
+            {
+                Editable = false;
+                field(name; Rec.name)
                 {
-                    Editable = false;
-                    field(name; Rec.name)
-                    {
-                        ToolTip = 'Specifies the value of the Name field.';
-                        ApplicationArea = All;
-                    }
-                    field(input_type; Rec.input_type)
-                    {
-                        ToolTip = 'Specifies the value of the Input type field.';
-                        ApplicationArea = All;
-                    }
-                    field("Option Name"; Rec."Option Name")
-                    {
-                        ToolTip = 'Specifies the value of the Option Name field.';
-                        ApplicationArea = All;
-                    }
-                    field(name_en; Rec.name_en)
-                    {
-                        ToolTip = 'Specifies the value of the Name En field.';
-                        ApplicationArea = All;
-                    }
-                    field(Attr_id; Rec.Attr_id)
-                    {
-                        ToolTip = 'Specifies the value of the attributes id field.';
-                        ApplicationArea = All;
-                    }
-                    field(attribute_type; Rec.attribute_type)
-                    {
-                        ToolTip = 'Specifies the value of the Attribute type field.';
-                        ApplicationArea = All;
-                    }
-                    field("Attr label"; Rec."Attr label")
-                    {
-                        ToolTip = 'Specifies the value of the label field.';
-                        ApplicationArea = All;
-                    }
+                    ToolTip = 'Specifies the value of the Name field.';
+                    ApplicationArea = All;
+                }
+                field(input_type; Rec.input_type)
+                {
+                    ToolTip = 'Specifies the value of the Input type field.';
+                    ApplicationArea = All;
+                }
+                field("Option Name"; Rec."Option Name")
+                {
+                    ToolTip = 'Specifies the value of the Option Name field.';
+                    ApplicationArea = All;
+                }
+                field(name_en; Rec.name_en)
+                {
+                    ToolTip = 'Specifies the value of the Name En field.';
+                    ApplicationArea = All;
+                }
+                field(Attr_id; Rec.Attr_id)
+                {
+                    ToolTip = 'Specifies the value of the attributes id field.';
+                    ApplicationArea = All;
+                }
+                field(attribute_type; Rec.attribute_type)
+                {
+                    ToolTip = 'Specifies the value of the Attribute type field.';
+                    ApplicationArea = All;
+                }
+                field("Attr label"; Rec."Attr label")
+                {
+                    ToolTip = 'Specifies the value of the label field.';
+                    ApplicationArea = All;
                 }
             }
+
         }
 
     }
@@ -80,9 +81,12 @@ page 50114 "Lazada Attributes"
                 trigger OnAction()
                 var
                     APIFunc: Codeunit "API Func";
+                    lttimestamp: BigInteger;
                 begin
                     if gvPrimaryCategoryid = '' then
                         error('Category id must have a value');
+                    lttimestamp := APIFunc.GetTimestamp(CurrentDateTime());
+                    APIFunc.SetTimeStamp(lttimestamp);
                     APIFunc."Get Attributes"(gvPrimaryCategoryid);
                     gvPrimaryCategoryid := '';
                 end;

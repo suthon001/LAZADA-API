@@ -120,7 +120,7 @@ page 50103 "Lazada Confirm Dialog Product"
                 if gvcreatedbeforeDate <> 0D then
                     ALLTextFilter := ALLTextFilter + 'T00:00:00' + '+07:00';
 
-            ALLTextFilter := ALLTextFilter + '&filter=' + Format(gvstatus) + '&limit=10&offset=0&sign_methodsha256&sort_by=updated_at&sort_direction=DESC&status=pending&timestamp=' + format(lttimestamp);
+            ALLTextFilter := ALLTextFilter + '&filter=' + Format(gvstatus) + '&limit=10&offset=0&sign_method=sha256&timestamp=' + format(lttimestamp);
 
             if gvupdateafterDate <> 0D then
                 ALLTextFilter := ALLTextFilter + '&update_after=' + format(gvupdateafterDate, 0, '<Year4>-<Month,2>-<Day,2>');
@@ -131,7 +131,7 @@ page 50103 "Lazada Confirm Dialog Product"
                     ALLTextFilter := ALLTextFilter + 'T00:00:00' + '+07:00';
 
             if gvupdatebeforDate <> 0D then
-                ALLTextFilter := ALLTextFilter + '&create_before=' + format(gvupdatebeforDate, 0, '<Year4>-<Month,2>-<Day,2>');
+                ALLTextFilter := ALLTextFilter + '&update_before=' + format(gvupdatebeforDate, 0, '<Year4>-<Month,2>-<Day,2>');
             if gvupdatebeforTIme <> 0T then
                 ALLTextFilter := ALLTextFilter + 'T' + format(gvupdatebeforTIme, 0, '<Hours24>:<Minutes,2>:<Seconds,2>') + '+07:00'
             else
@@ -155,5 +155,5 @@ page 50103 "Lazada Confirm Dialog Product"
         gvcreatedafterDate: Date;
         gvcreatedafterTime: Time;
         ALLTextFilter, SignPath : Text[1024];
-        gvstatus: Option ll,live,inactive,deleted,"image-missing",pending,rejected,"sold-out";
+        gvstatus: Option All,live,inactive,deleted,"image-missing",pending,rejected,"sold-out";
 }
