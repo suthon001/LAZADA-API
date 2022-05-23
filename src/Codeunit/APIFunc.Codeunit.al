@@ -497,8 +497,8 @@ codeunit 50100 "API Func"
         ltJsonValue: JsonValue;
         ltJsonObject: JsonObject;
         ltJsonArray: JsonArray;
-        GetProductPathTxt: Label 'https://api.lazada.co.th/rest/product/get?app_key=%1&access_token=%2&sign=%3%4', Locked = true;
-        GetProductSignTxt: Label '/product/getaccess_token%1app_key%2%3', Locked = true;
+        GetProductPathTxt: Label 'https://api.lazada.co.th/rest/products/get?app_key=%1&access_token=%2&sign=%3%4', Locked = true;
+        GetProductSignTxt: Label '/products/getaccess_token%1app_key%2%3', Locked = true;
     begin
         if GetAccessToken() then begin
 
@@ -510,6 +510,7 @@ codeunit 50100 "API Func"
             for myLoop := 0 to ltJsonArray.Count - 1 do begin
                 ltJsonArray.Get(myLoop, ltJsonToken);
                 InsertTransaction(ltJsonToken, Database::"Lazada Product", 0);
+
             end;
         end;
     end;
@@ -824,6 +825,31 @@ codeunit 50100 "API Func"
         end;
     end;
 
+    procedure "Get Order Trace"(pOrderID: Code[50])
+    var
+        ltLazadaOrderTrace: Record "Lazada Get Order Trace";
+        ltJsonToken: JsonToken;
+        ltJsonValue: JsonValue;
+        ltJsonObject: JsonObject;
+        ltJsonArray: JsonArray;
+        GetOrderTracePath: Label 'https://api.lazada.co.th/rest/logistic/order/trace?app_key=%1&access_token=%2&sign_method=sha256&sign=%3&timestamp=%4&order_id=%5', Locked = true;
+        GetOrderTraceSign: Label '/logistic/order/traceaccess_token%1app_key%2order_id%3sign_methodsha256timestamp%4', Locked = true;
+    begin
+        if GetAccessToken() then begin
+            gvtokenpath := StrSubstNo(GetOrderTraceSign, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", pOrderID, gvTimeStam);
+            gvUrlAddress := StrSubstNo(GetOrderTracePath, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, pOrderID);
+            ConnectToLazada('GET', gvUrlAddress, ltJsonObject, ltJsonToken);
+            ltLazadaOrderTrace.reset();
+            ltLazadaOrderTrace.DeleteAll();
+            ltJsonObject.SelectToken('$.result.module', ltJsonToken);
+            ltJsonArray := ltJsonToken.AsArray();
+            for myLoop := 0 to ltJsonArray.Count - 1 do begin
+                ltJsonArray.Get(myLoop, ltJsonToken);
+                InsertTransaction(ltJsonToken, Database::"Lazada Get Order Trace", 0);
+            end;
+        end;
+    end;
+
     procedure "Get Shipment Providers"()
     var
         ltShipmentProviders: Record "Lazada Shipment Providers";
@@ -1048,8 +1074,10 @@ codeunit 50100 "API Func"
             ltJsonObject := ltJsonToken.AsObject();
             if ltJsonObject.get('type', ltJsonToken) then
                 if ltJsonToken.AsValue().AsText() IN ['ISV', 'ISP'] then begin
-                    ltJsonObject.get('message', ltJsonToken);
-                    Message('%1', ltJsonToken.AsValue().AsText());
+                    if ltJsonObject.get('message', ltJsonToken) then
+                        Message('%1', ltJsonToken.AsValue().AsText())
+                    else
+                        Message('%1', SelectJsonTokenText(ltJsonObject, '$.code.displayMessage'));
                     error('');
                 end;
             pJsonObject := ltJsonObject;
