@@ -398,8 +398,7 @@ codeunit 50100 "API Func"
             gvtokenpath := StrSubstNo(CreateProductionSignTxt, gvLazadaSetup."Access Token", gvLazadaSetup."App Key", ltPayload, gvTimeStam);
             gvUrlAddress := StrSubstNo(CreateProductionPathTxt, gvLazadaSetup."App Key", gvLazadaSetup."Access Token", GenerateSign(gvtokenpath), gvTimeStam, ltPayload);
             ConnectToLazada('POST', gvUrlAddress, ltJsonObject, ltJsonToken);
-            ltJsonObject.get('$.data.item_id', ltJsonToken);
-            ltItem."Lazada Item Id" := ltJsonToken.AsValue().AsText();
+            ltItem."Lazada Item Id" := SelectJsonTokenText(ltJsonObject, '$.data.item_id');
             ltJsonObject.SelectToken('$data.sku_list', ltJsonToken);
             ltJsonArray := ltJsonToken.AsArray();
             ltJsonObject.get('$.seller_sku[0]', ltJsonToken);
